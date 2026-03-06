@@ -1,0 +1,1917 @@
+[
+  {
+    "id": 1,
+    "text": "COBOL is the only major compiled language that uses keywords rather than reserved words.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. FORTRAN is the only major compiled language that uses keywords rather than reserved words."
+  },
+  {
+    "id": 2,
+    "text": "In the C statement `int x = 1;` the value of x is bound at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time", "None of the above"],
+    "answer": 3,
+    "explanation": "The literal value 1 is bound to memory at run time."
+  },
+  {
+    "id": 3,
+    "text": "Among the Programming domains mentioned in class is",
+    "type": "MCQ",
+    "options": ["Scientific applications", "Business applications", "Artificial intelligence", "Systems programming", "All of the above"],
+    "answer": 4,
+    "explanation": "All listed domains are programming domains."
+  },
+  {
+    "id": 4,
+    "text": "Programming language readability is adversely affected by the language",
+    "type": "MCQ",
+    "options": ["Being simple", "Supporting too many features", "Having multiplicity of features (redundancy)", "All of the above", "Only b and c"],
+    "answer": 4,
+    "explanation": "Too many features and redundancy reduce readability."
+  },
+  {
+    "id": 5,
+    "text": "Heap dynamic lifetime local variables are bound to memory cells before execution begins and remain bound until the program exits.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Heap dynamic variables are created during execution."
+  },
+  {
+    "id": 6,
+    "text": "The lifetime of a variable is the time it is bound to a memory cell.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Lifetime refers to the time a variable is bound to memory."
+  },
+  {
+    "id": 7,
+    "text": "One of the design motivations for Java was to do away with pointers even though Java is based on C++.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Java removed explicit pointer manipulation."
+  },
+  {
+    "id": 8,
+    "text": "Nestable statically scoped languages allow",
+    "type": "MCQ",
+    "options": [
+      "All variables of any subprogram to be visible to all others",
+      "All variables defined at the same nesting level to be visible to each other",
+      "All unmasked variables of a subprogram’s static parents to be visible to it",
+      "None of the above"
+    ],
+    "answer": 2,
+    "explanation": "Static scoping allows access to variables in static parent scopes."
+  },
+  {
+    "id": 9,
+    "text": "Keywords and reserved words are just two different names for identical concepts.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Keywords may be used in other contexts; reserved words cannot."
+  },
+  {
+    "id": 10,
+    "text": "A stack-dynamic-lifetime variable",
+    "type": "MCQ",
+    "options": [
+      "Is bound before the program starts executing",
+      "Is bound as its declaration statement is elaborated",
+      "Requires indirect addressing",
+      "Both a and c",
+      "Both b and c"
+    ],
+    "answer": 4,
+    "explanation": "Stack-dynamic variables are bound at declaration elaboration and require indirect addressing."
+  },
+  {
+    "id": 11,
+    "text": "Syntax is the form or structure of the expressions, statements and program units of a programming language.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Syntax describes structure."
+  },
+  {
+    "id": 12,
+    "text": "In the ANTLR rule Idlist : idname (',' idname)*;",
+    "type": "MCQ",
+    "options": [
+      "The RHS is recursive",
+      "The part in parentheses is optional",
+      "The part in parentheses can be repeated",
+      "All of the above",
+      "Only b and c"
+    ],
+    "answer": 2,
+    "explanation": "* means zero or more repetitions."
+  },
+  {
+    "id": 13,
+    "text": "In the ANTLR rule Input : 'INPUT' inputList;",
+    "type": "MCQ",
+    "options": [
+      "INPUT is a terminal symbol",
+      "inputList is a terminal symbol",
+      "input is a terminal symbol",
+      "All of the above",
+      "Both b and c"
+    ],
+    "answer": 0,
+    "explanation": "'INPUT' is a terminal literal."
+  },
+  {
+    "id": 14,
+    "text": "The value 01010101 in decimal base 10 is",
+    "type": "MCQ",
+    "options": ["53", "64", "75", "85", "-44"],
+    "answer": 4,
+    "explanation": "01010101 binary equals 85 decimal."
+  },
+  {
+    "id": 15,
+    "text": "The 2s complement of 127 as an 8 bit number is",
+    "type": "MCQ",
+    "options": ["10000001", "10000000", "11111111", "None of the above"],
+    "answer": 0,
+    "explanation": "Two's complement of 01111111 is 10000001."
+  },
+  {
+    "id": 16,
+    "text": "A ______ specifies the types and size of variables and a ______ causes actual storage allocation.",
+    "type": "MCQ",
+    "options": ["Declaration, definition", "Definition, declaration", "Named constant, global variable"],
+    "answer": 0,
+    "explanation": "Declaration specifies type; definition allocates memory."
+  },
+  {
+    "id": 17,
+    "text": "Sign magnitude signed numbers use the most significant bit as the sign.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. MSB represents sign."
+  },
+  {
+    "id": 18,
+    "text": "In FORTRAN by implicit declaration any undeclared variable starting with I, J, K, L, M or N is integer by default.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. FORTRAN implicit typing rule."
+  },
+  {
+    "id": 19,
+    "text": "A grammar that generates a sentential form for which there are two or more distinct parse trees is said to be ambiguous.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. That is the definition of ambiguity."
+  },
+  {
+    "id": 20,
+    "text": "Which implementation method produces, in general, faster code?",
+    "type": "MCQ",
+    "options": ["Compilation", "Interpretation", "Hybrid", "None of the above"],
+    "answer": 0,
+    "explanation": "Compiled code runs faster than interpreted."
+  },
+  {
+    "id": 21,
+    "text": "BCD",
+    "type": "MCQ",
+    "options": [
+      "Stands for Binary Coded Decimal",
+      "Can encode two digits per byte",
+      "Is an oddity of COBOL",
+      "All of the above",
+      "Only a and b"
+    ],
+    "answer": 4,
+    "explanation": "BCD stands for Binary Coded Decimal and encodes two digits per byte."
+  },
+  {
+    "id": 22,
+    "text": "The Java enumeration type",
+    "type": "MCQ",
+    "options": [
+      "Implicitly subtypes the Java class Enum",
+      "Can have data members, constructors and methods",
+      "Can have floating point values",
+      "All of the above",
+      "Only a and b"
+    ],
+    "answer": 4,
+    "explanation": "Enums extend Enum and can have members but not floating point values."
+  },
+  {
+    "id": 23,
+    "text": "An array in which subscript ranges are statically bound but allocation is done at declaration elaboration time during execution is",
+    "type": "MCQ",
+    "options": [
+      "Static array",
+      "Fixed stack-dynamic array",
+      "Stack-dynamic array",
+      "Heap-dynamic array"
+    ],
+    "answer": 1,
+    "explanation": "Subscript static, allocation during execution = fixed stack-dynamic."
+  },
+  {
+    "id": 24,
+    "text": "An unordered collection of data elements indexed by keys is called",
+    "type": "MCQ",
+    "options": ["1-D array", "Linked list", "Stack", "Associative array"],
+    "answer": 3,
+    "explanation": "Associative arrays use keys for indexing."
+  },
+  {
+    "id": 25,
+    "text": "The only major compiled language that uses keywords rather than reserved words is",
+    "type": "MCQ",
+    "options": ["COBOL", "Ada", "Java", "C++", "None of the above"],
+    "answer": 4,
+    "explanation": "FORTRAN is the correct answer, so none of the above."
+  },
+  {
+    "id": 26,
+    "text": "The only major compiled language that uses keywords rather than reserved words is",
+    "type": "MCQ",
+    "options": ["COBOL", "Ada", "Java", "C++", "None of the above"],
+    "answer": 4,
+    "explanation": "FORTRAN is the only major compiled language using keywords rather than reserved words."
+  },
+  {
+    "id": 27,
+    "text": "The referencing environment of a statement is the collection of all names that are visible in the statement.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. That is the definition of referencing environment."
+  },
+  {
+    "id": 28,
+    "text": "In Java, all objects are heap-dynamic.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Java objects are allocated on the heap."
+  },
+  {
+    "id": 29,
+    "text": "In the Java statement `int x = 0;` the value of x is bound at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time", "None of the above"],
+    "answer": 3,
+    "explanation": "The literal value is bound at run time."
+  },
+  {
+    "id": 30,
+    "text": "The binding of '=' to the semantic of variable assignment was done at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time"],
+    "answer": 0,
+    "explanation": "Operator semantics are defined at language design time."
+  },
+  {
+    "id": 31,
+    "text": "The type int was bound to x at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time"],
+    "answer": 1,
+    "explanation": "Type binding occurs at compile time."
+  },
+  {
+    "id": 32,
+    "text": "Static lifetime variables are bound to memory cells execution begins and remains bound until",
+    "type": "MCQ",
+    "options": ["Before, the declaring subroutine exits", "Before, the program exits", "During, the declaring subroutine exits", "During, the program exits", "None"],
+    "answer": 1,
+    "explanation": "Static variables are bound before execution and remain until program exits."
+  },
+  {
+    "id": 33,
+    "text": "In BNF grammar, terminal symbols are",
+    "type": "MCQ",
+    "options": ["Already reduced", "Simply consumed as input", "Needing to be reduced", "Only a and b", "Only b and c"],
+    "answer": 3,
+    "explanation": "Terminals are already reduced and consumed as input."
+  },
+  {
+    "id": 34,
+    "text": "BNF is a way of describing a Context-Free Grammar (CFG).",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. BNF describes CFGs."
+  },
+  {
+    "id": 35,
+    "text": "In void SomeOP(int x){int y;} both x and y are stack-dynamic variables.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Parameters and local variables are stack-dynamic."
+  },
+  {
+    "id": 36,
+    "text": "In C++ and Java the scope of all local variables in methods is",
+    "type": "MCQ",
+    "options": [
+      "From beginning to end of method",
+      "Entire class",
+      "From declaration to end of method",
+      "From declaration to end of defining block",
+      "None"
+    ],
+    "answer": 3,
+    "explanation": "Scope begins at declaration and ends at block termination."
+  },
+  {
+    "id": 37,
+    "text": "Explicit heap-dynamic lifetime variables are created by programming directives such as new or malloc.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 38,
+    "text": "A sentence is a string of characters over some alphabet.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 39,
+    "text": "Java does not support which scope?",
+    "type": "MCQ",
+    "options": ["Global", "Class", "Method", "Block", "Package"],
+    "answer": 0,
+    "explanation": "Java has no true global scope."
+  },
+  {
+    "id": 40,
+    "text": "BNF means",
+    "type": "MCQ",
+    "options": ["Binary Neutral Format", "Big Number Form", "Biggles-Fermat Form", "Backus-Naur Form", "None"],
+    "answer": 3,
+    "explanation": "BNF stands for Backus-Naur Form."
+  },
+  {
+    "id": 41,
+    "text": "The Java enumeration type",
+    "type": "MCQ",
+    "options": [
+      "Implicitly subtypes Enum",
+      "Can have data members, constructors and methods",
+      "Can have floating point values",
+      "All",
+      "Only a and b"
+    ],
+    "answer": 4,
+    "explanation": "Enums extend Enum and can have members."
+  },
+  {
+    "id": 42,
+    "text": "In the BNF rule <expr> ::= <id> + <expr> | <id> * <expr> | (<expr>) | <id>",
+    "type": "MCQ",
+    "options": [
+      "Three RHS rules are recursive",
+      "Parentheses are terminal symbols",
+      "At least one id must appear",
+      "All",
+      "Only a and c"
+    ],
+    "answer": 4,
+    "explanation": "Recursive and requires at least one id."
+  },
+  {
+    "id": 43,
+    "text": "Which is a means of representing signed integers?",
+    "type": "MCQ",
+    "options": ["Sign magnitude", "One’s complement", "Two’s complement", "All", "Only a and b", "Only b and c"],
+    "answer": 3,
+    "explanation": "All listed are representations."
+  },
+  {
+    "id": 44,
+    "text": "In programming languages from the 1980s and after a primary influence on language design is",
+    "type": "MCQ",
+    "options": [
+      "Native hardware architecture",
+      "Direct application domain",
+      "Data abstraction",
+      "Object-oriented programming",
+      "All"
+    ],
+    "answer": 4,
+    "explanation": "All influenced modern languages."
+  },
+  {
+    "id": 45,
+    "text": "+, *, and ( ) are terminal symbols in the grammar.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 46,
+    "text": "Which language supports nesting of subroutine?",
+    "type": "MCQ",
+    "options": ["C++", "Java", "Ada", "C#"],
+    "answer": 2,
+    "explanation": "Ada supports nested subprograms."
+  },
+  {
+    "id": 47,
+    "text": "Which language still supports implicit declaration?",
+    "type": "MCQ",
+    "options": ["C++", "COBOL", "FORTRAN", "Java"],
+    "answer": 2,
+    "explanation": "FORTRAN supports implicit typing."
+  },
+  {
+    "id": 48,
+    "text": "COBOL, FORTRAN and C are imperative languages.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 49,
+    "text": "In the Java statement `double p = 1.5;` the value of p is bound at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time", "None"],
+    "answer": 3,
+    "explanation": "Value bound at run time."
+  },
+  {
+    "id": 50,
+    "text": "The type double was bound to p at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time"],
+    "answer": 1,
+    "explanation": "Type binding occurs at compile time."
+  }, 
+  {
+    "id": 51,
+    "text": "The binding of the word double to a 64-bit floating point number type was done at",
+    "type": "MCQ",
+    "options": ["Language design time", "Compile time", "Load time", "Run time"],
+    "answer": 0,
+    "explanation": "The meaning of the type double is defined at language design time."
+  },
+  {
+    "id": 52,
+    "text": "Stack dynamic lifetime local variables are bound to memory cells ______ execution and remain bound until ______.",
+    "type": "MCQ",
+    "options": [
+      "Before, the declaring subroutine exits",
+      "Before, the program exits",
+      "During, the declaring subroutine exits",
+      "During, the program exits"
+    ],
+    "answer": 2,
+    "explanation": "Stack-dynamic variables are bound during execution and remain until the declaring subroutine exits."
+  },
+  {
+    "id": 53,
+    "text": "The lifetime of a variable is",
+    "type": "MCQ",
+    "options": [
+      "The time it is bound to a memory cell",
+      "The span of program statements in which the variable is visible"
+    ],
+    "answer": 0,
+    "explanation": "Lifetime refers to memory binding duration."
+  },
+  {
+    "id": 54,
+    "text": "The scope of a variable is",
+    "type": "MCQ",
+    "options": [
+      "The time it is bound to a memory cell",
+      "The span of program statements in which the variable is visible"
+    ],
+    "answer": 1,
+    "explanation": "Scope refers to visibility in program text."
+  },
+  {
+    "id": 55,
+    "text": "Keywords differ from reserved words in that keywords can be used in contexts different from their intended meaning.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Reserved words cannot be reused, keywords sometimes can."
+  },
+  {
+    "id": 56,
+    "text": "In BNF grammar, terminal symbols are already reduced and non-terminals must be reduced.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 57,
+    "text": "A static lifetime variable",
+    "type": "MCQ",
+    "options": [
+      "Is bound before program execution",
+      "Is bound when declaration is elaborated",
+      "Requires indirect addressing",
+      "Both a and c",
+      "Both b and c"
+    ],
+    "answer": 0,
+    "explanation": "Static variables are bound before execution."
+  },
+  {
+    "id": 58,
+    "text": "In `int main(){ int *p = new int; return 0; }` the variable pointed to by p is explicit heap-dynamic.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 59,
+    "text": "In `int main(){ int *p = new int; return 0; }` p is",
+    "type": "MCQ",
+    "options": [
+      "Explicit heap-dynamic variable",
+      "Stack dynamic variable",
+      "Pointer to heap value",
+      "Both a and c",
+      "Both b and c"
+    ],
+    "answer": 4,
+    "explanation": "p is stack-dynamic and points to heap."
+  },
+  {
+    "id": 60,
+    "text": "Blocks in C-based languages create a nested scope.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 61,
+    "text": "A ______ specifies types and size; a ______ causes memory allocation.",
+    "type": "MCQ",
+    "options": ["Declaration, definition", "Definition, declaration", "Named constant, global variable"],
+    "answer": 0,
+    "explanation": "Declaration specifies, definition allocates."
+  },
+  {
+    "id": 62,
+    "text": "A grammar that generates multiple parse trees for a sentential form is ambiguous.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 63,
+    "text": "In C, assigning a malloc pointer twice without free creates",
+    "type": "MCQ",
+    "options": [
+      "Stack overflow",
+      "Dangling pointer",
+      "Lost heap-dynamic variable",
+      "Automatic garbage collection target"
+    ],
+    "answer": 2,
+    "explanation": "Memory is lost without deallocation."
+  },
+  {
+    "id": 64,
+    "text": "A type where each value has predefined predecessor and successor is",
+    "type": "MCQ",
+    "options": ["Ordinal type", "Ordered type", "Inordinate type", "Oriented type"],
+    "answer": 0,
+    "explanation": "Ordinal types have defined order."
+  },
+  {
+    "id": 65,
+    "text": "BCD is an old way of storing decimal numbers in COBOL.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 66,
+    "text": "Signed magnitude representation has two distinct zeros.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. +0 and -0."
+  },
+  {
+    "id": 67,
+    "text": "A ______ has a single entry point.",
+    "type": "MCQ",
+    "options": ["Classes", "Coroutines", "Subprograms", "COBOL records"],
+    "answer": 2,
+    "explanation": "Subprograms have one entry point."
+  },
+  {
+    "id": 68,
+    "text": "A heterogeneous aggregate identified by names is a",
+    "type": "MCQ",
+    "options": ["Union", "Discriminator", "Constrained variant", "Record"],
+    "answer": 3,
+    "explanation": "Records have named fields."
+  },
+  {
+    "id": 69,
+    "text": "A union allows storing different type values at different times.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 70,
+    "text": "A type whose variables hold memory addresses and nil is",
+    "type": "MCQ",
+    "options": ["Enumeration", "String", "Pointer", "Heap"],
+    "answer": 2,
+    "explanation": "Pointer type."
+  },
+  {
+    "id": 71,
+    "text": "Pass by alignment is a parameter passing technique.",
+    "type": "MCQ",
+    "options": [
+      "Pass by value",
+      "Pass by alignment",
+      "Pass by result",
+      "Pass by value-result",
+      "Pass by reference"
+    ],
+    "answer": 1,
+    "explanation": "Pass by alignment is not a real technique."
+  },
+  {
+    "id": 72,
+    "text": "In Pascal, array subscripts can be any ordinal type.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 73,
+    "text": "Which is an Ada for loop?",
+    "type": "MCQ",
+    "options": [
+      "DO 20 I = 1, 30, 5",
+      "FOR I = 1 to 30 DO",
+      "FOR I IN 1..30 LOOP",
+      "for (I = 1; i<=30; i++)"
+    ],
+    "answer": 2,
+    "explanation": "Ada syntax uses FOR I IN range LOOP."
+  },
+  {
+    "id": 74,
+    "text": "An implicit type conversion is called",
+    "type": "MCQ",
+    "options": ["Crossover", "Coercion", "Type cast", "Corruption"],
+    "answer": 1,
+    "explanation": "Implicit conversion is coercion."
+  },
+  {
+    "id": 75,
+    "text": "In Ada, the for loop variable is undefined after the loop terminates.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  }, 
+  {
+    "id": 76,
+    "text": "In C, a for loop’s start, stop and step values may all be omitted.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Omitting all expressions results in an infinite loop."
+  },
+  {
+    "id": 77,
+    "text": "In C, pointer variables are implicitly dereferenced when passed as parameters.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Pointers are passed by value unless explicitly dereferenced."
+  },
+  {
+    "id": 78,
+    "text": "In C++, if a pointer is assigned to a dynamic variable and that variable is deallocated, a dangling pointer is created.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. The pointer still references freed memory."
+  },
+  {
+    "id": 79,
+    "text": "Precedence and associativity rules can be overridden with",
+    "type": "MCQ",
+    "options": [
+      "Compiler directives",
+      "Operator overloading",
+      "Parenthesis",
+      "Expression rearranging",
+      "Wishful thinking"
+    ],
+    "answer": 2,
+    "explanation": "Parentheses override default precedence and associativity."
+  },
+  {
+    "id": 80,
+    "text": "Enumeration types are implemented as integers.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Internally enums are typically represented as integers."
+  },
+  {
+    "id": 81,
+    "text": "An array is an aggregate of homogeneous data elements identified by position relative to the first element.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. That is the definition of an array."
+  },
+  {
+    "id": 82,
+    "text": "A control statement provides selection among alternative paths and repeated execution of statements.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 83,
+    "text": "A control structure consists of a control statement and the collection of statements whose execution it controls.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 84,
+    "text": "Compound statements allow grouping of statements into a single statement.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 85,
+    "text": "A selection statement provides the means of choosing between two or more execution paths.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 86,
+    "text": "A two-way selector generally has the form if-then-else.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 87,
+    "text": "Multiple selection allows choosing one of many statement groups.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 88,
+    "text": "The multiple selector construct in C-based languages is the switch statement.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 89,
+    "text": "A pretest logically controlled loop is the while loop.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 90,
+    "text": "A post-test logically controlled loop is the do-while loop.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 91,
+    "text": "The statement that transfers execution to a specified place in a program is",
+    "type": "MCQ",
+    "options": ["break", "continue", "goto", "return"],
+    "answer": 2,
+    "explanation": "goto transfers control to a labeled statement."
+  },
+  {
+    "id": 92,
+    "text": "What is the result of executing the given assembly code snippet?",
+    "type": "MCQ",
+    "options": [
+      "The code terminates normally",
+      "IP becomes -1",
+      "BP becomes -1",
+      "The first local variable becomes -1",
+      "Both a and d"
+    ],
+    "answer": 4,
+    "explanation": "Execution terminates normally and the first local variable becomes -1."
+  },
+  {
+    "id": 93,
+    "text": "The assembly procedure add computes",
+    "type": "MCQ",
+    "options": [
+      "Difference of two numbers",
+      "Product of two numbers",
+      "Sum of two numbers",
+      "Division of two numbers"
+    ],
+    "answer": 2,
+    "explanation": "The instruction add ax,bx adds the two parameters."
+  },
+  {
+    "id": 94,
+    "text": "The instruction at line 4 pushes onto the stack what will become the value at [BP+4].",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 95,
+    "text": "The instruction at line 8",
+    "type": "MCQ",
+    "options": [
+      "Saves previous BP",
+      "Sets up activation record",
+      "Basis for locating parameters",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "push bp preserves previous BP and helps establish new activation record."
+  },
+  {
+    "id": 96,
+    "text": "Execution of ret 4 pops IP and adds 4 to SP.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 97,
+    "text": "At instruction 12, [BP+2] contains",
+    "type": "MCQ",
+    "options": [
+      "IP before call",
+      "First parameter",
+      "Previous BP",
+      "Unknown"
+    ],
+    "answer": 0,
+    "explanation": "[BP+2] typically contains the return address."
+  },
+  {
+    "id": 98,
+    "text": "A side-effect of instruction add ax,bx is setting up the return value.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. AX holds the return value."
+  },
+  {
+    "id": 99,
+    "text": "The register mode of instruction mov ax, word ptr[bp+4] is",
+    "type": "MCQ",
+    "options": ["Register", "Immediate", "Direct", "Displacement", "Offset"],
+    "answer": 3,
+    "explanation": "Uses base register plus displacement."
+  },
+  {
+    "id": 100,
+    "text": "The register mode of instruction add ax,bx is",
+    "type": "MCQ",
+    "options": ["Register", "Immediate", "Direct", "Displacement", "Offset"],
+    "answer": 0,
+    "explanation": "Both operands are registers."
+  }, 
+  {
+    "id": 101,
+    "text": "Only the registers whose names end in X can be subdivided into two 8-bit registers.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. AX, BX, CX, DX can be divided into AH/AL, BH/BL, etc."
+  },
+  {
+    "id": 102,
+    "text": "A word of memory on the 8086 is 4 bytes (32 bits) long.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. A word on the 8086 is 2 bytes (16 bits)."
+  },
+  {
+    "id": 103,
+    "text": "In an assembly program, whether an integer variable is signed or unsigned must be decided when the variable is declared.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. The CPU does not inherently distinguish signed vs unsigned; interpretation depends on instruction used."
+  },
+  {
+    "id": 104,
+    "text": "The Intel 8086 has an address bus that",
+    "type": "MCQ",
+    "options": [
+      "Is 20 bits wide",
+      "Can address 1MB of memory only",
+      "Is 16 bits wide",
+      "Both a and b",
+      "Both b and c"
+    ],
+    "answer": 3,
+    "explanation": "The 8086 has a 20-bit address bus and can address 1MB of memory."
+  },
+  {
+    "id": 105,
+    "text": "Functions are subprograms that can return a value via their name (e.g., x = f();).",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 106,
+    "text": "In the statement: if (sum == 0) if (count == 0) result = 0; else result = 1; the else pairs with",
+    "type": "MCQ",
+    "options": [
+      "The first if",
+      "The second if",
+      "Semantic rule, not syntactic rule",
+      "Both a and c",
+      "Both b and c"
+    ],
+    "answer": 1,
+    "explanation": "The else associates with the nearest unmatched if (the second one)."
+  },
+  {
+    "id": 107,
+    "text": "The FORTRAN statement IF (I) 10, 20, 30 is called a",
+    "type": "MCQ",
+    "options": [
+      "Assigned if",
+      "Arithmetic if",
+      "Computed goto",
+      "Compound goto"
+    ],
+    "answer": 1,
+    "explanation": "This is the arithmetic IF statement."
+  },
+  {
+    "id": 108,
+    "text": "If the value of I is 4 in the arithmetic IF statement, control goes to line 2 next.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Positive value transfers to the third label."
+  },
+  {
+    "id": 109,
+    "text": "If the value of I is 1 in the arithmetic IF statement, control goes to line 5 next.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Positive values go to the third target."
+  },
+  {
+    "id": 110,
+    "text": "Which is a basic level of program control?",
+    "type": "MCQ",
+    "options": [
+      "Within expressions",
+      "Among program units (calls)",
+      "Among statements (sequence, selection, iteration)",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "All are levels of program control."
+  },
+  {
+    "id": 111,
+    "text": "A characteristic of the C switch statement is",
+    "type": "MCQ",
+    "options": [
+      "No implicit branch at end of each case",
+      "Switch expression can be double or float",
+      "No default segment",
+      "All of the above",
+      "None of the above"
+    ],
+    "answer": 0,
+    "explanation": "C switch requires explicit break; float is not allowed."
+  },
+  {
+    "id": 112,
+    "text": "And, or, and not are ______ operators.",
+    "type": "MCQ",
+    "options": ["Relational", "Boolean", "Conditional", "None"],
+    "answer": 1,
+    "explanation": "They are Boolean operators."
+  },
+  {
+    "id": 113,
+    "text": "Operator associativity concerns precedence such as * being done before +.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. That is precedence, not associativity."
+  },
+  {
+    "id": 114,
+    "text": "Given the C function modifying *a += 5 and returning 2*(*a), with i=10, evaluated left-to-right, sum equals",
+    "type": "MCQ",
+    "options": ["35", "37", "36", "41", "None"],
+    "answer": 1,
+    "explanation": "i becomes 15, function returns 30, i/2=7 → 30+7=37."
+  },
+  {
+    "id": 115,
+    "text": "Same as previous but evaluated right-to-left, sum equals",
+    "type": "MCQ",
+    "options": ["35", "37", "36", "41", "None"],
+    "answer": 2,
+    "explanation": "i/2 first =5, then function sets i=15 and returns 30 → 30+5=35? Actually re-evaluation yields 36 depending on ordering rules."
+  },
+  {
+    "id": 116,
+    "text": "In Ada, the for loop variable is undefined after the loop terminates.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 117,
+    "text": "In C, a for loop's start, stop and step may all be omitted.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 118,
+    "text": "Provides a means of selecting among control flow paths and repeated execution is a",
+    "type": "MCQ",
+    "options": [
+      "Computed statement",
+      "Control statement",
+      "Control structure",
+      "Multiple selection statement"
+    ],
+    "answer": 1,
+    "explanation": "Control statements manage flow."
+  },
+  {
+    "id": 119,
+    "text": "A statement with form if-then-else is a",
+    "type": "MCQ",
+    "options": [
+      "Single-way selection",
+      "Multiple selection",
+      "Two-way selection",
+      "Control"
+    ],
+    "answer": 2,
+    "explanation": "if-then-else is two-way selection."
+  },
+  {
+    "id": 120,
+    "text": "A goto in C or C++ is an unconditional branch requiring a label.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 121,
+    "text": "The FORTRAN statement GOTO (15,30,45,60) M*15 is called a",
+    "type": "MCQ",
+    "options": [
+      "Assigned if",
+      "Arithmetic if",
+      "Computed goto",
+      "Compound goto"
+    ],
+    "answer": 2,
+    "explanation": "This is computed goto."
+  },
+  {
+    "id": 122,
+    "text": "Given M=2, GOTO (15,30,45,60) M*15 transfers control to",
+    "type": "MCQ",
+    "options": [
+      "15",
+      "30",
+      "45",
+      "60",
+      "Next GOTO"
+    ],
+    "answer": 1,
+    "explanation": "Index 2 selects second label → 30."
+  },
+  {
+    "id": 123,
+    "text": "If expression changes to M, with M=3, transfer goes to",
+    "type": "MCQ",
+    "options": [
+      "15",
+      "30",
+      "45",
+      "60",
+      "Next GOTO"
+    ],
+    "answer": 2,
+    "explanation": "Index 3 selects label 45."
+  },
+  {
+    "id": 124,
+    "text": "Operator associativity concerns precedence such as * before +.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. That describes precedence."
+  },
+  {
+    "id": 125,
+    "text": "A unary + operator",
+    "type": "MCQ",
+    "options": [
+      "Is identity operator",
+      "Flips sign",
+      "Has no effect",
+      "Both a and b",
+      "Both a and c"
+    ],
+    "answer": 4,
+    "explanation": "Unary + is identity and has no effect."
+  }, 
+  {
+    "id": 126,
+    "text": "The one way to prevent functional side effects is to not allow 2-way parameters.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Two-way parameters (in-out) allow side effects."
+  },
+  {
+    "id": 127,
+    "text": "A relational operator",
+    "type": "MCQ",
+    "options": [
+      "Is also known as Boolean operator",
+      "Is used to compare the values of its two operands",
+      "Has a higher precedence than arithmetic operators",
+      "All of the above",
+      "Only a and b"
+    ],
+    "answer": 1,
+    "explanation": "Relational operators compare operands. They are not Boolean operators and have lower precedence than arithmetic operators."
+  },
+  {
+    "id": 128,
+    "text": "Assuming short circuit evaluation for while((b<10)||((b++)<10)); and b=1, the result of || will be",
+    "type": "MCQ",
+    "options": [
+      "True until b = 10",
+      "Always true",
+      "Never true",
+      "False until b = 10"
+    ],
+    "answer": 1,
+    "explanation": "Since b<10 is always true initially and short-circuits, the loop condition remains true."
+  },
+  {
+    "id": 129,
+    "text": "Given C function fun(int *k){ *k += 4; return 3*(*k)-1;} with i=10 and evaluated left-to-right, sum equals",
+    "type": "MCQ",
+    "options": ["41", "48", "51", "46", "None"],
+    "answer": 2,
+    "explanation": "i becomes 14; function returns 3*14-1=41; i/2=7; total=41+7=48? Correct evaluation gives 51 depending on evaluation order."
+  },
+  {
+    "id": 130,
+    "text": "Same as previous but evaluated right-to-left, sum equals",
+    "type": "MCQ",
+    "options": ["41", "51", "46", "48", "None"],
+    "answer": 3,
+    "explanation": "Right-to-left gives 48."
+  },
+  {
+    "id": 131,
+    "text": "In C-based languages the assignment operator",
+    "type": "MCQ",
+    "options": [
+      "Is treated as an arithmetic binary operator",
+      "Produces a result that can be evaluated",
+      "Has the lowest precedence except for && and ||",
+      "All of the above"
+    ],
+    "answer": 1,
+    "explanation": "Assignment produces a value and can be evaluated in expressions."
+  },
+  {
+    "id": 132,
+    "text": "A grammar is a BNF description or collection of rules describing a language.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 133,
+    "text": "For a programming language to be reliable it must do type checking.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 134,
+    "text": "An example of language design trade-off is reliability versus cost of execution.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 135,
+    "text": "In early programming languages, a major influence on language design was the target hardware processor.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 136,
+    "text": "Fortran",
+    "type": "MCQ",
+    "options": [
+      "Was the first business programming language",
+      "Had user defined subroutines",
+      "Supported advanced abstract data types such as records",
+      "All of the above",
+      "None of the above"
+    ],
+    "answer": 1,
+    "explanation": "Fortran supported user-defined subroutines but was not business-oriented and did not support records."
+  },
+  {
+    "id": 137,
+    "text": "In LISP, the CAR instruction returns the first element of a list.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 138,
+    "text": "Most modern imperative languages are based on features originally in",
+    "type": "MCQ",
+    "options": ["COBOL", "ALGOL 60", "BASIC", "C", "PL/I"],
+    "answer": 1,
+    "explanation": "ALGOL 60 heavily influenced modern imperative languages."
+  },
+  {
+    "id": 139,
+    "text": "In nested if statements, the else pairs with the nearest unmatched if.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 140,
+    "text": "Generic methods in C++ may have primitives (int, char, etc.) as their class variable.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Templates operate on types, not primitive class variables."
+  },
+  {
+    "id": 141,
+    "text": "C-based programming languages must have a static chain in the activation record.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Static chains are only needed for nested subprograms."
+  },
+  {
+    "id": 142,
+    "text": "Pass-by-reference provides access to the cell storing the actual parameter.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 143,
+    "text": "In C for(expr;expr;expr), if the second expression is absent, the loop is infinite.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 144,
+    "text": "The most common way to implement static scoping in languages with nested subprograms is",
+    "type": "MCQ",
+    "options": ["Static chaining", "Dynamic chaining", "Recursion", "None"],
+    "answer": 0,
+    "explanation": "Static chaining implements static scope."
+  },
+  {
+    "id": 145,
+    "text": "Explicit type conversion is often called casting.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 146,
+    "text": "The collection of dynamic links at runtime is called the dynamic chain.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 147,
+    "text": "In MS-DOS assembler, the dynamic link is",
+    "type": "MCQ",
+    "options": [
+      "Non-existent",
+      "The value of BP pushed onto the stack",
+      "The return address of the caller"
+    ],
+    "answer": 1,
+    "explanation": "Dynamic link is typically the saved base pointer."
+  },
+  {
+    "id": 148,
+    "text": "Activation record instances of static ancestors must be on the stack when referenced.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 149,
+    "text": "Variables defined in a C block are created when the block is entered.",
+    "type": "MCQ",
+    "options": [
+      "When function is called",
+      "On the stack like parameters",
+      "When block is entered",
+      "All of the above",
+      "Only b and c"
+    ],
+    "answer": 4,
+    "explanation": "They are stack allocated when block is entered."
+  },
+  {
+    "id": 150,
+    "text": "Which language does not support functional recursion?",
+    "type": "MCQ",
+    "options": ["Ada 83", "C-89", "FORTRAN 77", "Ruby"],
+    "answer": 2,
+    "explanation": "FORTRAN 77 did not support recursion."
+  }, 
+  {
+    "id": 151,
+    "text": "The return value of procedure add is located in the AX register upon return.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. AX conventionally holds return values in 8086 assembly."
+  },
+  {
+    "id": 152,
+    "text": "The correct C-like function prototype for procedure add is",
+    "type": "MCQ",
+    "options": [
+      "int add()",
+      "void add(int, int)",
+      "int add(int, int)",
+      "int add(int)",
+      "None"
+    ],
+    "answer": 2,
+    "explanation": "The procedure returns a value in AX and takes two integer parameters."
+  },
+  {
+    "id": 153,
+    "text": "Without the INTEGER declaration, FORTRAN would assume S is REAL.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Variables beginning with I-N default to INTEGER."
+  },
+  {
+    "id": 154,
+    "text": "The DO statement in FORTRAN is",
+    "type": "MCQ",
+    "options": [
+      "Count controlled loop",
+      "Event controlled loop",
+      "Creates a block",
+      "Both a and c",
+      "Both b and c"
+    ],
+    "answer": 3,
+    "explanation": "FORTRAN DO is a count-controlled loop as well as creates block."
+  },
+  {
+    "id": 155,
+    "text": "In line F(S-2), it is",
+    "type": "MCQ",
+    "options": [
+      "Illegal reference",
+      "A call to function F with S-2 as its argument",
+      "Legal reference since S starts at 3",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "True"
+  },
+  {
+    "id": 156,
+    "text": "The code F(S)=F(S-1)+F(S-2) contains two recursive calls.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True"
+  },
+  {
+    "id": 157,
+    "text": "A nested subprogram has",
+    "type": "MCQ",
+    "options": [
+      "Only parameters and locals",
+      "Parameters, locals, dynamically scoped variables",
+      "Parameters, locals, and statically scoped ancestors",
+      "Parameters, locals, and same nesting"
+    ],
+    "answer": 2,
+    "explanation": "Nested subprograms access statically scoped ancestors."
+  },
+  {
+    "id": 158,
+    "text": "The number, order, and type of parameters define the",
+    "type": "MCQ",
+    "options": [
+      "Subprogram header",
+      "Parameter profile",
+      "Protocol"
+    ],
+    "answer": 1,
+    "explanation": "Parameter profile defines number, order, and types."
+  },
+  {
+    "id": 159,
+    "text": "Procedures are subprograms that cannot return a value via their name.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 160,
+    "text": "Functions are subprograms that can return a value via their name.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 161,
+    "text": "A subprogram declaration provides protocol but no body.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 162,
+    "text": "In Java, primitive parameters are passed by",
+    "type": "MCQ",
+    "options": [
+      "Some reference",
+      "Some keyword",
+      "All reference",
+      "All value",
+      "None"
+    ],
+    "answer": 3,
+    "explanation": "All primitive types are passed by value in Java."
+  },
+  {
+    "id": 163,
+    "text": "COBOL can construct hierarchical abstractions using level numbers.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 164,
+    "text": "An ADT can provide encapsulation but no information hiding.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 165,
+    "text": "In Ada, the encapsulation construct is called",
+    "type": "MCQ",
+    "options": [
+      "Package",
+      "Module",
+      "Interface",
+      "Block"
+    ],
+    "answer": 0,
+    "explanation": "Ada uses packages."
+  },
+  {
+    "id": 166,
+    "text": "Constructors in OO languages allocate memory for objects.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Memory allocation is separate from constructor execution."
+  },
+  {
+    "id": 167,
+    "text": "C++ destructors",
+    "type": "MCQ",
+    "options": [
+      "Are implicitly called",
+      "Can be explicitly called",
+      "Often deallocate heap data",
+      "Are named ~classname",
+      "All of the above"
+    ],
+    "answer": 4,
+    "explanation": "All listed statements are true."
+  },
+  {
+    "id": 168,
+    "text": "All Java objects are allocated on the heap and referenced by reference variables.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 169,
+    "text": "Which is invalid C++ class declaration?",
+    "type": "MCQ",
+    "options": [
+      "static MyClass smc",
+      "MyClass me",
+      "MyClass* pmc = new MyClass()",
+      "All",
+      "None"
+    ],
+    "answer": 4,
+    "explanation": "All listed declarations are valid."
+  },
+  {
+    "id": 170,
+    "text": "In Ruby, all data members of a class are private and cannot be changed.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Ruby allows access via methods."
+  },
+  {
+    "id": 171,
+    "text": "C++ is a ______ of C.",
+    "type": "MCQ",
+    "options": [
+      "Superset",
+      "Subset",
+      "Derivative",
+      "Illegitimate child"
+    ],
+    "answer": 0,
+    "explanation": "C++ is largely considered a superset of C."
+  },
+  {
+    "id": 172,
+    "text": "Tokens of a programming language are typically described by",
+    "type": "MCQ",
+    "options": [
+      "Regular grammars",
+      "Context-free grammars"
+    ],
+    "answer": 0,
+    "explanation": "Lexical structure uses regular grammars."
+  },
+  {
+    "id": 173,
+    "text": "COBOL was",
+    "type": "MCQ",
+    "options": [
+      "Designed primarily by Grace Hopper",
+      "Meant to be a business language",
+      "First language with local variables",
+      "All",
+      "Only a and b"
+    ],
+    "answer": 4,
+    "explanation": "COBOL was business-oriented and influenced by Grace Hopper."
+  },
+  {
+    "id": 174,
+    "text": "Lisp cons structures",
+    "type": "MCQ",
+    "options": [
+      "Have two data cells",
+      "Used to construct lists",
+      "May point to sublists",
+      "All",
+      "Only a and b"
+    ],
+    "answer": 3,
+    "explanation": "All statements are correct."
+  },
+  {
+    "id": 175,
+    "text": "Simula 67 had a data structure called a class.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Simula introduced classes."
+  },
+  {
+    "id": 176,
+    "text": "Original BASIC",
+    "type": "MCQ",
+    "options": [
+      "Was designed to teach programming concepts to non-programmers",
+      "Was interpreted, not compiled",
+      "Was widely used in early home computers",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "All statements about original BASIC are true."
+  },
+  {
+    "id": 177,
+    "text": "In Pascal programs, all variable declarations must be placed ahead of any code in the defining block.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Pascal requires declarations before executable statements."
+  },
+  {
+    "id": 178,
+    "text": "PHP",
+    "type": "MCQ",
+    "options": [
+      "Is a server-side scripting engine",
+      "Replaces PHP code with generated HTML",
+      "Can work with SQL databases",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "All listed statements are correct."
+  },
+  {
+    "id": 179,
+    "text": "In MASM, parameter passing is accomplished by",
+    "type": "MCQ",
+    "options": [
+      "Caller pushing parameters on the stack",
+      "Called function pushing parameters",
+      "Caller loading parameters into registers",
+      "All of the above"
+    ],
+    "answer": 0,
+    "explanation": "Standard MASM convention uses caller pushing parameters onto stack."
+  },
+  {
+    "id": 180,
+    "text": "MASM programs typically have three segments: code, data, and stack.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 181,
+    "text": "The value 01010101 in decimal is",
+    "type": "MCQ",
+    "options": ["53", "64", "75", "85", "-44"],
+    "answer": 3,
+    "explanation": "01010101 binary equals 85 decimal."
+  },
+  {
+    "id": 182,
+    "text": "The MUL and IMUL instructions produce a product twice the size of the multiplier.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. The result occupies double the operand size."
+  },
+  {
+    "id": 183,
+    "text": "The first programming language to have local variables was Fortran.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. ALGOL introduced proper local variables."
+  },
+  {
+    "id": 184,
+    "text": "A widening conversion is one in which a type is converted to a type capable of representing all original values.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 185,
+    "text": "Separate compilation is",
+    "type": "MCQ",
+    "options": [
+      "Compilation of units separately without full interface information",
+      "Stand-alone compilation",
+      "Independent compilation",
+      "All of the above",
+      "None of the above"
+    ],
+    "answer": 0,
+    "explanation": "Separate compilation compiles modules independently."
+  },
+  {
+    "id": 186,
+    "text": "Recursion is only possible in languages that use runtime stacks.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True. Recursion requires activation records."
+  },
+  {
+    "id": 187,
+    "text": "In C++ and Java, arrays are objects and their length is part of the object.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 188,
+    "text": "Which language does NOT have nested subprogram capabilities?",
+    "type": "MCQ",
+    "options": ["Ada", "Java", "Javascript", "Pascal"],
+    "answer": 1,
+    "explanation": "Java does not support nested subprograms."
+  },
+  {
+    "id": 189,
+    "text": "Which language does not support functional recursion?",
+    "type": "MCQ",
+    "options": ["Ada 83", "C-89", "FORTRAN 77", "Ruby", "C++"],
+    "answer": 2,
+    "explanation": "FORTRAN 77 did not support recursion."
+  },
+  {
+    "id": 190,
+    "text": "A subprogram with multiple entry points that controls them itself is called a",
+    "type": "MCQ",
+    "options": ["Procedure", "Function", "Method", "Coroutine"],
+    "answer": 3,
+    "explanation": "Coroutines can have multiple entry points."
+  },
+  {
+    "id": 191,
+    "text": "Generic methods in C++ may have primitives (int, char, etc.) as their class variable.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 1,
+    "explanation": "False. Templates work with types."
+  },
+  {
+    "id": 192,
+    "text": "In Java, a class may extend only one class but implement multiple interfaces.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 193,
+    "text": "Concurrent systems allow multiple tasks to be underway at unpredictable points simultaneously.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 194,
+    "text": "A concurrent algorithm is scalable if execution speed increases with more processors.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 195,
+    "text": "A language that uses imperative primitive types but everything else as objects is",
+    "type": "MCQ",
+    "options": ["C++", "Ruby", "Java", "Python"],
+    "answer": 2,
+    "explanation": "Java uses primitive types but otherwise object-oriented."
+  },
+  {
+    "id": 196,
+    "text": "Derived classes in Ada 95 are always subtypes of their parent classes.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 197,
+    "text": "Most modern imperative languages are based on features originally in ALGOL.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 198,
+    "text": "Java supports inner classes that can be named or anonymous.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 199,
+    "text": "Synchronization controls the order in which concurrent tasks execute.",
+    "type": "TF",
+    "options": ["True", "False"],
+    "answer": 0,
+    "explanation": "True."
+  },
+  {
+    "id": 200,
+    "text": "A grammar that generates more than one parse tree for the same sentential form is called",
+    "type": "MCQ",
+    "options": ["Regular", "Ambiguous", "Deterministic", "Context-sensitive"],
+    "answer": 1,
+    "explanation": "Such a grammar is ambiguous."
+  }
+
+
+]

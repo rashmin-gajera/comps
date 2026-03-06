@@ -3,636 +3,745 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APL 524 — Quiz Prep</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Exam Prep — Quiz Station</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0d0f14;
-    --surface: #161921;
-    --surface2: #1e2330;
-    --border: #2a3045;
-    --accent: #4ff0b4;
-    --accent2: #7c6fff;
-    --danger: #ff5c6a;
-    --warn: #ffb347;
-    --text: #e8eaf0;
-    --muted: #7a8299;
-    --mono: 'Space Mono', monospace;
-    --sans: 'Syne', sans-serif;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* Grid background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(79,240,180,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(79,240,180,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  /* ── HEADER ── */
-  header {
-    text-align: center;
-    margin-bottom: 60px;
-    animation: fadeDown 0.7s ease both;
-  }
-
-  .badge {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 4px 14px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-
-  header h1 {
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1px;
-    background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  header p {
-    color: var(--muted);
-    font-family: var(--mono);
-    font-size: 13px;
-    margin-top: 14px;
-    letter-spacing: 1px;
-  }
-
-  /* ── SETUP SCREEN ── */
-  #setup-screen {
-    animation: fadeUp 0.6s ease both 0.2s;
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 36px;
-  }
-
-  .card h2 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 8px;
-    letter-spacing: -0.3px;
-  }
-
-  .card .subtitle {
-    color: var(--muted);
-    font-family: var(--mono);
-    font-size: 12px;
-    margin-bottom: 32px;
-    letter-spacing: 0.5px;
-  }
-
-  .range-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-
-  .field label {
-    display: block;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .field input {
-    width: 100%;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 1.6rem;
-    font-weight: 700;
-    padding: 14px 18px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .field input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(79,240,180,0.1);
-  }
-
-  .range-info {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 28px;
-  }
-
-  .range-info span {
-    color: var(--accent2);
-    font-weight: 700;
-  }
-
-  /* Quick select chips */
-  .quick-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 32px;
-  }
-
-  .chip {
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.5px;
-  }
-
-  .chip:hover {
-    border-color: var(--accent2);
-    color: var(--accent2);
-    background: rgba(124,111,255,0.08);
-  }
-
-  .btn-start {
-    width: 100%;
-    padding: 18px;
-    background: var(--accent);
-    color: #0d0f14;
-    border: none;
-    border-radius: 8px;
-    font-family: var(--sans);
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .btn-start:hover {
-    background: #7affd4;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(79,240,180,0.25);
-  }
-
-  /* ── QUIZ SCREEN ── */
-  #quiz-screen { display: none; animation: fadeUp 0.5s ease both; }
-
-  .progress-bar-wrap {
-    background: var(--surface2);
-    border-radius: 4px;
-    height: 4px;
-    margin-bottom: 36px;
-    overflow: hidden;
-  }
-
-  .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    border-radius: 4px;
-    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
-  }
-
-  .quiz-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-  }
-
-  .quiz-meta .qnum {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 14px;
-  }
-
-  .score-live {
-    display: flex;
-    gap: 16px;
-  }
-
-  .score-live .s-correct { color: var(--accent); }
-  .score-live .s-wrong { color: var(--danger); }
-
-  .question-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    margin-bottom: 20px;
-  }
-
-  .q-type-badge {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent2);
-    margin-bottom: 14px;
-    display: block;
-  }
-
-  .question-text {
-    font-size: 1.08rem;
-    font-weight: 600;
-    line-height: 1.65;
-    color: var(--text);
-    margin-bottom: 28px;
-  }
-
-  .question-text code {
-    font-family: var(--mono);
-    background: var(--surface2);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.88em;
-    color: var(--warn);
-  }
-
-  .code-block {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent2);
-    border-radius: 6px;
-    padding: 16px 18px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--warn);
-    line-height: 1.8;
-    margin-bottom: 20px;
-    white-space: pre-wrap;
-    overflow-x: auto;
-  }
-
-  /* Options */
-  .options { display: flex; flex-direction: column; gap: 12px; }
-
-  .option-btn {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 20px;
-    cursor: pointer;
-    text-align: left;
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    color: var(--text);
-    transition: all 0.18s;
-    line-height: 1.5;
-    width: 100%;
-  }
-
-  .option-btn:hover:not(:disabled) {
-    border-color: var(--accent2);
-    background: rgba(124,111,255,0.08);
-    transform: translateX(3px);
-  }
-
-  .option-btn .opt-letter {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent2);
-    background: rgba(124,111,255,0.15);
-    border-radius: 4px;
-    padding: 2px 7px;
-    flex-shrink: 0;
-    margin-top: 2px;
-    letter-spacing: 1px;
-    transition: all 0.18s;
-  }
-
-  .option-btn.correct {
-    border-color: var(--accent) !important;
-    background: rgba(79,240,180,0.1) !important;
-    animation: flashCorrect 0.4s ease;
-  }
-
-  .option-btn.correct .opt-letter {
-    background: var(--accent);
-    color: #0d0f14;
-  }
-
-  .option-btn.wrong {
-    border-color: var(--danger) !important;
-    background: rgba(255,92,106,0.1) !important;
-    animation: flashWrong 0.4s ease;
-  }
-
-  .option-btn.wrong .opt-letter {
-    background: var(--danger);
-    color: #fff;
-  }
-
-  .option-btn:disabled { cursor: default; }
-
-  /* Feedback banner */
-  .feedback {
-    display: none;
-    border-radius: 10px;
-    padding: 16px 20px;
-    font-family: var(--mono);
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    animation: fadeUp 0.3s ease;
-  }
-
-  .feedback.show { display: block; }
-
-  .feedback.correct-fb {
-    background: rgba(79,240,180,0.1);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-  }
-
-  .feedback.wrong-fb {
-    background: rgba(255,92,106,0.1);
-    border: 1px solid var(--danger);
-    color: #ff8f9a;
-  }
-
-  .feedback .fb-label {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .btn-next {
-    width: 100%;
-    padding: 16px;
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: none;
-  }
-
-  .btn-next:hover {
-    background: var(--accent);
-    color: #0d0f14;
-    transform: translateY(-1px);
-  }
-
-  .btn-next.show { display: block; animation: fadeUp 0.3s ease; }
-
-  /* ── RESULTS SCREEN ── */
-  #results-screen { display: none; animation: fadeUp 0.6s ease both; }
-
-  .results-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 48px 36px;
-    text-align: center;
-  }
-
-  .score-circle {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 3px solid var(--border);
-    margin: 0 auto 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .score-circle::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: conic-gradient(var(--accent) var(--pct, 0%), var(--surface2) 0%);
-    mask: radial-gradient(transparent 60%, black 61%);
-    -webkit-mask: radial-gradient(transparent 60%, black 61%);
-  }
-
-  .score-pct {
-    font-family: var(--mono);
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--accent);
-    position: relative;
-    z-index: 1;
-  }
-
-  .score-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .results-card h2 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-  }
-
-  .results-card .grade-msg {
-    color: var(--muted);
-    font-family: var(--mono);
-    font-size: 13px;
-    margin-bottom: 36px;
-  }
-
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-
-  .stat-box {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 16px;
-  }
-
-  .stat-box .stat-val {
-    font-family: var(--mono);
-    font-size: 1.8rem;
-    font-weight: 700;
-    display: block;
-  }
-
-  .stat-box .stat-name {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
-
-  .stat-box.s-correct .stat-val { color: var(--accent); }
-  .stat-box.s-wrong .stat-val { color: var(--danger); }
-  .stat-box.s-total .stat-val { color: var(--accent2); }
-
-  /* Review list */
-  .review-toggle {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 24px;
-    transition: all 0.2s;
-  }
-
-  .review-toggle:hover { border-color: var(--accent2); color: var(--accent2); }
-
-  .review-list { display: none; text-align: left; }
-  .review-list.open { display: block; }
-
-  .review-item {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    font-size: 0.88rem;
-    line-height: 1.55;
-  }
-
-  .review-item.ri-correct { border-left: 3px solid var(--accent); }
-  .review-item.ri-wrong { border-left: 3px solid var(--danger); }
-
-  .ri-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-  }
-
-  .ri-qnum { font-family: var(--mono); font-size: 11px; color: var(--muted); }
-  .ri-badge { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 2px 8px; border-radius: 3px; }
-  .ri-badge.correct { background: rgba(79,240,180,0.15); color: var(--accent); }
-  .ri-badge.wrong { background: rgba(255,92,106,0.15); color: var(--danger); }
-
-  .ri-q { color: var(--text); margin-bottom: 6px; }
-  .ri-your { font-family: var(--mono); font-size: 11px; }
-  .ri-your.wrong-ans { color: var(--danger); }
-  .ri-your.correct-ans { color: var(--accent); }
-  .ri-correct-ans { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-top: 2px; }
-
-  .btn-restart {
-    width: 100%;
-    padding: 18px;
-    background: var(--accent2);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-family: var(--sans);
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 28px;
-  }
-
-  .btn-restart:hover {
-    background: #9b8fff;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(124,111,255,0.3);
-  }
-
-  /* Animations */
-  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: none; } }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-  @keyframes flashCorrect { 0%,100% { transform: scale(1); } 50% { transform: scale(1.01); } }
-  @keyframes flashWrong { 0%,100% { transform: translateX(0); } 25%,75% { transform: translateX(-4px); } 50% { transform: translateX(4px); } }
-
-  @media (max-width: 560px) {
-    .range-row { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr; }
-    .card, .question-card, .results-card { padding: 24px 18px; }
-  }
+/* ── TOKENS ─────────────────────────────────────────────────── */
+:root {
+  --bg:        #0b0c10;
+  --surf:      #13151c;
+  --surf2:     #1a1d28;
+  --border:    #252836;
+
+  /* APL – teal/green */
+  --apl-a:     #4ff0b4;
+  --apl-b:     #00c9ff;
+
+  /* ASE – amber/coral */
+  --ase-a:     #ff9d4d;
+  --ase-b:     #ff5c7c;
+
+  --ok:        #4ff0b4;
+  --err:       #ff5c6a;
+  --warn:      #ffb347;
+  --text:      #e8eaf0;
+  --muted:     #6e7591;
+  --mono:      'Space Mono', monospace;
+  --sans:      'Syne', sans-serif;
+  --serif:     'DM Serif Display', serif;
+}
+
+/* ── RESET ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grid bg */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none; z-index: 0;
+}
+
+/* ── LAYOUT ─────────────────────────────────────────────────── */
+.wrap {
+  position: relative; z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 100px;
+}
+
+/* ── SCREENS ─────────────────────────────────────────────────── */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeDown { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:none; } }
+@keyframes fadeUp   { from { opacity:0; transform:translateY(18px);  } to { opacity:1; transform:none; } }
+@keyframes pop      { 0%,100%{transform:scale(1)} 50%{transform:scale(1.015)} }
+@keyframes shake    { 0%,100%{transform:translateX(0)} 25%,75%{transform:translateX(-5px)} 50%{transform:translateX(5px)} }
+@keyframes spin     { to{transform:rotate(360deg)} }
+
+/* ── GLOBAL HEADER ──────────────────────────────────────────── */
+.site-header {
+  text-align: center;
+  margin-bottom: 56px;
+  animation: fadeDown .7s ease both;
+}
+.site-header .eyebrow {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 5px 16px;
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+.site-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem,5.5vw,3.6rem);
+  line-height: 1.08;
+  letter-spacing: -.5px;
+  background: linear-gradient(135deg, #fff 20%, #888 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.site-header p {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  margin-top: 14px;
+  letter-spacing: 1px;
+}
+
+/* ── SUBJECT SELECT ─────────────────────────────────────────── */
+#subject-screen { animation: fadeUp .6s ease both .15s; }
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.subject-card {
+  position: relative;
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 28px 32px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform .22s, border-color .22s, box-shadow .22s;
+  overflow: hidden;
+}
+.subject-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+  transition: opacity .22s;
+}
+.subject-card.apl::before { background: linear-gradient(90deg, var(--apl-a), var(--apl-b)); }
+.subject-card.ase::before { background: linear-gradient(90deg, var(--ase-a), var(--ase-b)); }
+
+.subject-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity .22s;
+}
+.subject-card.apl::after { background: radial-gradient(circle at 20% 20%, rgba(79,240,180,.06), transparent 60%); }
+.subject-card.ase::after { background: radial-gradient(circle at 20% 20%, rgba(255,157,77,.06), transparent 60%); }
+
+.subject-card:hover { transform: translateY(-4px); }
+.subject-card.apl:hover { border-color: var(--apl-a); box-shadow: 0 16px 40px rgba(79,240,180,.12); }
+.subject-card.ase:hover { border-color: var(--ase-a); box-shadow: 0 16px 40px rgba(255,157,77,.12); }
+.subject-card:hover::after { opacity: 1; }
+
+.subj-icon {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  display: block;
+}
+.subj-code {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.subject-card.apl .subj-code { color: var(--apl-a); }
+.subject-card.ase .subj-code { color: var(--ase-a); }
+
+.subj-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.subj-desc {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.subj-count {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.subject-card.apl .subj-count { background: rgba(79,240,180,.1); color: var(--apl-a); }
+.subject-card.ase .subj-count { background: rgba(255,157,77,.1);  color: var(--ase-a); }
+
+.subj-arrow {
+  position: absolute;
+  bottom: 28px; right: 28px;
+  font-size: 1.4rem;
+  opacity: .25;
+  transition: opacity .2s, transform .2s;
+}
+.subject-card:hover .subj-arrow { opacity: .9; transform: translate(3px,-3px); }
+
+/* Loading state */
+.loading-wrap {
+  text-align: center;
+  padding: 60px 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+.spinner {
+  width: 28px; height: 28px;
+  border: 2px solid var(--border);
+  border-top-color: var(--ok);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  margin: 0 auto 14px;
+}
+.error-msg {
+  background: rgba(255,92,106,.1);
+  border: 1px solid var(--err);
+  color: #ff8f9a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 16px;
+  display: none;
+}
+
+/* ── SETUP SCREEN ───────────────────────────────────────────── */
+#setup-screen { animation: fadeUp .5s ease both; }
+
+.back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 28px;
+  transition: all .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.back-btn:hover { border-color: var(--text); color: var(--text); }
+
+.setup-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.setup-subj-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 4px;
+}
+.setup-subj-badge.apl { background: rgba(79,240,180,.12); color: var(--apl-a); }
+.setup-subj-badge.ase { background: rgba(255,157,77,.12);  color: var(--ase-a); }
+
+.setup-card {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.setup-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+}
+.setup-card.apl::before { background: linear-gradient(90deg, var(--apl-a), var(--apl-b)); }
+.setup-card.ase::before { background: linear-gradient(90deg, var(--ase-a), var(--ase-b)); }
+
+.setup-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.setup-card.apl h2 { color: var(--apl-a); }
+.setup-card.ase h2 { color: var(--ase-a); }
+
+.setup-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .5px;
+  margin-bottom: 32px;
+}
+
+.range-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+
+.field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.apl .field label { color: var(--apl-a); }
+.ase .field label { color: var(--ase-a); }
+
+.field input {
+  width: 100%;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 13px 18px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.apl .field input:focus { border-color: var(--apl-a); box-shadow: 0 0 0 3px rgba(79,240,180,.1); }
+.ase .field input:focus { border-color: var(--ase-a); box-shadow: 0 0 0 3px rgba(255,157,77,.1); }
+
+.range-info { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+.range-info span { font-weight: 700; }
+.apl .range-info span { color: var(--apl-b); }
+.ase .range-info span { color: var(--ase-b); }
+
+.quick-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.chip {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .18s;
+  letter-spacing: .5px;
+}
+.apl .chip:hover { border-color: var(--apl-b); color: var(--apl-b); background: rgba(0,201,255,.08); }
+.ase .chip:hover { border-color: var(--ase-b); color: var(--ase-b); background: rgba(255,92,124,.08); }
+
+.btn-start {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .22s;
+}
+.btn-start.apl { background: var(--apl-a); color: #0b0c10; }
+.btn-start.apl:hover { background: #7affd4; transform: translateY(-1px); box-shadow: 0 10px 30px rgba(79,240,180,.25); }
+.btn-start.ase { background: var(--ase-a); color: #0b0c10; }
+.btn-start.ase:hover { background: #ffba77; transform: translateY(-1px); box-shadow: 0 10px 30px rgba(255,157,77,.25); }
+
+/* ── QUIZ SCREEN ─────────────────────────────────────────────── */
+#quiz-screen { animation: fadeUp .4s ease both; }
+
+.quiz-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.qnum { font-size: 14px; font-weight: 700; }
+.qnum.apl { color: var(--apl-a); }
+.qnum.ase { color: var(--ase-a); }
+
+.score-live { display: flex; gap: 16px; }
+.s-ok { color: var(--ok); }
+.s-err { color: var(--err); }
+
+.prog-wrap {
+  background: var(--surf2);
+  border-radius: 4px;
+  height: 3px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.prog-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+.prog-fill.apl { background: linear-gradient(90deg, var(--apl-a), var(--apl-b)); }
+.prog-fill.ase { background: linear-gradient(90deg, var(--ase-a), var(--ase-b)); }
+
+.q-card {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.q-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+}
+.q-card.apl::before { background: linear-gradient(90deg, var(--apl-a), var(--apl-b)); }
+.q-card.ase::before { background: linear-gradient(90deg, var(--ase-a), var(--ase-b)); }
+
+.q-type-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+.q-type-tag.apl { color: var(--apl-b); }
+.q-type-tag.ase { color: var(--ase-b); }
+
+.q-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.q-text code {
+  font-family: var(--mono);
+  background: var(--surf2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: .87em;
+  color: var(--warn);
+}
+
+.code-block {
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--muted);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--warn);
+  line-height: 1.85;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+.apl .code-block { border-left-color: var(--apl-b); }
+.ase .code-block { border-left-color: var(--ase-b); }
+
+.options { display: flex; flex-direction: column; gap: 11px; }
+
+.opt-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px 18px;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: .93rem;
+  color: var(--text);
+  line-height: 1.5;
+  width: 100%;
+  transition: border-color .16s, background .16s, transform .16s;
+}
+.opt-btn:hover:not(:disabled) { transform: translateX(3px); }
+.opt-btn.apl:hover:not(:disabled) { border-color: var(--apl-b); background: rgba(0,201,255,.07); }
+.opt-btn.ase:hover:not(:disabled) { border-color: var(--ase-b); background: rgba(255,92,124,.07); }
+
+.opt-ltr {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 1px;
+  transition: all .16s;
+}
+.opt-btn.apl .opt-ltr { background: rgba(0,201,255,.14); color: var(--apl-b); }
+.opt-btn.ase .opt-ltr { background: rgba(255,92,124,.14); color: var(--ase-b); }
+
+/* answer states */
+.opt-btn.correct {
+  border-color: var(--ok) !important;
+  background: rgba(79,240,180,.09) !important;
+  animation: pop .4s ease;
+}
+.opt-btn.correct .opt-ltr { background: var(--ok); color: #0b0c10; }
+.opt-btn.wrong {
+  border-color: var(--err) !important;
+  background: rgba(255,92,106,.09) !important;
+  animation: shake .35s ease;
+}
+.opt-btn.wrong .opt-ltr { background: var(--err); color: #fff; }
+.opt-btn:disabled { cursor: default; }
+
+/* feedback */
+.feedback {
+  display: none;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.65;
+  margin-bottom: 14px;
+  animation: fadeUp .28s ease;
+}
+.feedback.show { display: block; }
+.feedback.fb-ok { background: rgba(79,240,180,.09); border: 1px solid var(--ok); color: var(--ok); }
+.feedback.fb-err { background: rgba(255,92,106,.09); border: 1px solid var(--err); color: #ff8f9a; }
+.fb-lbl { font-weight: 700; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+
+.btn-next {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: .93rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+  display: none;
+}
+.btn-next.show { display: block; animation: fadeUp .28s ease; }
+.btn-next.apl { color: var(--apl-a); border: 1px solid var(--apl-a); }
+.btn-next.apl:hover { background: var(--apl-a); color: #0b0c10; transform: translateY(-1px); }
+.btn-next.ase { color: var(--ase-a); border: 1px solid var(--ase-a); }
+.btn-next.ase:hover { background: var(--ase-a); color: #0b0c10; transform: translateY(-1px); }
+
+/* ── RESULTS SCREEN ─────────────────────────────────────────── */
+#results-screen { animation: fadeUp .55s ease both; }
+
+.results-card {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.results-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.results-card.apl::before { background: linear-gradient(90deg, var(--apl-a), var(--apl-b)); }
+.results-card.ase::before { background: linear-gradient(90deg, var(--ase-a), var(--ase-b)); }
+
+.score-ring {
+  width: 155px; height: 155px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  margin: 0 auto 28px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.score-ring::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--ring-color, var(--ok)) var(--pct,0%), var(--surf2) 0%);
+  mask: radial-gradient(transparent 59%, black 60%);
+  -webkit-mask: radial-gradient(transparent 59%, black 60%);
+}
+.ring-pct { font-family: var(--mono); font-size: 2.2rem; font-weight: 700; position: relative; z-index:1; }
+.ring-lbl { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 2px; position: relative; z-index:1; }
+.apl .ring-pct { color: var(--apl-a); }
+.ase .ring-pct { color: var(--ase-a); }
+.apl .score-ring { --ring-color: var(--apl-a); }
+.ase .score-ring { --ring-color: var(--ase-a); }
+
+.res-title { font-size: 1.7rem; font-weight: 800; margin-bottom: 8px; }
+.res-msg { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-bottom: 32px; }
+
+.stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 30px; }
+.stat-box {
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 12px;
+}
+.stat-v { font-family: var(--mono); font-size: 1.7rem; font-weight: 700; display: block; }
+.stat-n { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+.stat-box.sv-ok .stat-v { color: var(--ok); }
+.stat-box.sv-err .stat-v { color: var(--err); }
+.stat-box.sv-tot .stat-v { color: var(--apl-b); }
+.ase .stat-box.sv-tot .stat-v { color: var(--ase-b); }
+
+.review-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 9px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all .2s;
+}
+.review-btn:hover { border-color: var(--text); color: var(--text); }
+
+.review-list { display: none; text-align: left; }
+.review-list.open { display: block; }
+
+.ri {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 15px;
+  margin-bottom: 9px;
+  font-size: .87rem;
+  line-height: 1.55;
+}
+.ri.ri-ok { border-left: 3px solid var(--ok); }
+.ri.ri-err { border-left: 3px solid var(--err); }
+.ri-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.ri-num { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.ri-badge { font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 2px 8px; border-radius: 3px; }
+.ri-badge.ok  { background: rgba(79,240,180,.15); color: var(--ok); }
+.ri-badge.err { background: rgba(255,92,106,.15); color: var(--err); }
+.ri-q { color: var(--text); margin-bottom: 6px; }
+.ri-yours { font-family: var(--mono); font-size: 11px; }
+.ri-yours.ok  { color: var(--ok); }
+.ri-yours.err { color: var(--err); }
+.ri-correct-a { font-family: var(--mono); font-size: 11px; color: var(--ok); margin-top: 2px; }
+
+.btn-restart {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: .96rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all .22s;
+  background: var(--surf2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-restart:hover { border-color: var(--text); background: var(--surf); transform: translateY(-1px); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .subject-grid { grid-template-columns: 1fr; }
+  .range-row    { grid-template-columns: 1fr; }
+  .stats-row    { grid-template-columns: 1fr; }
+  .setup-card, .q-card, .results-card { padding: 22px 16px; }
+}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
-  <header>
-    <div class="badge">APL 524 · Programming Languages</div>
-    <h1>Quiz Prep Station</h1>
-    <p>// select range → answer questions → see results</p>
+  <!-- GLOBAL HEADER -->
+  <header class="site-header">
+    <div class="eyebrow">Exam Prep · Quiz Station</div>
+    <h1>Study Smart.<br>Test Harder.</h1>
+    <p>// select subject → set range → ace the exam</p>
   </header>
 
-  <!-- ── SETUP SCREEN ── -->
-  <div id="setup-screen">
-    <div class="card">
-      <h2>Configure Your Quiz</h2>
-      <p class="subtitle">// choose which questions to practice</p>
+  <!-- ══════════════════════════════════════════
+       SCREEN 1 — SUBJECT SELECTION
+  ═══════════════════════════════════════════ -->
+  <div id="subject-screen" class="screen active">
+    <div class="subject-grid">
+
+      <!-- ATPL -->
+      <div class="subject-card apl" onclick="selectSubject('atpl')">
+        <span class="subj-icon">💻</span>
+        <div class="subj-code">APL 524</div>
+        <div class="subj-title">Advanced Topics in<br>Programming Languages</div>
+        <div class="subj-desc">BNF · Binding · Scoping · Memory<br>Assembly · OOP · Concurrency</div>
+        <div class="subj-count" id="atpl-count">
+          <span>⟳ loading...</span>
+        </div>
+        <div class="subj-arrow">↗</div>
+      </div>
+
+      <!-- ASE -->
+      <div class="subject-card ase" onclick="selectSubject('ase')">
+        <span class="subj-icon">⚙️</span>
+        <div class="subj-code">ASE 543</div>
+        <div class="subj-title">Advanced Software<br>Engineering</div>
+        <div class="subj-desc">Design Patterns · Architecture<br>Testing · Agile · UML · Metrics</div>
+        <div class="subj-count" id="ase-count">
+          <span>⟳ loading...</span>
+        </div>
+        <div class="subj-arrow">↗</div>
+      </div>
+
+    </div>
+
+    <div id="load-error" class="error-msg">
+      ⚠ Could not load question files. Make sure <strong>ase.json</strong> and <strong>atpl.json</strong>
+      are in the same folder as this HTML file, then reload the page.<br><br>
+      Each JSON file should export an array of question objects:<br>
+      <code>[{ "id":1, "text":"...", "type":"MCQ", "options":["a","b","c"], "answer":0, "explanation":"..." }, ...]</code>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SCREEN 2 — SETUP
+  ═══════════════════════════════════════════ -->
+  <div id="setup-screen" class="screen">
+    <button class="back-btn" onclick="goTo('subject-screen')">← Back</button>
+
+    <div class="setup-card" id="setup-card">
+      <h2 id="setup-title">Configure Quiz</h2>
+      <p class="setup-sub" id="setup-sub">// choose your question range</p>
 
       <div class="range-row">
         <div class="field">
@@ -645,2219 +754,370 @@
         </div>
       </div>
 
-      <p class="range-info">Question bank: <span id="total-count"></span> questions available</p>
+      <p class="range-info">Bank: <span id="bank-count">0</span> questions available</p>
 
-      <div class="quick-row">
-        <button class="chip" onclick="setRange(1,25)">Q1–25</button>
-        <button class="chip" onclick="setRange(26,50)">Q26–50</button>
-        <button class="chip" onclick="setRange(51,75)">Q51–75</button>
-        <button class="chip" onclick="setRange(76,100)">Q76–100</button>
-        <button class="chip" onclick="setRange(101,130)">Q101–130</button>
-        <button class="chip" onclick="setRange(1,50)">First 50</button>
-        <button class="chip" onclick="setRange(1, questions.length)">All Questions</button>
-      </div>
+      <div class="quick-row" id="quick-chips"></div>
 
-      <button class="btn-start" onclick="startQuiz()">▶ Start Quiz</button>
+      <button class="btn-start" id="btn-start" onclick="startQuiz()">▶ Start Quiz</button>
     </div>
   </div>
 
-  <!-- ── QUIZ SCREEN ── -->
-  <div id="quiz-screen">
-    <div class="quiz-meta">
-      <span class="qnum" id="q-counter">Q 1 / 20</span>
+  <!-- ══════════════════════════════════════════
+       SCREEN 3 — QUIZ
+  ═══════════════════════════════════════════ -->
+  <div id="quiz-screen" class="screen">
+    <div class="quiz-topbar">
+      <span class="qnum" id="q-counter">Q 1/20</span>
       <div class="score-live">
-        <span class="s-correct" id="live-correct">✓ 0</span>
-        <span class="s-wrong" id="live-wrong">✗ 0</span>
+        <span class="s-ok"  id="live-ok">✓ 0</span>
+        <span class="s-err" id="live-err">✗ 0</span>
       </div>
     </div>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" id="prog-bar" style="width:0%"></div>
+    <div class="prog-wrap">
+      <div class="prog-fill" id="prog-fill" style="width:0%"></div>
     </div>
 
-    <div class="question-card">
-      <span class="q-type-badge" id="q-type-badge">MCQ</span>
-      <div class="question-text" id="q-text"></div>
+    <div class="q-card" id="q-card">
+      <span class="q-type-tag" id="q-type-tag">MCQ</span>
+      <div class="q-text"     id="q-text"></div>
       <div class="code-block" id="q-code" style="display:none"></div>
-      <div class="options" id="options"></div>
+      <div class="options"    id="options"></div>
     </div>
 
     <div class="feedback" id="feedback">
-      <span class="fb-label" id="fb-label"></span>
+      <span class="fb-lbl" id="fb-lbl"></span>
       <span id="fb-detail"></span>
     </div>
 
-    <button class="btn-next" id="btn-next" onclick="nextQuestion()">Next Question →</button>
+    <button class="btn-next" id="btn-next" onclick="nextQuestion()">Next →</button>
   </div>
 
-  <!-- ── RESULTS SCREEN ── -->
-  <div id="results-screen">
-    <div class="results-card">
-      <div class="score-circle" id="score-circle">
-        <span class="score-pct" id="score-pct">0%</span>
-        <span class="score-label">SCORE</span>
+  <!-- ══════════════════════════════════════════
+       SCREEN 4 — RESULTS
+  ═══════════════════════════════════════════ -->
+  <div id="results-screen" class="screen">
+    <div class="results-card" id="results-card">
+      <div class="score-ring" id="score-ring">
+        <span class="ring-pct" id="ring-pct">0%</span>
+        <span class="ring-lbl">SCORE</span>
       </div>
-      <h2 id="result-title">Well done!</h2>
-      <p class="grade-msg" id="grade-msg"></p>
-
+      <div class="res-title"  id="res-title">—</div>
+      <div class="res-msg"    id="res-msg"></div>
       <div class="stats-row">
-        <div class="stat-box s-correct">
-          <span class="stat-val" id="res-correct">0</span>
-          <span class="stat-name">Correct</span>
-        </div>
-        <div class="stat-box s-wrong">
-          <span class="stat-val" id="res-wrong">0</span>
-          <span class="stat-name">Wrong</span>
-        </div>
-        <div class="stat-box s-total">
-          <span class="stat-val" id="res-total">0</span>
-          <span class="stat-name">Total</span>
-        </div>
+        <div class="stat-box sv-ok">  <span class="stat-v" id="r-ok">0</span>  <span class="stat-n">Correct</span></div>
+        <div class="stat-box sv-err"> <span class="stat-v" id="r-err">0</span> <span class="stat-n">Wrong</span></div>
+        <div class="stat-box sv-tot"> <span class="stat-v" id="r-tot">0</span> <span class="stat-n">Total</span></div>
       </div>
-
-      <button class="review-toggle" onclick="toggleReview()">📋 Review Answers</button>
+      <button class="review-btn" onclick="toggleReview()">📋 Review Answers</button>
       <div class="review-list" id="review-list"></div>
-
-      <button class="btn-restart" onclick="restart()">↺ New Quiz</button>
+      <button class="btn-restart" onclick="goTo('subject-screen')">↺ Choose Another Subject</button>
     </div>
   </div>
 
-</div>
+</div><!-- /wrap -->
 
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
 <script>
-// ─────────────────────────────────────────────────────────────
-//  QUESTION BANK — JSON
-// ─────────────────────────────────────────────────────────────
-const questions = [
-  {
-    "id": 1,
-    "text": "COBOL is the only major compiled language that uses keywords rather than reserved words.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. FORTRAN is the only major compiled language that uses keywords rather than reserved words."
-  },
-  {
-    "id": 2,
-    "text": "In the C statement `int x = 1;` the value of x is bound at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time", "None of the above"],
-    "answer": 3,
-    "explanation": "The literal value 1 is bound to memory at run time."
-  },
-  {
-    "id": 3,
-    "text": "Among the Programming domains mentioned in class is",
-    "type": "MCQ",
-    "options": ["Scientific applications", "Business applications", "Artificial intelligence", "Systems programming", "All of the above"],
-    "answer": 4,
-    "explanation": "All listed domains are programming domains."
-  },
-  {
-    "id": 4,
-    "text": "Programming language readability is adversely affected by the language",
-    "type": "MCQ",
-    "options": ["Being simple", "Supporting too many features", "Having multiplicity of features (redundancy)", "All of the above", "Only b and c"],
-    "answer": 4,
-    "explanation": "Too many features and redundancy reduce readability."
-  },
-  {
-    "id": 5,
-    "text": "Heap dynamic lifetime local variables are bound to memory cells before execution begins and remain bound until the program exits.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Heap dynamic variables are created during execution."
-  },
-  {
-    "id": 6,
-    "text": "The lifetime of a variable is the time it is bound to a memory cell.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Lifetime refers to the time a variable is bound to memory."
-  },
-  {
-    "id": 7,
-    "text": "One of the design motivations for Java was to do away with pointers even though Java is based on C++.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Java removed explicit pointer manipulation."
-  },
-  {
-    "id": 8,
-    "text": "Nestable statically scoped languages allow",
-    "type": "MCQ",
-    "options": [
-      "All variables of any subprogram to be visible to all others",
-      "All variables defined at the same nesting level to be visible to each other",
-      "All unmasked variables of a subprogram’s static parents to be visible to it",
-      "None of the above"
-    ],
-    "answer": 2,
-    "explanation": "Static scoping allows access to variables in static parent scopes."
-  },
-  {
-    "id": 9,
-    "text": "Keywords and reserved words are just two different names for identical concepts.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Keywords may be used in other contexts; reserved words cannot."
-  },
-  {
-    "id": 10,
-    "text": "A stack-dynamic-lifetime variable",
-    "type": "MCQ",
-    "options": [
-      "Is bound before the program starts executing",
-      "Is bound as its declaration statement is elaborated",
-      "Requires indirect addressing",
-      "Both a and c",
-      "Both b and c"
-    ],
-    "answer": 4,
-    "explanation": "Stack-dynamic variables are bound at declaration elaboration and require indirect addressing."
-  },
-  {
-    "id": 11,
-    "text": "Syntax is the form or structure of the expressions, statements and program units of a programming language.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Syntax describes structure."
-  },
-  {
-    "id": 12,
-    "text": "In the ANTLR rule Idlist : idname (',' idname)*;",
-    "type": "MCQ",
-    "options": [
-      "The RHS is recursive",
-      "The part in parentheses is optional",
-      "The part in parentheses can be repeated",
-      "All of the above",
-      "Only b and c"
-    ],
-    "answer": 2,
-    "explanation": "* means zero or more repetitions."
-  },
-  {
-    "id": 13,
-    "text": "In the ANTLR rule Input : 'INPUT' inputList;",
-    "type": "MCQ",
-    "options": [
-      "INPUT is a terminal symbol",
-      "inputList is a terminal symbol",
-      "input is a terminal symbol",
-      "All of the above",
-      "Both b and c"
-    ],
-    "answer": 0,
-    "explanation": "'INPUT' is a terminal literal."
-  },
-  {
-    "id": 14,
-    "text": "The value 01010101 in decimal base 10 is",
-    "type": "MCQ",
-    "options": ["53", "64", "75", "85", "-44"],
-    "answer": 4,
-    "explanation": "01010101 binary equals 85 decimal."
-  },
-  {
-    "id": 15,
-    "text": "The 2s complement of 127 as an 8 bit number is",
-    "type": "MCQ",
-    "options": ["10000001", "10000000", "11111111", "None of the above"],
-    "answer": 0,
-    "explanation": "Two's complement of 01111111 is 10000001."
-  },
-  {
-    "id": 16,
-    "text": "A ______ specifies the types and size of variables and a ______ causes actual storage allocation.",
-    "type": "MCQ",
-    "options": ["Declaration, definition", "Definition, declaration", "Named constant, global variable"],
-    "answer": 0,
-    "explanation": "Declaration specifies type; definition allocates memory."
-  },
-  {
-    "id": 17,
-    "text": "Sign magnitude signed numbers use the most significant bit as the sign.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. MSB represents sign."
-  },
-  {
-    "id": 18,
-    "text": "In FORTRAN by implicit declaration any undeclared variable starting with I, J, K, L, M or N is integer by default.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. FORTRAN implicit typing rule."
-  },
-  {
-    "id": 19,
-    "text": "A grammar that generates a sentential form for which there are two or more distinct parse trees is said to be ambiguous.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. That is the definition of ambiguity."
-  },
-  {
-    "id": 20,
-    "text": "Which implementation method produces, in general, faster code?",
-    "type": "MCQ",
-    "options": ["Compilation", "Interpretation", "Hybrid", "None of the above"],
-    "answer": 0,
-    "explanation": "Compiled code runs faster than interpreted."
-  },
-  {
-    "id": 21,
-    "text": "BCD",
-    "type": "MCQ",
-    "options": [
-      "Stands for Binary Coded Decimal",
-      "Can encode two digits per byte",
-      "Is an oddity of COBOL",
-      "All of the above",
-      "Only a and b"
-    ],
-    "answer": 4,
-    "explanation": "BCD stands for Binary Coded Decimal and encodes two digits per byte."
-  },
-  {
-    "id": 22,
-    "text": "The Java enumeration type",
-    "type": "MCQ",
-    "options": [
-      "Implicitly subtypes the Java class Enum",
-      "Can have data members, constructors and methods",
-      "Can have floating point values",
-      "All of the above",
-      "Only a and b"
-    ],
-    "answer": 4,
-    "explanation": "Enums extend Enum and can have members but not floating point values."
-  },
-  {
-    "id": 23,
-    "text": "An array in which subscript ranges are statically bound but allocation is done at declaration elaboration time during execution is",
-    "type": "MCQ",
-    "options": [
-      "Static array",
-      "Fixed stack-dynamic array",
-      "Stack-dynamic array",
-      "Heap-dynamic array"
-    ],
-    "answer": 1,
-    "explanation": "Subscript static, allocation during execution = fixed stack-dynamic."
-  },
-  {
-    "id": 24,
-    "text": "An unordered collection of data elements indexed by keys is called",
-    "type": "MCQ",
-    "options": ["1-D array", "Linked list", "Stack", "Associative array"],
-    "answer": 3,
-    "explanation": "Associative arrays use keys for indexing."
-  },
-  {
-    "id": 25,
-    "text": "The only major compiled language that uses keywords rather than reserved words is",
-    "type": "MCQ",
-    "options": ["COBOL", "Ada", "Java", "C++", "None of the above"],
-    "answer": 4,
-    "explanation": "FORTRAN is the correct answer, so none of the above."
-  },
-  {
-    "id": 26,
-    "text": "The only major compiled language that uses keywords rather than reserved words is",
-    "type": "MCQ",
-    "options": ["COBOL", "Ada", "Java", "C++", "None of the above"],
-    "answer": 4,
-    "explanation": "FORTRAN is the only major compiled language using keywords rather than reserved words."
-  },
-  {
-    "id": 27,
-    "text": "The referencing environment of a statement is the collection of all names that are visible in the statement.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. That is the definition of referencing environment."
-  },
-  {
-    "id": 28,
-    "text": "In Java, all objects are heap-dynamic.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Java objects are allocated on the heap."
-  },
-  {
-    "id": 29,
-    "text": "In the Java statement `int x = 0;` the value of x is bound at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time", "None of the above"],
-    "answer": 3,
-    "explanation": "The literal value is bound at run time."
-  },
-  {
-    "id": 30,
-    "text": "The binding of '=' to the semantic of variable assignment was done at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time"],
-    "answer": 0,
-    "explanation": "Operator semantics are defined at language design time."
-  },
-  {
-    "id": 31,
-    "text": "The type int was bound to x at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time"],
-    "answer": 1,
-    "explanation": "Type binding occurs at compile time."
-  },
-  {
-    "id": 32,
-    "text": "Static lifetime variables are bound to memory cells execution begins and remains bound until",
-    "type": "MCQ",
-    "options": ["Before, the declaring subroutine exits", "Before, the program exits", "During, the declaring subroutine exits", "During, the program exits", "None"],
-    "answer": 1,
-    "explanation": "Static variables are bound before execution and remain until program exits."
-  },
-  {
-    "id": 33,
-    "text": "In BNF grammar, terminal symbols are",
-    "type": "MCQ",
-    "options": ["Already reduced", "Simply consumed as input", "Needing to be reduced", "Only a and b", "Only b and c"],
-    "answer": 3,
-    "explanation": "Terminals are already reduced and consumed as input."
-  },
-  {
-    "id": 34,
-    "text": "BNF is a way of describing a Context-Free Grammar (CFG).",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. BNF describes CFGs."
-  },
-  {
-    "id": 35,
-    "text": "In void SomeOP(int x){int y;} both x and y are stack-dynamic variables.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Parameters and local variables are stack-dynamic."
-  },
-  {
-    "id": 36,
-    "text": "In C++ and Java the scope of all local variables in methods is",
-    "type": "MCQ",
-    "options": [
-      "From beginning to end of method",
-      "Entire class",
-      "From declaration to end of method",
-      "From declaration to end of defining block",
-      "None"
-    ],
-    "answer": 3,
-    "explanation": "Scope begins at declaration and ends at block termination."
-  },
-  {
-    "id": 37,
-    "text": "Explicit heap-dynamic lifetime variables are created by programming directives such as new or malloc.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 38,
-    "text": "A sentence is a string of characters over some alphabet.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 39,
-    "text": "Java does not support which scope?",
-    "type": "MCQ",
-    "options": ["Global", "Class", "Method", "Block", "Package"],
-    "answer": 0,
-    "explanation": "Java has no true global scope."
-  },
-  {
-    "id": 40,
-    "text": "BNF means",
-    "type": "MCQ",
-    "options": ["Binary Neutral Format", "Big Number Form", "Biggles-Fermat Form", "Backus-Naur Form", "None"],
-    "answer": 3,
-    "explanation": "BNF stands for Backus-Naur Form."
-  },
-  {
-    "id": 41,
-    "text": "The Java enumeration type",
-    "type": "MCQ",
-    "options": [
-      "Implicitly subtypes Enum",
-      "Can have data members, constructors and methods",
-      "Can have floating point values",
-      "All",
-      "Only a and b"
-    ],
-    "answer": 4,
-    "explanation": "Enums extend Enum and can have members."
-  },
-  {
-    "id": 42,
-    "text": "In the BNF rule <expr> ::= <id> + <expr> | <id> * <expr> | (<expr>) | <id>",
-    "type": "MCQ",
-    "options": [
-      "Three RHS rules are recursive",
-      "Parentheses are terminal symbols",
-      "At least one id must appear",
-      "All",
-      "Only a and c"
-    ],
-    "answer": 4,
-    "explanation": "Recursive and requires at least one id."
-  },
-  {
-    "id": 43,
-    "text": "Which is a means of representing signed integers?",
-    "type": "MCQ",
-    "options": ["Sign magnitude", "One’s complement", "Two’s complement", "All", "Only a and b", "Only b and c"],
-    "answer": 3,
-    "explanation": "All listed are representations."
-  },
-  {
-    "id": 44,
-    "text": "In programming languages from the 1980s and after a primary influence on language design is",
-    "type": "MCQ",
-    "options": [
-      "Native hardware architecture",
-      "Direct application domain",
-      "Data abstraction",
-      "Object-oriented programming",
-      "All"
-    ],
-    "answer": 4,
-    "explanation": "All influenced modern languages."
-  },
-  {
-    "id": 45,
-    "text": "+, *, and ( ) are terminal symbols in the grammar.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 46,
-    "text": "Which language supports nesting of subroutine?",
-    "type": "MCQ",
-    "options": ["C++", "Java", "Ada", "C#"],
-    "answer": 2,
-    "explanation": "Ada supports nested subprograms."
-  },
-  {
-    "id": 47,
-    "text": "Which language still supports implicit declaration?",
-    "type": "MCQ",
-    "options": ["C++", "COBOL", "FORTRAN", "Java"],
-    "answer": 2,
-    "explanation": "FORTRAN supports implicit typing."
-  },
-  {
-    "id": 48,
-    "text": "COBOL, FORTRAN and C are imperative languages.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 49,
-    "text": "In the Java statement `double p = 1.5;` the value of p is bound at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time", "None"],
-    "answer": 3,
-    "explanation": "Value bound at run time."
-  },
-  {
-    "id": 50,
-    "text": "The type double was bound to p at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time"],
-    "answer": 1,
-    "explanation": "Type binding occurs at compile time."
-  }, 
-  {
-    "id": 51,
-    "text": "The binding of the word double to a 64-bit floating point number type was done at",
-    "type": "MCQ",
-    "options": ["Language design time", "Compile time", "Load time", "Run time"],
-    "answer": 0,
-    "explanation": "The meaning of the type double is defined at language design time."
-  },
-  {
-    "id": 52,
-    "text": "Stack dynamic lifetime local variables are bound to memory cells ______ execution and remain bound until ______.",
-    "type": "MCQ",
-    "options": [
-      "Before, the declaring subroutine exits",
-      "Before, the program exits",
-      "During, the declaring subroutine exits",
-      "During, the program exits"
-    ],
-    "answer": 2,
-    "explanation": "Stack-dynamic variables are bound during execution and remain until the declaring subroutine exits."
-  },
-  {
-    "id": 53,
-    "text": "The lifetime of a variable is",
-    "type": "MCQ",
-    "options": [
-      "The time it is bound to a memory cell",
-      "The span of program statements in which the variable is visible"
-    ],
-    "answer": 0,
-    "explanation": "Lifetime refers to memory binding duration."
-  },
-  {
-    "id": 54,
-    "text": "The scope of a variable is",
-    "type": "MCQ",
-    "options": [
-      "The time it is bound to a memory cell",
-      "The span of program statements in which the variable is visible"
-    ],
-    "answer": 1,
-    "explanation": "Scope refers to visibility in program text."
-  },
-  {
-    "id": 55,
-    "text": "Keywords differ from reserved words in that keywords can be used in contexts different from their intended meaning.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Reserved words cannot be reused, keywords sometimes can."
-  },
-  {
-    "id": 56,
-    "text": "In BNF grammar, terminal symbols are already reduced and non-terminals must be reduced.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 57,
-    "text": "A static lifetime variable",
-    "type": "MCQ",
-    "options": [
-      "Is bound before program execution",
-      "Is bound when declaration is elaborated",
-      "Requires indirect addressing",
-      "Both a and c",
-      "Both b and c"
-    ],
-    "answer": 0,
-    "explanation": "Static variables are bound before execution."
-  },
-  {
-    "id": 58,
-    "text": "In `int main(){ int *p = new int; return 0; }` the variable pointed to by p is explicit heap-dynamic.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 59,
-    "text": "In `int main(){ int *p = new int; return 0; }` p is",
-    "type": "MCQ",
-    "options": [
-      "Explicit heap-dynamic variable",
-      "Stack dynamic variable",
-      "Pointer to heap value",
-      "Both a and c",
-      "Both b and c"
-    ],
-    "answer": 4,
-    "explanation": "p is stack-dynamic and points to heap."
-  },
-  {
-    "id": 60,
-    "text": "Blocks in C-based languages create a nested scope.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 61,
-    "text": "A ______ specifies types and size; a ______ causes memory allocation.",
-    "type": "MCQ",
-    "options": ["Declaration, definition", "Definition, declaration", "Named constant, global variable"],
-    "answer": 0,
-    "explanation": "Declaration specifies, definition allocates."
-  },
-  {
-    "id": 62,
-    "text": "A grammar that generates multiple parse trees for a sentential form is ambiguous.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 63,
-    "text": "In C, assigning a malloc pointer twice without free creates",
-    "type": "MCQ",
-    "options": [
-      "Stack overflow",
-      "Dangling pointer",
-      "Lost heap-dynamic variable",
-      "Automatic garbage collection target"
-    ],
-    "answer": 2,
-    "explanation": "Memory is lost without deallocation."
-  },
-  {
-    "id": 64,
-    "text": "A type where each value has predefined predecessor and successor is",
-    "type": "MCQ",
-    "options": ["Ordinal type", "Ordered type", "Inordinate type", "Oriented type"],
-    "answer": 0,
-    "explanation": "Ordinal types have defined order."
-  },
-  {
-    "id": 65,
-    "text": "BCD is an old way of storing decimal numbers in COBOL.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 66,
-    "text": "Signed magnitude representation has two distinct zeros.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. +0 and -0."
-  },
-  {
-    "id": 67,
-    "text": "A ______ has a single entry point.",
-    "type": "MCQ",
-    "options": ["Classes", "Coroutines", "Subprograms", "COBOL records"],
-    "answer": 2,
-    "explanation": "Subprograms have one entry point."
-  },
-  {
-    "id": 68,
-    "text": "A heterogeneous aggregate identified by names is a",
-    "type": "MCQ",
-    "options": ["Union", "Discriminator", "Constrained variant", "Record"],
-    "answer": 3,
-    "explanation": "Records have named fields."
-  },
-  {
-    "id": 69,
-    "text": "A union allows storing different type values at different times.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 70,
-    "text": "A type whose variables hold memory addresses and nil is",
-    "type": "MCQ",
-    "options": ["Enumeration", "String", "Pointer", "Heap"],
-    "answer": 2,
-    "explanation": "Pointer type."
-  },
-  {
-    "id": 71,
-    "text": "Pass by alignment is a parameter passing technique.",
-    "type": "MCQ",
-    "options": [
-      "Pass by value",
-      "Pass by alignment",
-      "Pass by result",
-      "Pass by value-result",
-      "Pass by reference"
-    ],
-    "answer": 1,
-    "explanation": "Pass by alignment is not a real technique."
-  },
-  {
-    "id": 72,
-    "text": "In Pascal, array subscripts can be any ordinal type.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 73,
-    "text": "Which is an Ada for loop?",
-    "type": "MCQ",
-    "options": [
-      "DO 20 I = 1, 30, 5",
-      "FOR I = 1 to 30 DO",
-      "FOR I IN 1..30 LOOP",
-      "for (I = 1; i<=30; i++)"
-    ],
-    "answer": 2,
-    "explanation": "Ada syntax uses FOR I IN range LOOP."
-  },
-  {
-    "id": 74,
-    "text": "An implicit type conversion is called",
-    "type": "MCQ",
-    "options": ["Crossover", "Coercion", "Type cast", "Corruption"],
-    "answer": 1,
-    "explanation": "Implicit conversion is coercion."
-  },
-  {
-    "id": 75,
-    "text": "In Ada, the for loop variable is undefined after the loop terminates.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  }, 
-  {
-    "id": 76,
-    "text": "In C, a for loop’s start, stop and step values may all be omitted.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Omitting all expressions results in an infinite loop."
-  },
-  {
-    "id": 77,
-    "text": "In C, pointer variables are implicitly dereferenced when passed as parameters.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Pointers are passed by value unless explicitly dereferenced."
-  },
-  {
-    "id": 78,
-    "text": "In C++, if a pointer is assigned to a dynamic variable and that variable is deallocated, a dangling pointer is created.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. The pointer still references freed memory."
-  },
-  {
-    "id": 79,
-    "text": "Precedence and associativity rules can be overridden with",
-    "type": "MCQ",
-    "options": [
-      "Compiler directives",
-      "Operator overloading",
-      "Parenthesis",
-      "Expression rearranging",
-      "Wishful thinking"
-    ],
-    "answer": 2,
-    "explanation": "Parentheses override default precedence and associativity."
-  },
-  {
-    "id": 80,
-    "text": "Enumeration types are implemented as integers.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Internally enums are typically represented as integers."
-  },
-  {
-    "id": 81,
-    "text": "An array is an aggregate of homogeneous data elements identified by position relative to the first element.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. That is the definition of an array."
-  },
-  {
-    "id": 82,
-    "text": "A control statement provides selection among alternative paths and repeated execution of statements.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 83,
-    "text": "A control structure consists of a control statement and the collection of statements whose execution it controls.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 84,
-    "text": "Compound statements allow grouping of statements into a single statement.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 85,
-    "text": "A selection statement provides the means of choosing between two or more execution paths.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 86,
-    "text": "A two-way selector generally has the form if-then-else.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 87,
-    "text": "Multiple selection allows choosing one of many statement groups.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 88,
-    "text": "The multiple selector construct in C-based languages is the switch statement.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 89,
-    "text": "A pretest logically controlled loop is the while loop.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 90,
-    "text": "A post-test logically controlled loop is the do-while loop.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 91,
-    "text": "The statement that transfers execution to a specified place in a program is",
-    "type": "MCQ",
-    "options": ["break", "continue", "goto", "return"],
-    "answer": 2,
-    "explanation": "goto transfers control to a labeled statement."
-  },
-  {
-    "id": 92,
-    "text": "What is the result of executing the given assembly code snippet?",
-    "type": "MCQ",
-    "options": [
-      "The code terminates normally",
-      "IP becomes -1",
-      "BP becomes -1",
-      "The first local variable becomes -1",
-      "Both a and d"
-    ],
-    "answer": 4,
-    "explanation": "Execution terminates normally and the first local variable becomes -1."
-  },
-  {
-    "id": 93,
-    "text": "The assembly procedure add computes",
-    "type": "MCQ",
-    "options": [
-      "Difference of two numbers",
-      "Product of two numbers",
-      "Sum of two numbers",
-      "Division of two numbers"
-    ],
-    "answer": 2,
-    "explanation": "The instruction add ax,bx adds the two parameters."
-  },
-  {
-    "id": 94,
-    "text": "The instruction at line 4 pushes onto the stack what will become the value at [BP+4].",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 95,
-    "text": "The instruction at line 8",
-    "type": "MCQ",
-    "options": [
-      "Saves previous BP",
-      "Sets up activation record",
-      "Basis for locating parameters",
-      "All of the above"
-    ],
-    "answer": 3,
-    "explanation": "push bp preserves previous BP and helps establish new activation record."
-  },
-  {
-    "id": 96,
-    "text": "Execution of ret 4 pops IP and adds 4 to SP.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 97,
-    "text": "At instruction 12, [BP+2] contains",
-    "type": "MCQ",
-    "options": [
-      "IP before call",
-      "First parameter",
-      "Previous BP",
-      "Unknown"
-    ],
-    "answer": 0,
-    "explanation": "[BP+2] typically contains the return address."
-  },
-  {
-    "id": 98,
-    "text": "A side-effect of instruction add ax,bx is setting up the return value.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. AX holds the return value."
-  },
-  {
-    "id": 99,
-    "text": "The register mode of instruction mov ax, word ptr[bp+4] is",
-    "type": "MCQ",
-    "options": ["Register", "Immediate", "Direct", "Displacement", "Offset"],
-    "answer": 3,
-    "explanation": "Uses base register plus displacement."
-  },
-  {
-    "id": 100,
-    "text": "The register mode of instruction add ax,bx is",
-    "type": "MCQ",
-    "options": ["Register", "Immediate", "Direct", "Displacement", "Offset"],
-    "answer": 0,
-    "explanation": "Both operands are registers."
-  }, 
-  {
-    "id": 101,
-    "text": "Only the registers whose names end in X can be subdivided into two 8-bit registers.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. AX, BX, CX, DX can be divided into AH/AL, BH/BL, etc."
-  },
-  {
-    "id": 102,
-    "text": "A word of memory on the 8086 is 4 bytes (32 bits) long.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. A word on the 8086 is 2 bytes (16 bits)."
-  },
-  {
-    "id": 103,
-    "text": "In an assembly program, whether an integer variable is signed or unsigned must be decided when the variable is declared.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. The CPU does not inherently distinguish signed vs unsigned; interpretation depends on instruction used."
-  },
-  {
-    "id": 104,
-    "text": "The Intel 8086 has an address bus that",
-    "type": "MCQ",
-    "options": [
-      "Is 20 bits wide",
-      "Can address 1MB of memory only",
-      "Is 16 bits wide",
-      "Both a and b",
-      "Both b and c"
-    ],
-    "answer": 3,
-    "explanation": "The 8086 has a 20-bit address bus and can address 1MB of memory."
-  },
-  {
-    "id": 105,
-    "text": "Functions are subprograms that can return a value via their name (e.g., x = f();).",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 106,
-    "text": "In the statement: if (sum == 0) if (count == 0) result = 0; else result = 1; the else pairs with",
-    "type": "MCQ",
-    "options": [
-      "The first if",
-      "The second if",
-      "Semantic rule, not syntactic rule",
-      "Both a and c",
-      "Both b and c"
-    ],
-    "answer": 1,
-    "explanation": "The else associates with the nearest unmatched if (the second one)."
-  },
-  {
-    "id": 107,
-    "text": "The FORTRAN statement IF (I) 10, 20, 30 is called a",
-    "type": "MCQ",
-    "options": [
-      "Assigned if",
-      "Arithmetic if",
-      "Computed goto",
-      "Compound goto"
-    ],
-    "answer": 1,
-    "explanation": "This is the arithmetic IF statement."
-  },
-  {
-    "id": 108,
-    "text": "If the value of I is 4 in the arithmetic IF statement, control goes to line 2 next.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Positive value transfers to the third label."
-  },
-  {
-    "id": 109,
-    "text": "If the value of I is 1 in the arithmetic IF statement, control goes to line 5 next.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Positive values go to the third target."
-  },
-  {
-    "id": 110,
-    "text": "Which is a basic level of program control?",
-    "type": "MCQ",
-    "options": [
-      "Within expressions",
-      "Among program units (calls)",
-      "Among statements (sequence, selection, iteration)",
-      "All of the above"
-    ],
-    "answer": 3,
-    "explanation": "All are levels of program control."
-  },
-  {
-    "id": 111,
-    "text": "A characteristic of the C switch statement is",
-    "type": "MCQ",
-    "options": [
-      "No implicit branch at end of each case",
-      "Switch expression can be double or float",
-      "No default segment",
-      "All of the above",
-      "None of the above"
-    ],
-    "answer": 0,
-    "explanation": "C switch requires explicit break; float is not allowed."
-  },
-  {
-    "id": 112,
-    "text": "And, or, and not are ______ operators.",
-    "type": "MCQ",
-    "options": ["Relational", "Boolean", "Conditional", "None"],
-    "answer": 1,
-    "explanation": "They are Boolean operators."
-  },
-  {
-    "id": 113,
-    "text": "Operator associativity concerns precedence such as * being done before +.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. That is precedence, not associativity."
-  },
-  {
-    "id": 114,
-    "text": "Given the C function modifying *a += 5 and returning 2*(*a), with i=10, evaluated left-to-right, sum equals",
-    "type": "MCQ",
-    "options": ["35", "37", "36", "41", "None"],
-    "answer": 1,
-    "explanation": "i becomes 15, function returns 30, i/2=7 → 30+7=37."
-  },
-  {
-    "id": 115,
-    "text": "Same as previous but evaluated right-to-left, sum equals",
-    "type": "MCQ",
-    "options": ["35", "37", "36", "41", "None"],
-    "answer": 2,
-    "explanation": "i/2 first =5, then function sets i=15 and returns 30 → 30+5=35? Actually re-evaluation yields 36 depending on ordering rules."
-  },
-  {
-    "id": 116,
-    "text": "In Ada, the for loop variable is undefined after the loop terminates.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 117,
-    "text": "In C, a for loop's start, stop and step may all be omitted.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 118,
-    "text": "Provides a means of selecting among control flow paths and repeated execution is a",
-    "type": "MCQ",
-    "options": [
-      "Computed statement",
-      "Control statement",
-      "Control structure",
-      "Multiple selection statement"
-    ],
-    "answer": 1,
-    "explanation": "Control statements manage flow."
-  },
-  {
-    "id": 119,
-    "text": "A statement with form if-then-else is a",
-    "type": "MCQ",
-    "options": [
-      "Single-way selection",
-      "Multiple selection",
-      "Two-way selection",
-      "Control"
-    ],
-    "answer": 2,
-    "explanation": "if-then-else is two-way selection."
-  },
-  {
-    "id": 120,
-    "text": "A goto in C or C++ is an unconditional branch requiring a label.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 121,
-    "text": "The FORTRAN statement GOTO (15,30,45,60) M*15 is called a",
-    "type": "MCQ",
-    "options": [
-      "Assigned if",
-      "Arithmetic if",
-      "Computed goto",
-      "Compound goto"
-    ],
-    "answer": 2,
-    "explanation": "This is computed goto."
-  },
-  {
-    "id": 122,
-    "text": "Given M=2, GOTO (15,30,45,60) M*15 transfers control to",
-    "type": "MCQ",
-    "options": [
-      "15",
-      "30",
-      "45",
-      "60",
-      "Next GOTO"
-    ],
-    "answer": 1,
-    "explanation": "Index 2 selects second label → 30."
-  },
-  {
-    "id": 123,
-    "text": "If expression changes to M, with M=3, transfer goes to",
-    "type": "MCQ",
-    "options": [
-      "15",
-      "30",
-      "45",
-      "60",
-      "Next GOTO"
-    ],
-    "answer": 2,
-    "explanation": "Index 3 selects label 45."
-  },
-  {
-    "id": 124,
-    "text": "Operator associativity concerns precedence such as * before +.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. That describes precedence."
-  },
-  {
-    "id": 125,
-    "text": "A unary + operator",
-    "type": "MCQ",
-    "options": [
-      "Is identity operator",
-      "Flips sign",
-      "Has no effect",
-      "Both a and b",
-      "Both a and c"
-    ],
-    "answer": 4,
-    "explanation": "Unary + is identity and has no effect."
-  }, 
-  {
-    "id": 126,
-    "text": "The one way to prevent functional side effects is to not allow 2-way parameters.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Two-way parameters (in-out) allow side effects."
-  },
-  {
-    "id": 127,
-    "text": "A relational operator",
-    "type": "MCQ",
-    "options": [
-      "Is also known as Boolean operator",
-      "Is used to compare the values of its two operands",
-      "Has a higher precedence than arithmetic operators",
-      "All of the above",
-      "Only a and b"
-    ],
-    "answer": 1,
-    "explanation": "Relational operators compare operands. They are not Boolean operators and have lower precedence than arithmetic operators."
-  },
-  {
-    "id": 128,
-    "text": "Assuming short circuit evaluation for while((b<10)||((b++)<10)); and b=1, the result of || will be",
-    "type": "MCQ",
-    "options": [
-      "True until b = 10",
-      "Always true",
-      "Never true",
-      "False until b = 10"
-    ],
-    "answer": 1,
-    "explanation": "Since b<10 is always true initially and short-circuits, the loop condition remains true."
-  },
-  {
-    "id": 129,
-    "text": "Given C function fun(int *k){ *k += 4; return 3*(*k)-1;} with i=10 and evaluated left-to-right, sum equals",
-    "type": "MCQ",
-    "options": ["41", "48", "51", "46", "None"],
-    "answer": 2,
-    "explanation": "i becomes 14; function returns 3*14-1=41; i/2=7; total=41+7=48? Correct evaluation gives 51 depending on evaluation order."
-  },
-  {
-    "id": 130,
-    "text": "Same as previous but evaluated right-to-left, sum equals",
-    "type": "MCQ",
-    "options": ["41", "51", "46", "48", "None"],
-    "answer": 3,
-    "explanation": "Right-to-left gives 48."
-  },
-  {
-    "id": 131,
-    "text": "In C-based languages the assignment operator",
-    "type": "MCQ",
-    "options": [
-      "Is treated as an arithmetic binary operator",
-      "Produces a result that can be evaluated",
-      "Has the lowest precedence except for && and ||",
-      "All of the above"
-    ],
-    "answer": 1,
-    "explanation": "Assignment produces a value and can be evaluated in expressions."
-  },
-  {
-    "id": 132,
-    "text": "A grammar is a BNF description or collection of rules describing a language.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 133,
-    "text": "For a programming language to be reliable it must do type checking.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 134,
-    "text": "An example of language design trade-off is reliability versus cost of execution.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 135,
-    "text": "In early programming languages, a major influence on language design was the target hardware processor.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 136,
-    "text": "Fortran",
-    "type": "MCQ",
-    "options": [
-      "Was the first business programming language",
-      "Had user defined subroutines",
-      "Supported advanced abstract data types such as records",
-      "All of the above",
-      "None of the above"
-    ],
-    "answer": 1,
-    "explanation": "Fortran supported user-defined subroutines but was not business-oriented and did not support records."
-  },
-  {
-    "id": 137,
-    "text": "In LISP, the CAR instruction returns the first element of a list.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 138,
-    "text": "Most modern imperative languages are based on features originally in",
-    "type": "MCQ",
-    "options": ["COBOL", "ALGOL 60", "BASIC", "C", "PL/I"],
-    "answer": 1,
-    "explanation": "ALGOL 60 heavily influenced modern imperative languages."
-  },
-  {
-    "id": 139,
-    "text": "In nested if statements, the else pairs with the nearest unmatched if.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 140,
-    "text": "Generic methods in C++ may have primitives (int, char, etc.) as their class variable.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Templates operate on types, not primitive class variables."
-  },
-  {
-    "id": 141,
-    "text": "C-based programming languages must have a static chain in the activation record.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Static chains are only needed for nested subprograms."
-  },
-  {
-    "id": 142,
-    "text": "Pass-by-reference provides access to the cell storing the actual parameter.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 143,
-    "text": "In C for(expr;expr;expr), if the second expression is absent, the loop is infinite.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 144,
-    "text": "The most common way to implement static scoping in languages with nested subprograms is",
-    "type": "MCQ",
-    "options": ["Static chaining", "Dynamic chaining", "Recursion", "None"],
-    "answer": 0,
-    "explanation": "Static chaining implements static scope."
-  },
-  {
-    "id": 145,
-    "text": "Explicit type conversion is often called casting.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 146,
-    "text": "The collection of dynamic links at runtime is called the dynamic chain.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 147,
-    "text": "In MS-DOS assembler, the dynamic link is",
-    "type": "MCQ",
-    "options": [
-      "Non-existent",
-      "The value of BP pushed onto the stack",
-      "The return address of the caller"
-    ],
-    "answer": 1,
-    "explanation": "Dynamic link is typically the saved base pointer."
-  },
-  {
-    "id": 148,
-    "text": "Activation record instances of static ancestors must be on the stack when referenced.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 149,
-    "text": "Variables defined in a C block are created when the block is entered.",
-    "type": "MCQ",
-    "options": [
-      "When function is called",
-      "On the stack like parameters",
-      "When block is entered",
-      "All of the above",
-      "Only b and c"
-    ],
-    "answer": 4,
-    "explanation": "They are stack allocated when block is entered."
-  },
-  {
-    "id": 150,
-    "text": "Which language does not support functional recursion?",
-    "type": "MCQ",
-    "options": ["Ada 83", "C-89", "FORTRAN 77", "Ruby"],
-    "answer": 2,
-    "explanation": "FORTRAN 77 did not support recursion."
-  }, 
-  {
-    "id": 151,
-    "text": "The return value of procedure add is located in the AX register upon return.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. AX conventionally holds return values in 8086 assembly."
-  },
-  {
-    "id": 152,
-    "text": "The correct C-like function prototype for procedure add is",
-    "type": "MCQ",
-    "options": [
-      "int add()",
-      "void add(int, int)",
-      "int add(int, int)",
-      "int add(int)",
-      "None"
-    ],
-    "answer": 2,
-    "explanation": "The procedure returns a value in AX and takes two integer parameters."
-  },
-  {
-    "id": 153,
-    "text": "Without the INTEGER declaration, FORTRAN would assume S is REAL.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Variables beginning with I-N default to INTEGER."
-  },
-  {
-    "id": 154,
-    "text": "The DO statement in FORTRAN is",
-    "type": "MCQ",
-    "options": [
-      "Count controlled loop",
-      "Event controlled loop",
-      "Creates a block",
-      "Both a and c",
-      "Both b and c"
-    ],
-    "answer": 3,
-    "explanation": "FORTRAN DO is a count-controlled loop as well as creates block."
-  },
-  {
-    "id": 155,
-    "text": "In line F(S-2), it is",
-    "type": "MCQ",
-    "options": [
-      "Illegal reference",
-      "A call to function F with S-2 as its argument",
-      "Legal reference since S starts at 3",
-      "None"
-    ],
-    "answer": 1,
-    "explanation": "True"
-  },
-  {
-    "id": 156,
-    "text": "The code F(S)=F(S-1)+F(S-2) contains two recursive calls.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True"
-  },
-  {
-    "id": 157,
-    "text": "A nested subprogram has",
-    "type": "MCQ",
-    "options": [
-      "Only parameters and locals",
-      "Parameters, locals, dynamically scoped variables",
-      "Parameters, locals, and statically scoped ancestors",
-      "Parameters, locals, and same nesting"
-    ],
-    "answer": 2,
-    "explanation": "Nested subprograms access statically scoped ancestors."
-  },
-  {
-    "id": 158,
-    "text": "The number, order, and type of parameters define the",
-    "type": "MCQ",
-    "options": [
-      "Subprogram header",
-      "Parameter profile",
-      "Protocol"
-    ],
-    "answer": 1,
-    "explanation": "Parameter profile defines number, order, and types."
-  },
-  {
-    "id": 159,
-    "text": "Procedures are subprograms that cannot return a value via their name.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 160,
-    "text": "Functions are subprograms that can return a value via their name.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 161,
-    "text": "A subprogram declaration provides protocol but no body.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 162,
-    "text": "In Java, primitive parameters are passed by",
-    "type": "MCQ",
-    "options": [
-      "Some reference",
-      "Some keyword",
-      "All reference",
-      "All value",
-      "None"
-    ],
-    "answer": 3,
-    "explanation": "All primitive types are passed by value in Java."
-  },
-  {
-    "id": 163,
-    "text": "COBOL can construct hierarchical abstractions using level numbers.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 164,
-    "text": "An ADT can provide encapsulation but no information hiding.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 165,
-    "text": "In Ada, the encapsulation construct is called",
-    "type": "MCQ",
-    "options": [
-      "Package",
-      "Module",
-      "Interface",
-      "Block"
-    ],
-    "answer": 0,
-    "explanation": "Ada uses packages."
-  },
-  {
-    "id": 166,
-    "text": "Constructors in OO languages allocate memory for objects.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Memory allocation is separate from constructor execution."
-  },
-  {
-    "id": 167,
-    "text": "C++ destructors",
-    "type": "MCQ",
-    "options": [
-      "Are implicitly called",
-      "Can be explicitly called",
-      "Often deallocate heap data",
-      "Are named ~classname",
-      "All of the above"
-    ],
-    "answer": 4,
-    "explanation": "All listed statements are true."
-  },
-  {
-    "id": 168,
-    "text": "All Java objects are allocated on the heap and referenced by reference variables.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 169,
-    "text": "Which is invalid C++ class declaration?",
-    "type": "MCQ",
-    "options": [
-      "static MyClass smc",
-      "MyClass me",
-      "MyClass* pmc = new MyClass()",
-      "All",
-      "None"
-    ],
-    "answer": 4,
-    "explanation": "All listed declarations are valid."
-  },
-  {
-    "id": 170,
-    "text": "In Ruby, all data members of a class are private and cannot be changed.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Ruby allows access via methods."
-  },
-  {
-    "id": 171,
-    "text": "C++ is a ______ of C.",
-    "type": "MCQ",
-    "options": [
-      "Superset",
-      "Subset",
-      "Derivative",
-      "Illegitimate child"
-    ],
-    "answer": 0,
-    "explanation": "C++ is largely considered a superset of C."
-  },
-  {
-    "id": 172,
-    "text": "Tokens of a programming language are typically described by",
-    "type": "MCQ",
-    "options": [
-      "Regular grammars",
-      "Context-free grammars"
-    ],
-    "answer": 0,
-    "explanation": "Lexical structure uses regular grammars."
-  },
-  {
-    "id": 173,
-    "text": "COBOL was",
-    "type": "MCQ",
-    "options": [
-      "Designed primarily by Grace Hopper",
-      "Meant to be a business language",
-      "First language with local variables",
-      "All",
-      "Only a and b"
-    ],
-    "answer": 4,
-    "explanation": "COBOL was business-oriented and influenced by Grace Hopper."
-  },
-  {
-    "id": 174,
-    "text": "Lisp cons structures",
-    "type": "MCQ",
-    "options": [
-      "Have two data cells",
-      "Used to construct lists",
-      "May point to sublists",
-      "All",
-      "Only a and b"
-    ],
-    "answer": 3,
-    "explanation": "All statements are correct."
-  },
-  {
-    "id": 175,
-    "text": "Simula 67 had a data structure called a class.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Simula introduced classes."
-  },
-  {
-    "id": 176,
-    "text": "Original BASIC",
-    "type": "MCQ",
-    "options": [
-      "Was designed to teach programming concepts to non-programmers",
-      "Was interpreted, not compiled",
-      "Was widely used in early home computers",
-      "All of the above"
-    ],
-    "answer": 3,
-    "explanation": "All statements about original BASIC are true."
-  },
-  {
-    "id": 177,
-    "text": "In Pascal programs, all variable declarations must be placed ahead of any code in the defining block.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Pascal requires declarations before executable statements."
-  },
-  {
-    "id": 178,
-    "text": "PHP",
-    "type": "MCQ",
-    "options": [
-      "Is a server-side scripting engine",
-      "Replaces PHP code with generated HTML",
-      "Can work with SQL databases",
-      "All of the above"
-    ],
-    "answer": 3,
-    "explanation": "All listed statements are correct."
-  },
-  {
-    "id": 179,
-    "text": "In MASM, parameter passing is accomplished by",
-    "type": "MCQ",
-    "options": [
-      "Caller pushing parameters on the stack",
-      "Called function pushing parameters",
-      "Caller loading parameters into registers",
-      "All of the above"
-    ],
-    "answer": 0,
-    "explanation": "Standard MASM convention uses caller pushing parameters onto stack."
-  },
-  {
-    "id": 180,
-    "text": "MASM programs typically have three segments: code, data, and stack.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 181,
-    "text": "The value 01010101 in decimal is",
-    "type": "MCQ",
-    "options": ["53", "64", "75", "85", "-44"],
-    "answer": 3,
-    "explanation": "01010101 binary equals 85 decimal."
-  },
-  {
-    "id": 182,
-    "text": "The MUL and IMUL instructions produce a product twice the size of the multiplier.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. The result occupies double the operand size."
-  },
-  {
-    "id": 183,
-    "text": "The first programming language to have local variables was Fortran.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. ALGOL introduced proper local variables."
-  },
-  {
-    "id": 184,
-    "text": "A widening conversion is one in which a type is converted to a type capable of representing all original values.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 185,
-    "text": "Separate compilation is",
-    "type": "MCQ",
-    "options": [
-      "Compilation of units separately without full interface information",
-      "Stand-alone compilation",
-      "Independent compilation",
-      "All of the above",
-      "None of the above"
-    ],
-    "answer": 0,
-    "explanation": "Separate compilation compiles modules independently."
-  },
-  {
-    "id": 186,
-    "text": "Recursion is only possible in languages that use runtime stacks.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True. Recursion requires activation records."
-  },
-  {
-    "id": 187,
-    "text": "In C++ and Java, arrays are objects and their length is part of the object.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 188,
-    "text": "Which language does NOT have nested subprogram capabilities?",
-    "type": "MCQ",
-    "options": ["Ada", "Java", "Javascript", "Pascal"],
-    "answer": 1,
-    "explanation": "Java does not support nested subprograms."
-  },
-  {
-    "id": 189,
-    "text": "Which language does not support functional recursion?",
-    "type": "MCQ",
-    "options": ["Ada 83", "C-89", "FORTRAN 77", "Ruby", "C++"],
-    "answer": 2,
-    "explanation": "FORTRAN 77 did not support recursion."
-  },
-  {
-    "id": 190,
-    "text": "A subprogram with multiple entry points that controls them itself is called a",
-    "type": "MCQ",
-    "options": ["Procedure", "Function", "Method", "Coroutine"],
-    "answer": 3,
-    "explanation": "Coroutines can have multiple entry points."
-  },
-  {
-    "id": 191,
-    "text": "Generic methods in C++ may have primitives (int, char, etc.) as their class variable.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. Templates work with types."
-  },
-  {
-    "id": 192,
-    "text": "In Java, a class may extend only one class but implement multiple interfaces.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 193,
-    "text": "Concurrent systems allow multiple tasks to be underway at unpredictable points simultaneously.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 194,
-    "text": "A concurrent algorithm is scalable if execution speed increases with more processors.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 195,
-    "text": "A language that uses imperative primitive types but everything else as objects is",
-    "type": "MCQ",
-    "options": ["C++", "Ruby", "Java", "Python"],
-    "answer": 2,
-    "explanation": "Java uses primitive types but otherwise object-oriented."
-  },
-  {
-    "id": 196,
-    "text": "Derived classes in Ada 95 are always subtypes of their parent classes.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 197,
-    "text": "Most modern imperative languages are based on features originally in ALGOL.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 198,
-    "text": "Java supports inner classes that can be named or anonymous.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 199,
-    "text": "Synchronization controls the order in which concurrent tasks execute.",
-    "type": "TF",
-    "options": ["True", "False"],
-    "answer": 0,
-    "explanation": "True."
-  },
-  {
-    "id": 200,
-    "text": "A grammar that generates more than one parse tree for the same sentential form is called",
-    "type": "MCQ",
-    "options": ["Regular", "Ambiguous", "Deterministic", "Context-sensitive"],
-    "answer": 1,
-    "explanation": "Such a grammar is ambiguous."
+// ─── State ────────────────────────────────────────────────────
+const bank = { atpl: [], ase: [] };
+let subj       = null;   // 'atpl' | 'ase'
+let quiz       = [];
+let idx        = 0;
+let okCount    = 0;
+let errCount   = 0;
+let answers    = [];
+let answered   = false;
+
+const THEME = {
+  atpl: 'apl',
+  ase:  'ase'
+};
+
+// ─── Load JSON files on page load ────────────────────────────
+window.addEventListener('DOMContentLoaded', async () => {
+  const [atplOk, aseOk] = await Promise.all([
+    loadJSON('atpl.json', 'atpl'),
+    loadJSON('ase.json',  'ase')
+  ]);
+  if (!atplOk || !aseOk) {
+    document.getElementById('load-error').style.display = 'block';
   }
+});
 
-
-];
-
-// ─────────────────────────────────────────────────────────────
-//  APP STATE
-// ─────────────────────────────────────────────────────────────
-let quizQuestions = [];
-let currentIdx = 0;
-let correct = 0;
-let wrong = 0;
-let userAnswers = [];
-let answered = false;
-
-// Init
-document.getElementById('total-count').textContent = questions.length;
-document.getElementById('to-input').value = Math.min(50, questions.length);
-
-function setRange(from, to) {
-  document.getElementById('from-input').value = from;
-  document.getElementById('to-input').value = Math.min(to, questions.length);
+async function loadJSON(file, key) {
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) throw new Error('empty');
+    bank[key] = data;
+    const el = document.getElementById(key + '-count');
+    el.innerHTML = `<span>${data.length} questions</span>`;
+    return true;
+  } catch (e) {
+    const el = document.getElementById(key + '-count');
+    if (el) el.innerHTML = `<span style="color:var(--err)">⚠ ${file} not found</span>`;
+    return false;
+  }
 }
 
+// ─── Screen Router ─────────────────────────────────────────────
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  // reset animation
+  el.style.animation = 'none';
+  el.offsetHeight;
+  el.style.animation = '';
+}
+
+// ─── Subject Selection ────────────────────────────────────────
+function selectSubject(s) {
+  if (bank[s].length === 0) {
+    alert(`Could not load ${s === 'atpl' ? 'atpl.json' : 'ase.json'}. Please make sure the file is in the same directory.`);
+    return;
+  }
+  subj = s;
+  const theme = THEME[s];
+  const qs = bank[s];
+
+  // Style setup screen
+  const card = document.getElementById('setup-card');
+  card.className = `setup-card ${theme}`;
+
+  document.getElementById('setup-title').textContent =
+    s === 'atpl' ? 'APL 524 — Configure Quiz' : 'ASE 543 — Configure Quiz';
+
+  document.getElementById('setup-sub').textContent =
+    s === 'atpl'
+      ? '// advanced topics in programming languages'
+      : '// advanced software engineering';
+
+  document.getElementById('bank-count').textContent = qs.length;
+  document.getElementById('to-input').value = Math.min(50, qs.length);
+  document.getElementById('from-input').value = 1;
+
+  document.getElementById('btn-start').className = `btn-start ${theme}`;
+
+  // Quick chips
+  const chips = document.getElementById('quick-chips');
+  chips.className = `quick-row ${theme}`;
+  chips.innerHTML = '';
+  const ranges = buildChips(qs.length);
+  ranges.forEach(([label, from, to]) => {
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.textContent = label;
+    btn.onclick = () => {
+      document.getElementById('from-input').value = from;
+      document.getElementById('to-input').value   = to;
+    };
+    chips.appendChild(btn);
+  });
+
+  goTo('setup-screen');
+}
+
+function buildChips(total) {
+  const chips = [];
+  const step = 25;
+  for (let i = 1; i <= total; i += step) {
+    const end = Math.min(i + step - 1, total);
+    chips.push([`Q${i}–${end}`, i, end]);
+    if (chips.length >= 6) break;
+  }
+  chips.push([`All (${total})`, 1, total]);
+  return chips;
+}
+
+// ─── Start Quiz ───────────────────────────────────────────────
 function startQuiz() {
-  const fromVal = parseInt(document.getElementById('from-input').value);
-  const toVal = parseInt(document.getElementById('to-input').value);
-  const from = Math.max(1, fromVal);
-  const to = Math.min(toVal, questions.length);
+  const from = Math.max(1, parseInt(document.getElementById('from-input').value) || 1);
+  const to   = Math.min(parseInt(document.getElementById('to-input').value) || 1, bank[subj].length);
 
-  if (isNaN(from) || isNaN(to) || from > to) {
-    alert('Please enter a valid range.');
-    return;
-  }
+  if (from > to) { alert('Invalid range.'); return; }
 
-  quizQuestions = questions.filter(q => q.id >= from && q.id <= to);
+  quiz     = bank[subj].filter(q => q.id >= from && q.id <= to);
+  if (quiz.length === 0) { alert('No questions in that range.'); return; }
 
-  if (quizQuestions.length === 0) {
-    alert('No questions found in that range.');
-    return;
-  }
+  idx      = 0;
+  okCount  = 0;
+  errCount = 0;
+  answers  = new Array(quiz.length).fill(null);
 
-  currentIdx = 0; correct = 0; wrong = 0;
-  userAnswers = new Array(quizQuestions.length).fill(null);
+  // Theme quiz screen elements
+  const theme = THEME[subj];
+  document.getElementById('q-counter').className = `qnum ${theme}`;
+  document.getElementById('prog-fill').className  = `prog-fill ${theme}`;
+  document.getElementById('q-card').className     = `q-card ${theme}`;
+  document.getElementById('q-type-tag').className = `q-type-tag ${theme}`;
+  document.getElementById('btn-next').className   = `btn-next ${theme}`;
 
-  document.getElementById('setup-screen').style.display = 'none';
-  document.getElementById('quiz-screen').style.display = 'block';
-  document.getElementById('results-screen').style.display = 'none';
-
-  renderQuestion();
+  goTo('quiz-screen');
+  renderQ();
 }
 
-function renderQuestion() {
+// ─── Render Question ──────────────────────────────────────────
+function renderQ() {
   answered = false;
-  const q = quizQuestions[currentIdx];
-  const total = quizQuestions.length;
+  const q     = quiz[idx];
+  const total = quiz.length;
+  const theme = THEME[subj];
+  const LTRS  = ['A','B','C','D','E','F','G'];
 
-  document.getElementById('q-counter').textContent = `Q ${currentIdx + 1} / ${total}`;
-  document.getElementById('live-correct').textContent = `✓ ${correct}`;
-  document.getElementById('live-wrong').textContent = `✗ ${wrong}`;
-  document.getElementById('prog-bar').style.width = `${(currentIdx / total) * 100}%`;
+  document.getElementById('q-counter').textContent  = `Q ${idx+1} / ${total}`;
+  document.getElementById('live-ok').textContent    = `✓ ${okCount}`;
+  document.getElementById('live-err').textContent   = `✗ ${errCount}`;
+  document.getElementById('prog-fill').style.width  = `${(idx/total)*100}%`;
 
-  document.getElementById('q-type-badge').textContent = q.type === 'TF' ? 'TRUE / FALSE' : 'MULTIPLE CHOICE';
-  document.getElementById('q-text').innerHTML = formatText(q.text);
+  document.getElementById('q-type-tag').textContent =
+    q.type === 'TF' ? 'TRUE / FALSE' : 'MULTIPLE CHOICE';
+
+  document.getElementById('q-text').innerHTML = fmtText(q.text);
 
   const codeEl = document.getElementById('q-code');
   if (q.codeBlock) {
-    codeEl.textContent = q.codeBlock;
-    codeEl.style.display = 'block';
+    codeEl.textContent    = q.codeBlock;
+    codeEl.style.display  = 'block';
+    codeEl.className      = `code-block ${theme}`;
   } else {
     codeEl.style.display = 'none';
   }
 
-  const letters = ['A','B','C','D','E','F'];
-  const optionsEl = document.getElementById('options');
-  optionsEl.innerHTML = '';
-
-  q.options.forEach((opt, i) => {
+  const optWrap = document.getElementById('options');
+  optWrap.innerHTML = '';
+  (q.options || []).forEach((opt, i) => {
     const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt}</span>`;
-    btn.onclick = () => selectAnswer(i);
-    optionsEl.appendChild(btn);
+    btn.className = `opt-btn ${theme}`;
+    btn.innerHTML = `<span class="opt-ltr">${LTRS[i]}</span><span>${opt}</span>`;
+    btn.addEventListener('click', () => pickAnswer(i));
+    optWrap.appendChild(btn);
   });
 
   document.getElementById('feedback').className = 'feedback';
-  document.getElementById('btn-next').className = 'btn-next';
+  document.getElementById('btn-next').className = `btn-next ${theme}`;
 }
 
-function formatText(text) {
-  return text.replace(/`([^`]+)`/g, '<code>$1</code>');
+function fmtText(t) {
+  if (!t) return '';
+  return t.replace(/`([^`]+)`/g, '<code>$1</code>');
 }
 
-function selectAnswer(idx) {
+// ─── Answer Selection ─────────────────────────────────────────
+function pickAnswer(i) {
   if (answered) return;
   answered = true;
 
-  const q = quizQuestions[currentIdx];
-  const isCorrect = idx === q.answer;
-  userAnswers[currentIdx] = idx;
+  const q     = quiz[idx];
+  const theme = THEME[subj];
+  const isOk  = i === q.answer;
+  answers[idx] = i;
 
-  const btns = document.querySelectorAll('.option-btn');
+  const btns = document.querySelectorAll('.opt-btn');
   btns.forEach(b => b.disabled = true);
 
-  if (isCorrect) {
-    btns[idx].classList.add('correct');
-    correct++;
-    showFeedback(true, q.options[q.answer], q.explanation);
+  if (isOk) {
+    btns[i].classList.add('correct');
+    okCount++;
   } else {
-    btns[idx].classList.add('wrong');
-    btns[q.answer].classList.add('correct');
-    wrong++;
-    showFeedback(false, q.options[q.answer], q.explanation);
+    btns[i].classList.add('wrong');
+    if (btns[q.answer]) btns[q.answer].classList.add('correct');
+    errCount++;
   }
 
-  document.getElementById('live-correct').textContent = `✓ ${correct}`;
-  document.getElementById('live-wrong').textContent = `✗ ${wrong}`;
+  document.getElementById('live-ok').textContent  = `✓ ${okCount}`;
+  document.getElementById('live-err').textContent = `✗ ${errCount}`;
 
-  const btnNext = document.getElementById('btn-next');
-  btnNext.textContent = currentIdx + 1 >= quizQuestions.length ? 'See Results →' : 'Next Question →';
-  btnNext.className = 'btn-next show';
+  showFeedback(isOk, q);
+
+  const nxtBtn = document.getElementById('btn-next');
+  nxtBtn.textContent = idx + 1 >= quiz.length ? 'See Results →' : 'Next Question →';
+  nxtBtn.className   = `btn-next ${theme} show`;
 }
 
-function showFeedback(isCorrect, correctAnswer, explanation) {
+function showFeedback(isOk, q) {
   const fb = document.getElementById('feedback');
-  const label = document.getElementById('fb-label');
-  const detail = document.getElementById('fb-detail');
-
-  if (isCorrect) {
-    fb.className = 'feedback show correct-fb';
-    label.textContent = '✓ CORRECT!';
-  } else {
-    fb.className = 'feedback show wrong-fb';
-    label.textContent = '✗ INCORRECT';
-  }
-
-  detail.textContent = explanation || ('Correct answer: ' + correctAnswer);
+  document.getElementById('fb-lbl').textContent    = isOk ? '✓ CORRECT!' : '✗ INCORRECT';
+  document.getElementById('fb-detail').textContent =
+    q.explanation || ('Correct answer: ' + (q.options || [])[q.answer]);
+  fb.className = `feedback show ${isOk ? 'fb-ok' : 'fb-err'}`;
 }
 
+// ─── Next / Results ───────────────────────────────────────────
 function nextQuestion() {
-  currentIdx++;
-  if (currentIdx >= quizQuestions.length) {
-    showResults();
-  } else {
-    document.getElementById('quiz-screen').style.animation = 'none';
-    document.getElementById('quiz-screen').offsetHeight;
-    document.getElementById('quiz-screen').style.animation = '';
-    renderQuestion();
-  }
+  idx++;
+  if (idx >= quiz.length) showResults();
+  else renderQ();
 }
 
 function showResults() {
-  document.getElementById('quiz-screen').style.display = 'none';
-  document.getElementById('results-screen').style.display = 'block';
+  const total = quiz.length;
+  const pct   = Math.round((okCount / total) * 100);
+  const theme = THEME[subj];
 
-  const total = quizQuestions.length;
-  const pct = Math.round((correct / total) * 100);
+  // Style results card
+  document.getElementById('results-card').className = `results-card ${theme}`;
+  document.getElementById('results-card').querySelectorAll('.stat-box.sv-tot .stat-v')
+    .forEach(e => {}); // handled via CSS
 
-  document.getElementById('score-pct').textContent = pct + '%';
-  document.getElementById('score-circle').style.setProperty('--pct', pct + '%');
+  document.getElementById('ring-pct').textContent = pct + '%';
+  document.getElementById('score-ring').style.setProperty('--pct', pct + '%');
 
-  document.getElementById('res-correct').textContent = correct;
-  document.getElementById('res-wrong').textContent = wrong;
-  document.getElementById('res-total').textContent = total;
+  const rCard = document.getElementById('results-card');
+  rCard.className = `results-card ${theme}`;
+  document.getElementById('score-ring').className = `score-ring ${theme}`;
+  document.getElementById('ring-pct').parentElement.className = `score-ring ${theme}`;
+
+  document.getElementById('r-ok').textContent  = okCount;
+  document.getElementById('r-err').textContent = errCount;
+  document.getElementById('r-tot').textContent = total;
 
   let title, msg;
-  if (pct >= 90) { title = '🏆 Excellent!'; msg = 'Outstanding performance! You\'re well prepared.'; }
-  else if (pct >= 75) { title = '🎯 Great Job!'; msg = 'Strong understanding. A bit more practice and you\'ll ace it.'; }
-  else if (pct >= 60) { title = '📚 Good Effort'; msg = 'Decent foundation. Focus on the missed questions.'; }
-  else if (pct >= 40) { title = '💪 Keep Going'; msg = 'More review needed. Study the explanations carefully.'; }
-  else { title = '📖 Keep Studying'; msg = 'Don\'t give up — review the material and try again!'; }
+  if (pct >= 90) { title = '🏆 Excellent!';       msg = 'Outstanding! You\'re exam-ready.'; }
+  else if (pct >= 75) { title = '🎯 Great Job!';   msg = 'Strong work — a bit more polish and you\'re set.'; }
+  else if (pct >= 60) { title = '📚 Good Effort';  msg = 'Solid foundation. Review the missed ones.'; }
+  else if (pct >= 40) { title = '💪 Keep Going';   msg = 'More review needed — study the explanations.'; }
+  else { title = '📖 Keep Studying'; msg = 'Don\'t quit — revisit the material and try again!'; }
 
-  document.getElementById('result-title').textContent = title;
-  document.getElementById('grade-msg').textContent = msg;
+  document.getElementById('res-title').textContent = title;
+  document.getElementById('res-msg').textContent   = msg;
 
   buildReview();
+  goTo('results-screen');
 }
 
+// ─── Review ───────────────────────────────────────────────────
 function buildReview() {
   const list = document.getElementById('review-list');
   list.innerHTML = '';
-
-  quizQuestions.forEach((q, i) => {
-    const ua = userAnswers[i];
+  quiz.forEach((q, i) => {
+    const ua  = answers[i];
     const isC = ua === q.answer;
-    const item = document.createElement('div');
-    item.className = `review-item ${isC ? 'ri-correct' : 'ri-wrong'}`;
-
-    const yourText = ua !== null ? q.options[ua] : 'Not answered';
-
-    item.innerHTML = `
-      <div class="ri-header">
-        <span class="ri-qnum">Q${q.id}</span>
-        <span class="ri-badge ${isC ? 'correct' : 'wrong'}">${isC ? '✓ CORRECT' : '✗ WRONG'}</span>
+    const div = document.createElement('div');
+    div.className = `ri ${isC ? 'ri-ok' : 'ri-err'}`;
+    const uaTxt = ua !== null ? (q.options || [])[ua] : 'Not answered';
+    const qtxt  = q.text ? (q.text.length > 110 ? q.text.slice(0,110)+'…' : q.text) : '';
+    div.innerHTML = `
+      <div class="ri-top">
+        <span class="ri-num">Q${q.id}</span>
+        <span class="ri-badge ${isC ? 'ok':'err'}">${isC ? '✓ CORRECT' : '✗ WRONG'}</span>
       </div>
-      <div class="ri-q">${q.text.length > 120 ? q.text.substring(0,120)+'…' : q.text}</div>
-      <div class="ri-your ${isC ? 'correct-ans' : 'wrong-ans'}">Your answer: ${yourText}</div>
-      ${!isC ? `<div class="ri-correct-ans">Correct: ${q.options[q.answer]}</div>` : ''}
+      <div class="ri-q">${qtxt}</div>
+      <div class="ri-yours ${isC ? 'ok':'err'}">Your answer: ${uaTxt}</div>
+      ${!isC ? `<div class="ri-correct-a">Correct: ${(q.options||[])[q.answer]}</div>` : ''}
     `;
-    list.appendChild(item);
+    list.appendChild(div);
   });
 }
 
 function toggleReview() {
   const list = document.getElementById('review-list');
-  const btn = document.querySelector('.review-toggle');
-  if (list.classList.contains('open')) {
-    list.classList.remove('open');
-    btn.textContent = '📋 Review Answers';
-  } else {
-    list.classList.add('open');
-    btn.textContent = '▲ Hide Review';
-  }
-}
-
-function restart() {
-  document.getElementById('results-screen').style.display = 'none';
-  document.getElementById('setup-screen').style.display = 'block';
+  const btn  = document.querySelector('.review-btn');
+  const open = list.classList.toggle('open');
+  btn.textContent = open ? '▲ Hide Review' : '📋 Review Answers';
 }
 </script>
 </body>
