@@ -2192,8 +2192,8 @@ const questions = [
       "Both a and c",
       "Both b and c"
     ],
-    "answer": 0,
-    "explanation": "FORTRAN DO is a count-controlled loop."
+    "answer": 3,
+    "explanation": "FORTRAN DO is a count-controlled loop as well as creates block."
   },
   {
     "id": 155,
@@ -2201,20 +2201,20 @@ const questions = [
     "type": "MCQ",
     "options": [
       "Illegal reference",
-      "Function call",
+      "A call to function F with S-2 as its argument",
       "Legal reference since S starts at 3",
       "None"
     ],
-    "answer": 2,
-    "explanation": "Since S begins at 3, S-2 is valid."
+    "answer": 1,
+    "explanation": "True"
   },
   {
     "id": 156,
     "text": "The code F(S)=F(S-1)+F(S-2) contains two recursive calls.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "False. These are array references, not recursive calls."
+    "answer": 0,
+    "explanation": "True"
   },
   {
     "id": 157,
