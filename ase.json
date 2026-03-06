@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "text": "An erroneous system state that can lead to system behavior that is unexpected is called:",
+    "text": "An erroneous system state that can lead to unexpected system behavior is called:",
     "type": "MCQ",
     "options": ["System faults", "System errors", "System failure"],
     "answer": 1,
-    "explanation": "A system error is an erroneous state that can lead to unexpected system behavior."
+    "explanation": "A system error is an erroneous system state; faults are causes and failures are externally observed incorrect behavior."
   },
   {
     "id": 2,
@@ -13,23 +13,23 @@
     "type": "TF",
     "options": ["True", "False"],
     "answer": 1,
-    "explanation": "True. Fault avoidance focuses on preventing faults before deployment using V&V techniques."
+    "explanation": "False. Discovering/removing faults via V&V is fault detection/removal; fault avoidance focuses on preventing faults from being introduced."
   },
   {
     "id": 3,
     "text": "Reliability measures are system attributes that define the number of failures that are acceptable during normal use of the system.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 2,
-    "explanation": "False. Reliability measures define probability and rate of failures, not acceptable number of failures."
+    "answer": 1,
+    "explanation": "False. Reliability measures quantify failure behavior (e.g., rate, probability), while acceptable failures are part of reliability requirements/specification."
   },
   {
     "id": 4,
-    "text": "______ probability that the system will fail when a service request is made.",
+    "text": "______ is the probability that the system will fail when a service request is made.",
     "type": "MCQ",
     "options": ["POFOD", "ROCOF", "AVAIL"],
-    "answer": 1,
-    "explanation": "POFOD (Probability of Failure on Demand) measures the probability that the system will fail when a request is made."
+    "answer": 0,
+    "explanation": "POFOD (Probability of Failure on Demand) is the probability of failure when a request/demand occurs."
   },
   {
     "id": 5,
@@ -40,24 +40,24 @@
       "It reduces the cost of the system",
       "It can be created after the system is implemented"
     ],
-    "answer": 1,
-    "explanation": "Reliability specifications help determine when sufficient testing has been achieved."
+    "answer": 0,
+    "explanation": "A reliability specification provides a target to decide when testing is sufficient."
   },
   {
     "id": 6,
-    "text": "A specialized system associated with some other control system that can take emergency action if a failure occurs is called:",
+    "text": "A specialized system associated with some other control system, which can take emergency action if a failure occurs, is called:",
     "type": "MCQ",
     "options": ["Protection system", "Self-monitoring system", "N-version system"],
-    "answer": 1,
-    "explanation": "A protection system monitors and takes emergency action if failure occurs."
+    "answer": 0,
+    "explanation": "A protection system can take emergency action when a failure is detected."
   },
   {
     "id": 7,
     "text": "The fault-tolerant solutions studied in class have as a core concept:",
     "type": "MCQ",
     "options": ["Non-determinism", "Redundancy", "Formalism", "All of the above", "None of the above"],
-    "answer": 2,
-    "explanation": "Redundancy is the core concept behind fault-tolerant systems."
+    "answer": 1,
+    "explanation": "Fault tolerance typically relies on redundancy (extra components/paths) to continue operation despite faults."
   },
   {
     "id": 8,
@@ -65,21 +65,21 @@
     "type": "MCQ",
     "options": [
       "It should monitor its own operations and take action if inconsistencies are detected.",
-      "Extensive use should be made of diversity so hardware failure will not lead to identical results.",
+      "Extensive use should be made of diversity so hardware failure will not lead to each channel producing the same results.",
       "Multiple architectural channels are employed.",
       "All of the above",
       "Only a and b"
     ],
-    "answer": 4,
-    "explanation": "Self-monitoring systems use monitoring, diversity, and multiple channels."
+    "answer": 3,
+    "explanation": "Self-monitoring systems typically use multiple channels and self-checking; diversity may also be used to reduce common-mode failures."
   },
   {
     "id": 9,
     "text": "An example of a validity check is range checking to determine if an input is acceptable.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "True. Range checking is a classic example of input validation."
+    "answer": 0,
+    "explanation": "True. Range checking is a standard input validity check."
   },
   {
     "id": 10,
@@ -92,16 +92,16 @@
       "All of the above",
       "Only b and c"
     ],
-    "answer": 4,
-    "explanation": "All listed strategies may be reasonable depending on context."
+    "answer": 3,
+    "explanation": "All three can be valid strategies depending on the failure context and system design."
   },
   {
     "id": 11,
-    "text": "In C, assuming int nums[100] is valid, the statement nums[105]; may result in addressing memory outside the array bounds.",
+    "text": "In the C programming language, assuming int nums[100] is a valid declaration, nums[105]; may access memory outside the declared array bounds.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "True. C does not enforce bounds checking at runtime."
+    "answer": 0,
+    "explanation": "True. C typically does not perform bounds checking at runtime."
   },
   {
     "id": 12,
@@ -110,18 +110,18 @@
     "options": [
       "Throw exceptions and generate detailed error messages",
       "Simply restart the program at a known stable point",
-      "Put the system in a safe state if an anomaly is detected"
+      "Put the system in a safe state if an operational anomaly is detected"
     ],
-    "answer": 2,
-    "explanation": "Restarting from a known stable checkpoint is often sufficient."
+    "answer": 1,
+    "explanation": "Many post-delivery faults are transient; restarting from a stable state often restores correct operation."
   },
   {
     "id": 13,
     "text": "The idea behind checkpoint and restart systems is similar to the Memento design pattern.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "True. Both involve saving state and restoring it later."
+    "answer": 0,
+    "explanation": "True. Both involve saving internal state and restoring it later."
   },
   {
     "id": 14,
@@ -134,34 +134,34 @@
       "All of the above",
       "Only b and c"
     ],
-    "answer": 5,
-    "explanation": "Checking bounds and naming constants improve reliability."
+    "answer": 4,
+    "explanation": "Array bounds checking and naming constants improve safety/clarity; heavy use of goto is generally discouraged."
   },
   {
     "id": 15,
     "text": "Reliability testing is essentially the same as normal software testing.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 2,
-    "explanation": "False. Reliability testing focuses on failure rates and operational profiles."
+    "answer": 1,
+    "explanation": "False. Reliability testing focuses on measuring failure behavior under expected operational usage (often using an operational profile)."
   },
   {
     "id": 16,
     "text": "An operational profile defines:",
     "type": "MCQ",
     "options": [
-      "A set of classes of expected inputs",
+      "A set of classes of expected inputs to a software system",
       "The expected frequency of input classes",
-      "The time spent in operational modules",
+      "The time spent in individual operational modules",
       "All of the above",
       "Only a and b"
     ],
-    "answer": 5,
-    "explanation": "Operational profile defines input classes and their expected frequencies."
+    "answer": 4,
+    "explanation": "Operational profiles primarily define expected input/operation classes and their frequencies."
   },
   {
     "id": 17,
-    "text": "By far the largest source of threats to software security results from vulnerability in:",
+    "text": "By far, the largest source of threats to software security results from vulnerability in:",
     "type": "MCQ",
     "options": [
       "Networking hardware",
@@ -170,31 +170,31 @@
       "Incautious use of software",
       "None of the above"
     ],
-    "answer": 3,
-    "explanation": "Application software vulnerabilities are the largest threat source."
+    "answer": 2,
+    "explanation": "Most exploitable vulnerabilities are found in application-level software and its dependencies."
   },
   {
     "id": 18,
     "text": "Something of value which has to be protected is called:",
     "type": "MCQ",
     "options": ["Asset", "Attack", "Threat", "Vulnerability"],
-    "answer": 1,
-    "explanation": "An asset is something of value that must be protected."
+    "answer": 0,
+    "explanation": "An asset is anything valuable that needs protection."
   },
   {
     "id": 19,
     "text": "Circumstances that have potential to cause loss or harm are called:",
     "type": "MCQ",
     "options": ["Asset", "Attack", "Threat", "Vulnerability"],
-    "answer": 3,
-    "explanation": "A threat has the potential to cause harm."
+    "answer": 2,
+    "explanation": "A threat is a potential cause of harm."
   },
   {
     "id": 20,
-    "text": "A weakness in a computer-based system that may be exploited is called:",
+    "text": "A weakness in a computer-based system that may be exploited to cause loss or harm is called:",
     "type": "MCQ",
     "options": ["Asset", "Attack", "Threat", "Vulnerability"],
-    "answer": 4,
+    "answer": 3,
     "explanation": "A vulnerability is a weakness that can be exploited."
   },
   {
@@ -202,39 +202,39 @@
     "text": "A threat that makes part of the system unavailable is:",
     "type": "MCQ",
     "options": ["Interception", "Interruption", "Modification", "Fabrication"],
-    "answer": 2,
-    "explanation": "Interruption makes a system or asset unavailable."
+    "answer": 1,
+    "explanation": "Interruption affects availability (making systems/resources unavailable)."
   },
   {
     "id": 22,
     "text": "A threat that allows an attacker to gain access to an asset is:",
     "type": "MCQ",
     "options": ["Interception", "Interruption", "Modification", "Fabrication"],
-    "answer": 1,
-    "explanation": "Interception allows unauthorized access."
+    "answer": 0,
+    "explanation": "Interception is unauthorized access (confidentiality breach)."
   },
   {
     "id": 23,
     "text": "Security requirements are classified into risk avoidance, risk detection and risk mitigation.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "True. These are common classifications of security requirements."
+    "answer": 0,
+    "explanation": "True. These are standard categories used for security requirements."
   },
   {
     "id": 24,
     "text": "A misuse case describes how an unauthorized user of a system might attack it.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "True. Misuse cases model potential attacks."
+    "answer": 0,
+    "explanation": "True. Misuse cases model attacker goals and attack paths."
   },
   {
     "id": 25,
     "text": "A key to providing system security and reliability is creating an appropriate architecture.",
     "type": "TF",
     "options": ["True", "False"],
-    "answer": 1,
-    "explanation": "True. Architecture strongly influences security and reliability."
+    "answer": 0,
+    "explanation": "True. Architecture choices strongly influence both reliability and security properties."
   }
 ]
