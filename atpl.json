@@ -109,7 +109,7 @@
       "All of the above",
       "Only b and c"
     ],
-    "answer": 2,
+    "answer": 4,
     "explanation": "* means zero or more repetitions."
   },
   {
@@ -131,7 +131,7 @@
     "text": "The value 01010101 in decimal base 10 is",
     "type": "MCQ",
     "options": ["53", "64", "75", "85", "-44"],
-    "answer": 4,
+    "answer": 3,
     "explanation": "01010101 binary equals 85 decimal."
   },
   {
@@ -232,13 +232,19 @@
     "explanation": "Associative arrays use keys for indexing."
   },
   {
-    "id": 25,
-    "text": "The only major compiled language that uses keywords rather than reserved words is",
-    "type": "MCQ",
-    "options": ["COBOL", "Ada", "Java", "C++", "None of the above"],
-    "answer": 4,
-    "explanation": "FORTRAN is the correct answer, so none of the above."
-  },
+  "id": 25,
+  "text": "Given the function:\n\n```\nint x(int a, int b){\n  int d;\n  if (a + b > 10){\n    int c = a + b;\n    d = c;\n  }\n  return d;\n}\n```\n\nGiven what we know about runtime stacks, which statement is false when x executes the instruction `if (a + b > 10)`?",
+  "type": "MCQ",
+  "options": [
+    "D is on the stack when x executes instruction if(a+b)",
+    "B is on the stack when x executes instruction if(a+b)",
+    "C is on the stack when x executes instruction if(a+b)",
+    "All the statements are false",
+    "None of the statements are false (All true)"
+  ],
+  "answer": 2,
+  "explanation": "When the function begins execution, parameters a and b and local variable d are allocated on the runtime stack. Variable c is declared inside the if block and is not allocated on the stack until execution enters that block. Therefore, the statement about C being on the stack at the time of evaluating the if condition is false."
+},
   {
     "id": 26,
     "text": "The only major compiled language that uses keywords rather than reserved words is",
