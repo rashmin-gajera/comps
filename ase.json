@@ -896,5 +896,233 @@
   "options": ["True", "False"],
   "answer": 1,
   "explanation": "That description matches the Unified Process, not XP."
+}, 
+{
+  "id": 101,
+  "text": "Of the 'four P’s' of a project, process is the most important element of a successful project.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "All four P’s (People, Product, Process, Project) are important; people are often considered the most critical."
+},
+{
+  "id": 102,
+  "text": "Boundary classes are used to create a user interface to software.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Boundary classes model interactions between the system and external actors (often UI components)."
+},
+{
+  "id": 103,
+  "text": "Regardless of stakeholder type, all share the same set of concerns for a project.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Different stakeholders (customer, manager, developer) have different concerns and priorities."
+},
+{
+  "id": 104,
+  "text": "Formal interpersonal procedures for team coordination focus on quality assurance activities applied to software engineering work products.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Formal coordination mechanisms such as reviews and audits are tied to QA of work products."
+},
+{
+  "id": 105,
+  "text": "DFDs are useful in representing which analysis model element?",
+  "type": "MCQ",
+  "options": ["Behavioral elements", "Class-based elements", "Flow-based elements", "Scenario-based elements"],
+  "answer": 2,
+  "explanation": "Data Flow Diagrams represent flow-based elements of the analysis model."
+},
+{
+  "id": 106,
+  "text": "Which is not a process model umbrella activity?",
+  "type": "MCQ",
+  "options": ["Software project management", "Software quality assurance", "Use case modeling", "Reusability management"],
+  "answer": 2,
+  "explanation": "Use case modeling is a modeling activity, not an umbrella activity."
+},
+{
+  "id": 107,
+  "text": "Which is not a process model umbrella activity?",
+  "type": "MCQ",
+  "options": ["Software project management", "Software quality assurance", "Modeling and control", "Reusability management", "All of the above"],
+  "answer": 2,
+  "explanation": "Modeling is a framework activity, not an umbrella activity."
+},
+{
+  "id": 108,
+  "text": "IEEE standard 1058.1 defines the phases of project management.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "IEEE 1058 addresses Software Project Management Plans."
+},
+{
+  "id": 109,
+  "text": "Which of the following is a typical operation performed by a class?",
+  "type": "MCQ",
+  "options": [
+    "Manipulates data",
+    "Performs computation",
+    "Inquires about object state",
+    "Monitors for controlling events",
+    "All of the above"
+  ],
+  "answer": 4,
+  "explanation": "Class operations may manipulate data, compute values, query state, or monitor events."
+},
+{
+  "id": 110,
+  "text": "In a UML class diagram aggregation is represented by a black diamond pointing to the aggregating class.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Aggregation is shown with a hollow (white) diamond; black diamond represents composition."
+},
+{
+  "id": 111,
+  "text": "The 'Blob' anti-pattern describes an OO structure where one class contains almost all functional elements and others are mere data holders.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "That is the definition of the Blob (God class) anti-pattern."
+},
+{
+  "id": 112,
+  "text": "A functional requirement is anything you can write code to achieve.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Functional requirements describe system behavior; not everything coded is necessarily a requirement."
+},
+{
+  "id": 113,
+  "text": "A data-centered architecture is:",
+  "type": "MCQ",
+  "options": [
+    "Common in business applications",
+    "An older form of program architecture",
+    "Requires careful data management to avoid corruption",
+    "All of the above"
+  ],
+  "answer": 3,
+  "explanation": "All statements apply to data-centered architectures."
+},
+{
+  "id": 114,
+  "text": "What is not visible in a class diagram?",
+  "type": "MCQ",
+  "options": [
+    "Relationship between classes",
+    "Class behavior",
+    "Class attributes",
+    "Class operations",
+    "They are all visible"
+  ],
+  "answer": 1,
+  "explanation": "Detailed behavior (algorithmic logic) is not shown in class diagrams."
+},
+{
+  "id": 115,
+  "text": "Analysis classes are determined by underlining each noun or noun phrase and entering it into a table.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Noun phrase analysis is a common technique for identifying candidate analysis classes."
+},
+{
+  "id": 116,
+  "text": "All use case actors must be human.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Actors can be other systems or devices, not only humans."
+},
+{
+  "id": 117,
+  "text": "A user story represents a feature or function of software used by an actor.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "User stories describe functionality from the user's perspective."
+},
+{
+  "id": 118,
+  "text": "Entity classes are derived from the project’s application domain.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Entity classes model domain concepts."
+},
+{
+  "id": 119,
+  "text": "In a local version control system, it is possible to share files in the repository.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Local VCS repositories are not inherently shared across users."
+},
+{
+  "id": 120,
+  "text": "In a centralized version control system:",
+  "type": "MCQ",
+  "options": [
+    "A single server contains all versioned files",
+    "Only one client at a time can check out files",
+    "Files can’t be shared",
+    "All of the above"
+  ],
+  "answer": 0,
+  "explanation": "Centralized systems use a single server repository accessible by clients."
+},
+{
+  "id": 121,
+  "text": "In Git, ______ means diverging from the main line of development and starting a new line of development.",
+  "type": "MCQ",
+  "options": ["Committing", "Branching", "Checkout", "Staging", "None of the above"],
+  "answer": 1,
+  "explanation": "Branching creates a separate line of development."
+},
+{
+  "id": 122,
+  "text": "A good quality for a metric is to be simple and computable.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Good metrics should be objective, consistent, and easy to compute."
+},
+{
+  "id": 123,
+  "text": "A(n) ______ is a quantitative measure of the degree to which a system possesses a given attribute.",
+  "type": "MCQ",
+  "options": ["Measure", "Metric", "Staging", "None of the above"],
+  "answer": 1,
+  "explanation": "A metric is a quantitative measure of a system attribute."
+},
+{
+  "id": 124,
+  "text": "In OO metrics, an indirect implication about the degree to which a class can be reused refers to:",
+  "type": "MCQ",
+  "options": ["Similarity", "Coupling", "Cohesion", "Completeness", "None of the above"],
+  "answer": 3,
+  "explanation": "Completeness"
+},
+{
+  "id": 125,
+  "text": "One of the most important factors in estimating cost and schedule is:",
+  "type": "MCQ",
+  "options": [
+    "The experience level of the estimator",
+    "Computing expected cost",
+    "Access to good historical metrics",
+    "All of the above",
+    "Only a and c"
+  ],
+  "answer": 4,
+  "explanation": "Experience and historical data are critical for accurate estimation."
 }
 ]
