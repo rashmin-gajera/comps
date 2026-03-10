@@ -1390,5 +1390,679 @@
   "options": ["Work breakdown schedule", "Work breakdown structure"],
   "answer": 1,
   "explanation": "WBS stands for Work Breakdown Structure."
+}, {
+  "id": 151,
+  "text": "The “risk table” is sorted by risk probability and risk occurrence impact.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Risk tables prioritize risks based on probability and impact (risk exposure)."
+},
+{
+  "id": 152,
+  "text": "Corrective maintenance is aimed at adding missing functionality.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Corrective maintenance fixes defects; adding functionality is perfective maintenance."
+},
+{
+  "id": 153,
+  "text": "Fixing potential Y2K problems is what type of maintenance?",
+  "type": "MCQ",
+  "options": ["Preventive", "Corrective", "Selective", "Adaptive", "Perfective"],
+  "answer": 0,
+  "explanation": "Y2K fixes were preventive maintenance to avoid future failure."
+},
+{
+  "id": 154,
+  "text": "Fixing a fault causing inaccurate results is what type of maintenance?",
+  "type": "MCQ",
+  "options": ["Preventive", "Corrective", "Selective", "Adaptive", "Perfective"],
+  "answer": 1,
+  "explanation": "Corrective maintenance fixes discovered defects."
+},
+{
+  "id": 155,
+  "text": "Adding the ability to sort on any field is what type of maintenance?",
+  "type": "MCQ",
+  "options": ["Preventive", "Corrective", "Selective", "Adaptive", "Perfective"],
+  "answer": 4,
+  "explanation": "Adding new features is perfective maintenance."
+},
+{
+  "id": 156,
+  "text": "Modifying software to use a new bar code reader is what type of maintenance?",
+  "type": "MCQ",
+  "options": ["Preventive", "Corrective", "Selective", "Adaptive", "Perfective"],
+  "answer": 3,
+  "explanation": "Adaptive maintenance adapts software to new environments or hardware."
+},
+{
+  "id": 157,
+  "text": "Developing new software costs more than maintaining old software.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Maintenance often consumes more total lifecycle cost than initial development."
+},
+{
+  "id": 158,
+  "text": "If we wrote perfect programs free of faults, we would never need maintenance.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Maintenance is also required for enhancements and environmental changes."
+},
+{
+  "id": 159,
+  "text": "The Y2K issue resulted from COBOL programs that used 2-digit year fields.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Two-digit year storage caused ambiguity in year 2000."
+},
+{
+  "id": 160,
+  "text": "Courts have consistently ruled that reverse engineering of copyrighted software is:",
+  "type": "MCQ",
+  "options": [
+    "Legal if the reverse engineering does not use any of the code",
+    "Legal no matter how much original code is used"
+  ],
+  "answer": 0,
+  "explanation": "Reverse engineering is generally legal for interoperability if no copyrighted code is copied."
+},
+{
+  "id": 161,
+  "text": "One issue with disassembly of binary code is:",
+  "type": "MCQ",
+  "options": [
+    "There’s too much symbolic information about variables",
+    "There’s no symbolic information about variables",
+    "It’s impossible to tell the difference between subprograms",
+    "All of the above",
+    "Only b and c"
+  ],
+  "answer": 4,
+  "explanation": "Disassembly loses symbolic information and structure clarity."
+},
+{
+  "id": 162,
+  "text": "Refactoring is a type of reverse engineering that relies on disassembly of binary files.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Refactoring restructures source code without changing behavior."
+},
+{
+  "id": 163,
+  "text": "Refactoring should be done on code that 'smells'.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Code smells indicate poor design needing refactoring."
+},
+{
+  "id": 164,
+  "text": "A misuse case describes how an authorized user misuses the system.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Misuse cases often describe malicious or unauthorized misuse."
+},
+{
+  "id": 165,
+  "text": "A good quality for a metric is to be programming language independent.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Metrics should ideally be language independent."
+},
+{
+  "id": 166,
+  "text": "A metric’s attributes should be programming language independent.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Language independence improves general applicability."
+},
+{
+  "id": 168,
+  "text": "The critical path for this project is:",
+  "type": "MCQ",
+  "options": [
+    "T1 -> T2 -> T3",
+    "T1 -> T2 -> T3 -> T4",
+    "T1 -> T3 -> T4",
+    "None of the above"
+  ],
+  "answer": 0,
+  "explanation": "T1 -> T2 -> T3"
+},
+{
+  "id": 169,
+  "text": "If we remove the dependency for T3 on T2 and let T3 start earlier, the project will take 12 days assuming two people per task.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "True, removing the dependency allows T3 to start at day 0, so T1 (2 days) + max(T2 (4 days), T3 (6 days)) + T4 (2 days) = 12 days."
+},
+{
+  "id": 170,
+  "text": "UML use case diagrams are useful in representing which analysis model elements?",
+  "type": "MCQ",
+  "options": [
+    "Algorithmic elements",
+    "Class-based elements",
+    "Flow-based elements",
+    "Scenario-based elements"
+  ],
+  "answer": 3,
+  "explanation": "Use case diagrams represent scenarios and interactions."
+},
+{
+  "id": 171,
+  "text": "Cohesion is a qualitative indication of the degree to which a module:",
+  "type": "MCQ",
+  "options": [
+    "Can be written more compactly",
+    "Focuses on just one thing",
+    "Completes its function in a timely manner",
+    "Is connected to other modules",
+    "Both a and d"
+  ],
+  "answer": 1,
+  "explanation": "High cohesion means a module focuses on a single responsibility."
+},
+{
+  "id": 172,
+  "text": "Coupling is a qualitative indication of the degree to which a module:",
+  "type": "MCQ",
+  "options": [
+    "Can be written more compactly",
+    "Focuses on one thing",
+    "Completes function timely",
+    "Is connected to other modules and the outside world",
+    "All of the above",
+    "Mon acroglisseur est plein des anguilles!"
+  ],
+  "answer": 3,
+  "explanation": "Coupling measures interdependence between modules."
+},
+{
+  "id": 173,
+  "text": "Horizontal partitioning defines separate branches of module hierarchy for each major function.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Horizontal partitioning separates major functions into branches."
+},
+{
+  "id": 174,
+  "text": "The most common layered architecture is called:",
+  "type": "MCQ",
+  "options": [
+    "Boundary-controller-entity architecture",
+    "Client-server architecture",
+    "3-tier architecture",
+    "Star network architecture"
+  ],
+  "answer": 2,
+  "explanation": "Three-tier architecture is a common layered style."
+},
+{
+  "id": 175,
+  "text": "An architectural style encompasses:",
+  "type": "MCQ",
+  "options": [
+    "Constraints",
+    "Set of components",
+    "Semantic models",
+    "All of the above"
+  ],
+  "answer": 3,
+  "explanation": "Architectural styles define components, constraints, and semantics."
+},
+{
+  "id": 176,
+  "text": "Data that outlasts the current execution of a program is called:",
+  "type": "MCQ",
+  "options": ["Permanent data", "Persistent data", "Processed data", "Procedural data"],
+  "answer": 1,
+  "explanation": "Persistent data survives beyond a single program execution."
+},
+{
+  "id": 177,
+  "text": "Before an architectural pattern can be chosen for a system it must have a code implementation to facilitate reuse.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Architectural patterns describe structure; they do not require an existing code implementation."
+},
+{
+  "id": 178,
+  "text": "A threat that allows an attacker to insert false information into a system is:",
+  "type": "MCQ",
+  "options": ["Interception", "Interruption", "Modification", "Fabrication"],
+  "answer": 3,
+  "explanation": "Fabrication involves inserting counterfeit data or transactions."
+},
+{
+  "id": 179,
+  "text": "Which of these is not an element of a requirements model?",
+  "type": "MCQ",
+  "options": ["Behavioral elements", "Class-based elements", "Data elements", "Scenario-based elements"],
+  "answer": 2,
+  "explanation": "Requirements models typically include scenario, class-based, and behavioral elements."
+},
+{
+  "id": 180,
+  "text": "Among the typical means used to gather requirements are:",
+  "type": "MCQ",
+  "options": ["Interviewing users", "Analyzing forms", "Questionnaires", "Creating prototypes", "All of the above"],
+  "answer": 4,
+  "explanation": "All listed methods are common requirements elicitation techniques."
+},
+{
+  "id": 181,
+  "text": "Which of the following is not part of a CRC card?",
+  "type": "MCQ",
+  "options": ["Class data flow", "Class name", "Class responsibility", "Class collaboration"],
+  "answer": 0,
+  "explanation": "CRC stands for Class, Responsibility, Collaboration."
+},
+{
+  "id": 182,
+  "text": "The concept of data abstraction is similar to the creation of:",
+  "type": "MCQ",
+  "options": ["Use cases", "Class diagrams", "Data objects", "None of the above"],
+  "answer": 2,
+  "explanation": "Data abstraction models data as objects with defined properties."
+},
+{
+  "id": 183,
+  "text": "A(n) ______ is the overall structure of a software system.",
+  "type": "MCQ",
+  "options": ["Class diagram", "Architecture", "Process", "Relation"],
+  "answer": 1,
+  "explanation": "Architecture defines the system’s overall structure."
+},
+{
+  "id": 184,
+  "text": "Which is not an architectural style?",
+  "type": "MCQ",
+  "options": ["Batch sequential", "Layered", "Data centered", "Throw & Catch"],
+  "answer": 3,
+  "explanation": "Throw & Catch is not a recognized architectural style; it is a programming construct."
+},
+{
+  "id": 185,
+  "text": "Structured analysis views data and processes as separate.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Structured analysis separates data and process modeling."
+},
+{
+  "id": 186,
+  "text": "The 5 generic software engineering framework activities are communication, planning, sequencing, construction and integration.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "The correct activities are communication, planning, modeling, construction, and deployment."
+},
+{
+  "id": 187,
+  "text": "The V process model is essentially the waterfall model with testing tied to each major process.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "The V-model associates development stages with corresponding testing stages."
+},
+{
+  "id": 188,
+  "text": "Iterative model of software development is:",
+  "type": "MCQ",
+  "options": [
+    "Reasonable when requirements are well defined",
+    "Useful when requirements are unclear",
+    "Best for large teams",
+    "Rarely produces meaningful product"
+  ],
+  "answer": 1,
+  "explanation": "Iterative models are effective when requirements evolve."
+},
+{
+  "id": 189,
+  "text": "In traditional requirements gathering, interviewing stakeholders is the primary technique used.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Stakeholder interviews are a primary elicitation technique."
+},
+{
+  "id": 190,
+  "text": "Which are recognized process flow types?",
+  "type": "MCQ",
+  "options": [
+    "Evolutionary flow",
+    "Iterative process flow",
+    "Linear process flow",
+    "Parallel process flow",
+    "All",
+    "Only a and b"
+  ],
+  "answer": 4,
+  "explanation": "All listed are recognized process flow types."
+},
+{
+  "id": 191,
+  "text": "Typically a use case may have multiple success and failure scenarios.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Use cases often include alternate success and failure paths."
+},
+{
+  "id": 192,
+  "text": "Waterfall model flaws included:",
+  "type": "MCQ",
+  "options": [
+    "Design gap between analysis and design",
+    "No working functionality until completion",
+    "Little consideration for changing requirements",
+    "All"
+  ],
+  "answer": 3,
+  "explanation": "All listed are known waterfall limitations."
+},
+{
+  "id": 193,
+  "text": "The Unified Process is an agile process aligned with UML.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Unified Process is iterative but not classified as agile."
+},
+{
+  "id": 194,
+  "text": "Use case and use case diagram are the same concept.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "A use case is a narrative; a use case diagram is a visual representation."
+},
+{
+  "id": 195,
+  "text": "A Scrum sprint involves:",
+  "type": "MCQ",
+  "options": [
+    "Company exercise program",
+    "Short standing meeting",
+    "Unit of work from backlog",
+    "None of the above"
+  ],
+  "answer": 2,
+  "explanation": "A sprint is a time-boxed iteration delivering backlog items."
+},
+{
+  "id": 196,
+  "text": "A benefit of using CRC cards is:",
+  "type": "MCQ",
+  "options": [
+    "Cards can represent priorities",
+    "They can be passed around",
+    "They can be discarded",
+    "All of the above"
+  ],
+  "answer": 3,
+  "explanation": "CRC cards are flexible, collaborative modeling tools."
+},
+{
+  "id": 197,
+  "text": "Which are part of agility?",
+  "type": "MCQ",
+  "options": [
+    "Rapid response to change",
+    "Effective communication",
+    "Customer involvement",
+    "Self-organizing teams",
+    "All of the above"
+  ],
+  "answer": 4,
+  "explanation": "All listed elements are core agile values."
+},
+{
+  "id": 198,
+  "text": "Cost of change in agile development is typically less than in traditional models.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Agile reduces cost of change through iterative delivery."
+},
+{
+  "id": 199,
+  "text": "Constant user involvement is viewed as a liability in agile methods.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Agile considers customer involvement essential."
+},
+{
+  "id": 200,
+  "text": "During project inception the intent is to determine:",
+  "type": "MCQ",
+  "options": [
+    "Basic problem understanding",
+    "Data structures required",
+    "Algorithms needed",
+    "None of the above"
+  ],
+  "answer": 0,
+  "explanation": "Inception focuses on understanding scope and vision."
+},
+{
+  "id": 201,
+  "text": "Refactoring is an example of ______ maintenance.",
+  "type": "MCQ",
+  "options": ["Corrective", "Adaptive", "Preventive", "Perfective"],
+  "answer": 2,
+  "explanation": "Refactoring improves internal quality to prevent future problems."
+},
+{
+  "id": 202,
+  "text": "The Y2K disaster was caused by using two-digit year fields in COBOL.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Two-digit year representation caused ambiguity."
+},
+{
+  "id": 203,
+  "text": "Which is not a problem associated with maintenance?",
+  "type": "MCQ",
+  "options": [
+    "Plenty of accurate documentation",
+    "Older unfamiliar language",
+    "Original designers unavailable",
+    "Missing source code"
+  ],
+  "answer": 0,
+  "explanation": "Having accurate documentation is beneficial, not a problem."
+},
+{
+  "id": 204,
+  "text": "Software maintenance is the ______ phase of a lifecycle.",
+  "type": "MCQ",
+  "options": ["Shortest", "Cheapest", "Most expensive", "Smelliest"],
+  "answer": 2,
+  "explanation": "Maintenance consumes the largest portion of lifecycle cost."
+},
+{
+  "id": 205,
+  "text": "Which maintenance type is largest percentage of effort?",
+  "type": "MCQ",
+  "options": ["Corrective", "Adaptive", "Preventive", "Perfective"],
+  "answer": 3,
+  "explanation": "Perfective maintenance (enhancements) is typically the largest."
+},
+{
+  "id": 206,
+  "text": "In peer-to-peer networks, there is no central server controlling communication.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "P2P networks are decentralized."
+},
+{
+  "id": 207,
+  "text": "The term 'bug' was coined because a moth crashed an early computer.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "The term existed earlier; the moth incident popularized it."
+},
+{
+  "id": 208,
+  "text": "In practice, most software architectures are:",
+  "type": "MCQ",
+  "options": [
+    "Communicating processes",
+    "Call and return",
+    "Heterogeneous (mixed)",
+    "Data centered",
+    "None of the above"
+  ],
+  "answer": 2,
+  "explanation": "Most real-world systems use mixed architectural styles."
+},
+{
+  "id": 209,
+  "text": "Control transformation as an obfuscation technique:",
+  "type": "MCQ",
+  "options": [
+    "Should not alter program semantics (behaviour)",
+    "Usually involves an opaque predicate",
+    "May introduce new execution paths",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 3,
+  "explanation": "Control transformation preserves semantics, often uses opaque predicates, and may introduce additional execution paths."
+},
+{
+  "id": 210,
+  "text": "Static program comprehension:",
+  "type": "MCQ",
+  "options": [
+    "Is based on analyzing source code structure",
+    "Is based on observed program behaviour",
+    "Looks at execution traces and call graphs",
+    "All of the above",
+    "Only c and b"
+  ],
+  "answer": 0,
+  "explanation": "Static comprehension analyzes source code without executing it."
+},
+{
+  "id": 211,
+  "text": "Which type of maintenance deals with problems arising from new hardware and software interfaces?",
+  "type": "MCQ",
+  "options": ["Corrective", "Adaptive", "Preventive", "Perfective"],
+  "answer": 1,
+  "explanation": "Adaptive maintenance modifies software to operate in new environments."
+},
+{
+  "id": 212,
+  "text": "Which one is not a product metric?",
+  "type": "MCQ",
+  "options": ["Hanson Index", "Hanson Index", "McCabe cyclomatic complexity", "Function Points"],
+  "answer": 0,
+  "explanation": "McCabe cyclomatic complexity and Function Points are classic product metrics; the duplicated 'Hanson Index' entry is not typically treated as a standard product metric in this context."
+},
+{
+  "id": 213,
+  "text": "Scheduling resources for a software project would not be possible without:",
+  "type": "MCQ",
+  "options": [
+    "Understanding the language requirements for coding",
+    "Every task having a defined outcome",
+    "A project being compartmentalized into management tasks",
+    "All of the above"
+  ],
+  "answer": 3,
+  "explanation": "Resource scheduling depends on task definition and decomposition; language/technology constraints can also affect staffing."
+},
+{
+  "id": 214,
+  "text": "Assume productivity is 800 LOC/person-month and size is 30,000 LOC. How many person-months will this project take?",
+  "type": "MCQ",
+  "options": ["44", "37.5", "3.75", "None of the above"],
+  "answer": 1,
+  "explanation": "Person-months = 30,000 / 800 = 37.5."
+},
+{
+  "id": 215,
+  "text": "What is the estimated cost of the project?",
+  "type": "MCQ",
+  "options": ["$242,000", "$149,600", "$277,200", "$392,700", "None"],
+  "answer": 4,
+  "explanation": "Using the given labor rate $12,152/month and 37.5 person-months: cost = 37.5 × 12,152 = $455,700, which is not listed."
+},
+{
+  "id": 216,
+  "text": "A generic software development process model needs:",
+  "type": "MCQ",
+  "options": [
+    "Framework, umbrella activities, framework activities and task sets",
+    "Iteration to make sure all requirements are captured",
+    "Good debugging to remove all errors during development"
+  ],
+  "answer": 0,
+  "explanation": "A generic process framework is defined by framework activities, umbrella activities, and task sets."
+},
+{
+  "id": 217,
+  "text": "A data object consists of:",
+  "type": "MCQ",
+  "options": [
+    "Data attributes of the entity",
+    "Name of the entity",
+    "Operations of the entity",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 4,
+  "explanation": "A data object includes the entity name and its data attributes; operations are typically part of classes, not data objects."
+},
+{
+  "id": 218,
+  "text": "Which is not one of the 4P’s of a software project?",
+  "type": "MCQ",
+  "options": ["Project", "Planning", "Process", "Product", "People"],
+  "answer": 1,
+  "explanation": "The 4P’s are People, Product, Process, and Project (not Planning)."
+},
+{
+  "id": 219,
+  "text": "In a software project the role of the customer is to specify the requirements for the software to be engineered.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Customers/stakeholders define requirements and needs for the system."
+},
+{
+  "id": 220,
+  "text": "Which is not true in XP?",
+  "type": "MCQ",
+  "options": [
+    "The customer writes the user stories",
+    "XP teams have only two members",
+    "XP is a linear process model",
+    "XP is an Agile Process Model"
+  ],
+  "answer": 2,
+  "explanation": "XP is iterative/incremental and agile, not a linear process model."
 }
 ]
