@@ -1124,5 +1124,271 @@
   ],
   "answer": 4,
   "explanation": "Experience and historical data are critical for accurate estimation."
+}, 
+{
+  "id": 126,
+  "text": "One way to estimate the size of a software project is to rely on expert judgment.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Expert judgment is a common size estimation technique, especially early in a project."
+},
+{
+  "id": 127,
+  "text": "Process measurement is done indirectly by measuring the outcomes of the process itself.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Process quality is often inferred indirectly through product and outcome measures."
+},
+{
+  "id": 128,
+  "text": "One of the goals of tracking process metrics is:",
+  "type": "MCQ",
+  "options": [
+    "To determine organizational productivity",
+    "To identify problem employees and retrain them",
+    "Both a and b"
+  ],
+  "answer": 0,
+  "explanation": "Process metrics are intended to improve organizational productivity, not to single out individuals."
+},
+{
+  "id": 129,
+  "text": "A typical project metric counts effort per software engineering task.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Effort per task is a common project metric."
+},
+{
+  "id": 130,
+  "text": "Project metrics should:",
+  "type": "MCQ",
+  "options": [
+    "Measure the resources consumed in the project",
+    "Count the deliverables created in the project",
+    "Determine the effectiveness of deliverables",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 3,
+  "explanation": "Effective project metrics include resource use, outputs, and effectiveness."
+},
+{
+  "id": 131,
+  "text": "A useful project metric for an OO system is:",
+  "type": "MCQ",
+  "options": [
+    "Number of scenario scripts (use cases)",
+    "Number of support classes per analysis class",
+    "FP per person-month",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 4,
+  "explanation": "Only a and b are specific to OO systems; FP per person-month is a general productivity metric."
+},
+{
+  "id": 132,
+  "text": "A danger of underestimating a project is that the team will likely have difficulty meeting shortened deadlines.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Underestimation often leads to unrealistic schedules and deadline pressure."
+},
+{
+  "id": 133,
+  "text": "Process-based estimation approximates time for activities based on historical productivity and sums them to compute total effort.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Process-based estimation relies on historical data tied to process activities."
+},
+{
+  "id": 134,
+  "text": "Bottom-up estimating based on a WBS:",
+  "type": "MCQ",
+  "options": [
+    "Is a flawed technique requiring expert judgment",
+    "Can produce accurate results if activities are well understood",
+    "Is a time-consuming process",
+    "None of the above",
+    "Only b and c"
+  ],
+  "answer": 4,
+  "explanation": "Bottom-up estimating can be accurate but is time-consuming."
+},
+{
+  "id": 135,
+  "text": "In most estimating techniques, estimate accuracy is affected by:",
+  "type": "MCQ",
+  "options": [
+    "Estimator’s ability to determine product size",
+    "Organization’s past metrics history",
+    "Ability to translate size into person-months and cost",
+    "All of the above",
+    "Only a and c"
+  ],
+  "answer": 3,
+  "explanation": "All listed factors influence estimation accuracy."
+},
+{
+  "id": 136,
+  "text": "Defect Removal Efficiency (DRE) is:",
+  "type": "MCQ",
+  "options": [
+    "DRE = E/(E+D), where E = errors found after delivery and D = defects found before delivery",
+    "DRE = E/(E+D), where E = errors found before delivery and D = defects found after delivery"
+  ],
+  "answer": 1,
+  "explanation": "DRE measures defects found before delivery divided by total defects."
+},
+{
+  "id": 137,
+  "text": "One view of requirements that considers data and processes as connected entities is called:",
+  "type": "MCQ",
+  "options": ["Object-oriented analysis", "Structured analysis", "Top-down analysis", "ERD"],
+  "answer": 0,
+  "explanation": "OOA integrates data and behavior (processes) within objects."
+},
+{
+  "id": 138,
+  "text": "An ______ is a metric or combination of metrics that provides insight into a process, project, or product.",
+  "type": "MCQ",
+  "options": ["Measure", "Indicator", "Metric", "None of the above"],
+  "answer": 1,
+  "explanation": "An indicator interprets one or more metrics to provide insight."
+},
+{
+  "id": 139,
+  "text": "Which is not a process model umbrella activity?",
+  "type": "MCQ",
+  "options": [
+    "Software project management",
+    "Software quality assurance",
+    "Monitoring and control",
+    "Reusability management",
+    "All of the above are umbrella activities"
+  ],
+  "answer": 4,
+  "explanation": "All of the above are umbrella activities in process models."
+},
+{
+  "id": 140,
+  "text": "The optimal development time (in terms of cost) for a project is not the earliest possible time.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Compressing schedules increases cost due to added resources and inefficiencies."
+},
+{
+  "id": 141,
+  "text": "In EVA, BCWS represents:",
+  "type": "MCQ",
+  "options": [
+    "The total amount of work in the entire project",
+    "The total amount of work accomplished at a point in time",
+    "The total amount of work planned for a single task at a point in time",
+    "None of the above"
+  ],
+  "answer": 2,
+  "explanation": "BCWS (Planned Value) represents the planned work scheduled at a specific time."
+},
+{
+  "id": 142,
+  "text": "Project scheduling takes place ______ project estimates.",
+  "type": "MCQ",
+  "options": ["Before", "After", "During"],
+  "answer": 1,
+  "explanation": "Scheduling is based on completed project estimates."
+},
+{
+  "id": 143,
+  "text": "Analysis classes differ from data objects primarily in:",
+  "type": "MCQ",
+  "options": [
+    "Classes can have operations and data objects cannot",
+    "Data objects can have operations and classes cannot",
+    "No way"
+  ],
+  "answer": 0,
+  "explanation": "Analysis classes encapsulate both data and operations."
+},
+{
+  "id": 144,
+  "text": "PERT is a technique for determining:",
+  "type": "MCQ",
+  "options": [
+    "The critical path for a project",
+    "Costs associated with a risk",
+    "Cost associated with a software engineering task"
+  ],
+  "answer": 0,
+  "explanation": "PERT is used to analyze task sequencing and identify the critical path."
+},
+{
+  "id": 145,
+  "text": "Earned value analysis:",
+  "type": "MCQ",
+  "options": [
+    "Computes project progress",
+    "Uses known data from previous projects",
+    "Is only a single value",
+    "Both a and b",
+    "Both a and c"
+  ],
+  "answer": 0,
+  "explanation": "EVA measures project progress using planned vs actual values."
+},
+{
+  "id": 146,
+  "text": "A critical path is a list of tasks that can be started simultaneously.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Critical path is the longest dependent chain of tasks determining project duration."
+},
+{
+  "id": 147,
+  "text": "An important factor in estimation for OO projects is:",
+  "type": "MCQ",
+  "options": [
+    "Determine the number of key classes",
+    "Estimate the number of users",
+    "Categorize the type of users",
+    "All of the above"
+  ],
+  "answer": 0,
+  "explanation": "Key classes are a critical factor in estimating OO projects, as they often drive complexity and effort."
+},
+{
+  "id": 148,
+  "text": "The 'make or buy decision' is supported by determining cost.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Cost comparison is central to make-or-buy decisions."
+},
+{
+  "id": 149,
+  "text": "Which is not a risk due to business impact?",
+  "type": "MCQ",
+  "options": [
+    "Effect on company revenue",
+    "Costs associated with late delivery",
+    "Are CASE tools used for analysis, design and testing",
+    "They are all risks due to business impact"
+  ],
+  "answer": 2,
+  "explanation": "Use of CASE tools is a technical risk, not directly a business impact risk."
+},
+{
+  "id": 150,
+  "text": "WBS means:",
+  "type": "MCQ",
+  "options": ["Work breakdown schedule", "Work breakdown structure"],
+  "answer": 1,
+  "explanation": "WBS stands for Work Breakdown Structure."
 }
 ]
