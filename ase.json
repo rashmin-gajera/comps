@@ -236,5 +236,665 @@
     "options": ["True", "False"],
     "answer": 0,
     "explanation": "True. Architecture choices strongly influence both reliability and security properties."
-  }
+  }, {
+  "id": 27,
+  "text": "Software design should",
+  "type": "MCQ",
+  "options": [
+    "Base decision on explicit security policy",
+    "Avoid a single point of failure",
+    "Specify the format of all system inputs",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 3,
+  "explanation": "Secure software design should be based on explicit security policies, avoid single points of failure, and clearly specify system inputs. Therefore, all listed options are correct."
+},
+{
+  "id": 28,
+  "text": "An issue with security testing is that security requirements are usually written as negatives and it is very difficult to prove something won’t happen.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Security requirements are often written as negatives (e.g., unauthorized access must not occur), and it is inherently difficult to prove that something will never happen."
+},
+{
+  "id": 29,
+  "text": "Dependable programming guidelines for security issues are essentially the same as those for reliability.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Many dependable programming practices such as input validation, error handling, and defensive programming apply to both security and reliability."
+},
+{
+  "id": 30,
+  "text": "The website of security issues shown in class was",
+  "type": "MCQ",
+  "options": [
+    "Internet vulnerability database",
+    "Common Vulnerability Enumeration",
+    "Common Weakness Enumeration",
+    "Microsoft.com"
+  ],
+  "answer": 2,
+  "explanation": "Common Weakness Enumeration"
+},
+{
+  "id": 31,
+  "text": "The unified process model of software development is",
+  "type": "MCQ",
+  "options": [
+    "A reasonable approach when requirements are well defined",
+    "A useful approach when a customer cannot define requirements clearly",
+    "The best approach to use for projects with large development teams",
+    "A risky model that rarely produces a meaningful product"
+  ],
+  "answer": 2,
+  "explanation": "The best approach to use for projects with large development teams"
+},
+{
+  "id": 32,
+  "text": "A characteristic of a project is that a project",
+  "type": "MCQ",
+  "options": [
+    "Is unique",
+    "Has project criteria",
+    "Has customer specified objectives",
+    "Consumes resources",
+    "All of the above"
+  ],
+  "answer": 4,
+  "explanation": "Projects are unique, have defined objectives and criteria, and consume resources. Therefore, all options are correct."
+},
+{
+  "id": 33,
+  "text": "Software teams are formed based on which of the following factors?",
+  "type": "MCQ",
+  "options": [
+    "The estimated size of the completed project",
+    "The language to be used in coding",
+    "The difficulty of the problem to be solved",
+    "All of the above",
+    "Only a and c"
+  ],
+  "answer": 3,
+  "explanation": "Team formation depends on project size, technical requirements (including language), and problem complexity."
+},
+{
+  "id": 34,
+  "text": "A product scope statement defines",
+  "type": "MCQ",
+  "options": [
+    "Context of the product as determined by how it fits in existing systems",
+    "The information objectives as determined by customer-visible data or product architecture details",
+    "The function and performance of the product",
+    "All of the above",
+    "Only a and c"
+  ],
+  "answer": 3,
+  "explanation": "A product scope statement defines the product context, objectives, functionality, and performance. Hence, all options are included."
+},
+{
+  "id": 35,
+  "text": "Which is the correct flow of activities (left to right)?",
+  "type": "MCQ",
+  "options": [
+    "Application domain -> design model -> analysis model -> solution domain",
+    "Solution domain -> design model -> analysis model -> Application domain",
+    "Application domain -> analysis model -> design model -> Solution domain",
+    "None of the above"
+  ],
+  "answer": 2,
+  "explanation": "The correct progression moves from understanding the application domain, to analysis modeling, to design modeling, and finally to the solution domain."
+},
+{
+  "id": 36,
+  "text": "V process model is essentially the waterfall process model with testing tied to each major activity.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "The V-model extends the waterfall model by associating each development phase with a corresponding testing phase."
+},
+{
+  "id": 37,
+  "text": "Among the factors that help projects succeed is",
+  "type": "MCQ",
+  "options": [
+    "User involvement",
+    "An experienced project manager",
+    "Firm basic requirements",
+    "All of the above",
+    "None of the above"
+  ],
+  "answer": 3,
+  "explanation": "User involvement, experienced management, and clear requirements all contribute to project success."
+},
+{
+  "id": 38,
+  "text": "Which diagram is not part of UML?",
+  "type": "MCQ",
+  "options": [
+    "Use case",
+    "Sequence",
+    "DFD",
+    "Class",
+    "All of the above are UML diagrams"
+  ],
+  "answer": 2,
+  "explanation": "Data Flow Diagrams (DFD) are not part of UML; they belong to structured analysis methods."
+},
+{
+  "id": 39,
+  "text": "Call and return architecture is based upon functions calling each other.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Call-and-return architecture is structured around hierarchical function calls."
+},
+{
+  "id": 40,
+  "text": "A sequence diagram",
+  "type": "MCQ",
+  "options": [
+    "Depicts relationship between data objects",
+    "Depicts functions that transform data flow",
+    "Indicates how data are transformed by the system",
+    "Indicates user-system interaction in a temporal relationship"
+  ],
+  "answer": 3,
+  "explanation": "A sequence diagram shows interactions between objects or actors over time, emphasizing temporal order."
+}, 
+{
+"id": 41,
+"text": "“Structured analysis” views data and the processes that transform it as separate.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "Structured analysis typically separates process modeling (e.g., DFDs) from data modeling (e.g., ER models)."
+},
+{
+"id": 42,
+"text": "The phases of the project management lifecycle that correspond to UP’s construction and transition phases are:",
+"type": "MCQ",
+"options": ["Initiating and planning", "Planning and execution", "Execution and closing", "Execution only", "None of the above"],
+"answer": 2,
+"explanation": "UP Construction aligns with Execution, and Transition aligns with Closing (deployment/rollout/hand-off)."
+},
+{
+"id": 43,
+"text": "In a UML sequence diagram, the arrows labeled by operations point to the class (object) that owns the operation.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "Messages (operation calls) in a sequence diagram point to the receiver object; that receiver’s class owns/implements the operation."
+},
+{
+"id": 44,
+"text": "A software project’s software configuration consists of:",
+"type": "MCQ",
+"options": ["Programs", "Documents", "Data", "All of the above"],
+"answer": 3,
+"explanation": "Software configuration items include code, documentation, and data that must be versioned/controlled."
+},
+{
+"id": 45,
+"text": "A “baseline” is a specification or product that has been formally reviewed and agreed upon, and thereafter serves as the basis for further development.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "That is the standard SCM definition of a baseline."
+},
+{
+"id": 46,
+"text": "A software configuration management repository is the set of mechanisms and data structures that allow a software team to manage change effectively.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "An SCM repository provides storage and controls for versions, changes, and traceability."
+},
+{
+"id": 47,
+"text": "Among a software configuration management repository’s features are:",
+"type": "MCQ",
+"options": ["Versioning or version control", "Dependency tracking", "Requirement tracking", "Configuration management", "All of the above"],
+"answer": 4,
+"explanation": "Modern SCM repositories commonly support all of these capabilities."
+},
+{
+"id": 48,
+"text": "Change control refers to the process of modifying elements before they are baselined.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 1,
+"explanation": "Change control is primarily about controlling changes to baselined items via formal change requests/approval."
+},
+{
+"id": 49,
+"text": "Among the reasons to collect data on software products and processes is to:",
+"type": "MCQ",
+"options": ["Gain understanding of processes and products", "Establish baselines for comparisons in the future", "Determine project status with respect to plans", "Improve processes and products by identifying root causes and inefficiencies", "All of the above"],
+"answer": 4,
+"explanation": "All listed items are standard purposes of software measurement/metrics programs."
+},
+{
+"id": 50,
+"text": "Which is not used to calculate Function Points (FPs)?",
+"type": "MCQ",
+"options": ["Number of external inputs", "Number of external outputs", "Number of internal logic files", "Number of potential use cases", "They are all used to calculate FPs"],
+"answer": 3,
+"explanation": "Traditional FP counting uses inputs/outputs/files (and related categories), not the number of potential use cases directly."
+},
+{
+"id": 51,
+"text": "Function points are derived using an empirical relationship based on countable measures of software’s information domain and assessments of software complexity.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "FPs are based on counted functional components plus adjustments reflecting general system characteristics."
+},
+{
+"id": 52,
+"text": "Function point values are conditioned by weighting factor multipliers for “simple”, “average”, and “complex” difficulty.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "FP counting weights the counted elements by complexity levels such as simple/average/complex."
+},
+{
+"id": 53,
+"text": "Among the value adjustment factors for Function Points is:",
+"type": "MCQ",
+"options": ["Does the system require backup and recovery features?", "Are there multiple users at any point in time?", "Are external databases used?", "None of the above"],
+"answer": 0,
+"explanation": "Backup and recovery is a standard general system characteristic used as a value adjustment factor."
+},
+{
+"id": 54,
+"text": "In OO metrics, the degree to which all operations work together to achieve a single, well-defined purpose is called:",
+"type": "MCQ",
+"options": ["Similarity", "Coupling", "Cohesion", "Completeness", "None of the above"],
+"answer": 2,
+"explanation": "Cohesion measures how strongly related and focused the responsibilities of a class/module are."
+},
+{
+"id": 55,
+"text": "Physical source lines are the length of code as it appears on paper or screen.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "Physical SLOC counts the actual lines as written (including formatting/blank/comment policies depending on definition)."
+},
+{
+"id": 56,
+"text": "Logical source lines are the length of code as it appears on paper or screen.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 1,
+"explanation": "Logical SLOC counts executable statements/logic (independent of formatting on the screen/paper)."
+},
+{
+"id": 57,
+"text": "The goal of software project planning is to:",
+"type": "MCQ",
+"options": ["Gather requirements, design software modules and implement code", "Systematically test software components", "Control, track and monitor a complex technical project"],
+"answer": 2,
+"explanation": "Project planning focuses on organizing and managing the work—tracking, controlling, and monitoring the project."
+},
+{
+"id": 58,
+"text": "The software scope describes, in part, the functions and features that are to be delivered to end users.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "Scope includes major functions/features, boundaries, and what will be delivered."
+},
+{
+"id": 59,
+"text": "Among the ways to define software scope is:",
+"type": "MCQ",
+"options": ["Create a software architecture before coding commences", "Estimate the number of person-months to complete the project", "Develop a set of use cases created by end users", "Determine project status with respect to plans", "All of the above", "None of the above"],
+"answer": 2,
+"explanation": "Use cases are a common method for defining scope from the user’s perspective."
+},
+{
+"id": 60,
+"text": "Assume productivity is 800 LOC/person-month and size is 30,000 LOC. How many person-months will this project take?",
+"type": "MCQ",
+"options": ["44", "37.5", "3.75", "None of the above"],
+"answer": 1,
+"explanation": "Person-months = 30,000 / 800 = 37.5."
+},
+{
+"id": 61,
+"text": "Using the above (37.5 person-months) and labor rate $12,152/month, what is the estimated cost?",
+"type": "MCQ",
+"options": ["$440,000", "$412,500", "$1,150,000", "None of the above", "Cannot be determined from the information given"],
+"answer": 3,
+"explanation": "Cost = 37.5 * 12,152 = $455,700, which is not listed, so 'None of the above'."
+},
+{
+"id": 62,
+"text": "The cost per LOC on this project is $15.19.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "Cost/LOC = 455,700 / 30,000 = $15.19 exactly, so it is True; therefore the statement is True (note: this makes the correct answer True)."
+},
+{
+"id": 63,
+"text": "Given count-total = 320 and ΣFi = 30, FP = count-total * (0.65 + 0.01 * ΣFi). What is FP?",
+"type": "MCQ",
+"options": ["220", "252", "304", "357", "None of the above"],
+"answer": 2,
+"explanation": "FP = 320 * (0.65 + 0.30) = 320 * 0.95 = 304."
+},
+{
+"id": 64,
+"text": "If average productivity is 6.0 FP/person-month, how many person-months will the project last (rounded up)?",
+"type": "MCQ",
+"options": ["49", "32", "20", "51", "None of the above"],
+"answer": 3,
+"explanation": "Person-months = 304 / 6 = 50.67, rounded up = 51, so the correct option is 51 (option d)."
+},
+{
+"id": 65,
+"text": "Total cost = avg productivity * labor rate per FP * person-months. What is total cost?",
+"type": "MCQ",
+"options": ["$242,000", "$149,600", "$277,200", "$392,700", "None of the above"],
+"answer": 4,
+"explanation": "Using the provided formula: 6.0 * 1200 * 51 = $367,200, which is not listed, so 'None of the above'."
+},
+{
+"id": 66,
+"text": "Using function decomposition techniques (like counting processes in a DFD) for estimation purposes leads to highly accurate and detailed estimates.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 1,
+"explanation": "Decomposition can improve detail, but estimates are still uncertain; 'highly accurate' is generally not true."
+},
+{
+"id": 67,
+"text": "A critical path is a chain of tasks that determines the duration of a project.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "The critical path is the longest-duration path through the task network and sets the project duration."
+},
+{
+"id": 68,
+"text": "What COCOMO II model is used during the earliest stages of software engineering?",
+"type": "MCQ",
+"options": ["Application composition model", "Early design stage model", "Return model", "Post architecture model", "None of the above"],
+"answer": 0,
+"explanation": "COCOMO II uses the Application Composition model for earliest/rough estimation (e.g., object points)."
+},
+{
+"id": 69,
+"text": "Project risk components are categorized by:",
+"type": "MCQ",
+"options": ["Performance, cost, support and schedule", "Mitigation, monitoring and management"],
+"answer": 0,
+"explanation": "Risk components are commonly categorized by performance, cost, support, and schedule."
+},
+{
+"id": 70,
+"text": "Risk exposure is computed as:",
+"type": "MCQ",
+"options": ["The probability that a risk will occur", "The cost to the project if the risk should occur", "The product of a and b"],
+"answer": 2,
+"explanation": "Risk exposure = Probability × Loss (impact/cost)."
+},
+{
+"id": 71,
+"text": "Among reasons projects are delivered late is:",
+"type": "MCQ",
+"options": ["An unrealistic deadline established by someone outside the software development group", "Changing customer requirements that are not reflected in schedule changes", "An honest underestimate of the effort and/or resources required", "All of the above"],
+"answer": 3,
+"explanation": "All listed factors commonly contribute to late delivery."
+},
+{
+"id": 72,
+"text": "The most reasonable order for the project scheduling process is: estimate activity resources, allocate people, identify activities, find activity dependencies.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 1,
+"explanation": "Reasonable order is identify activities → determine dependencies → estimate resources/duration → allocate people."
+},
+{
+"id": 73,
+"text": "Project activities (tasks):",
+"type": "MCQ",
+"options": ["Are the basic planning elements", "Have a duration in days, weeks or months of calendar time", "Need an estimation of effort in person-days or person-months", "All of the above"],
+"answer": 3,
+"explanation": "Tasks are basic planning units with durations and effort/resource estimates."
+},
+{
+"id": 74,
+"text": "A WBS is a hierarchical description of all the activities scheduled for a project.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "A Work Breakdown Structure decomposes the project work into a hierarchy of deliverables/tasks."
+},
+{
+"id": 75,
+"text": "A task network is a graphical representation of task flow for a project used to set up task sequences and dependencies.",
+"type": "TF",
+"options": ["True", "False"],
+"answer": 0,
+"explanation": "Task networks (PERT/CPM) show task ordering and dependencies."
+},
+{
+"id": 76,
+"text": "Which is not a Scheduling Principle?",
+"type": "MCQ",
+"options": ["Compartmentalization", "Risk analysis", "Determining task interdependency"],
+"answer": 1,
+"explanation": "Compartmentalization and interdependency determination are scheduling principles; risk analysis is a project risk activity (often related, but not a core scheduling principle list item)."
+}, 
+{
+  "id": 77,
+  "text": "The reason adding people to a late project makes it later is because the new person drains time from other project participants to get him/her up to speed.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "This reflects Brooks’ Law: adding manpower to a late software project makes it later due to ramp-up and communication overhead."
+},
+{
+  "id": 78,
+  "text": "In EVA, budgeted cost of work performed (BCWP) is the value of:",
+  "type": "MCQ",
+  "options": [
+    "All work tasks that should have been completed by a point on the project schedule",
+    "All work tasks that have actually been completed by a point on the project schedule",
+    "The sum of the effort actually expended on work tasks completed by a point in time",
+    "None of the above"
+  ],
+  "answer": 1,
+  "explanation": "BCWP (Earned Value) represents the budgeted value of the work actually completed."
+},
+{
+  "id": 79,
+  "text": "Program Evaluation and Review Technique (PERT) and Critical Path Method (CPM) do completely different tasks in software project scheduling.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "PERT and CPM are closely related network scheduling techniques with similar purposes."
+},
+{
+  "id": 80,
+  "text": "A recommended distribution of effort across front-end, construction, and testing activities is:",
+  "type": "MCQ",
+  "options": ["40-20-40 %", "20-40-40 %", "20-60-20 %"],
+  "answer": 0,
+  "explanation": "A common guideline is roughly 40% front-end, 22% construction, and 40% testing."
+},
+{
+  "id": 81,
+  "text": "According to Boehm’s model of cost changes, the relative cost of correcting an error during field operations is how many times more costly than during requirements?",
+  "type": "MCQ",
+  "options": ["10", "200", "400", "1000", "2000"],
+  "answer": 3,
+  "explanation": "Boehm’s curve suggests field correction can cost up to 1000 times more than fixing during requirements."
+},
+{
+  "id": 82,
+  "text": "According to Lehman, S-type programs are those that model real-world processes and become part of the real world by their use.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "That describes E-type systems; S-type programs are formally specifiable mathematical solutions."
+},
+{
+  "id": 83,
+  "text": "Adding new pieces of hardware to an existing system usually necessitates what type of maintenance?",
+  "type": "MCQ",
+  "options": ["Perfective", "Corrective", "Adaptive"],
+  "answer": 2,
+  "explanation": "Adaptive maintenance modifies software to operate in a changed environment (e.g., new hardware)."
+},
+{
+  "id": 84,
+  "text": "Problem (bug) reports:",
+  "type": "MCQ",
+  "options": [
+    "Should be written",
+    "Are most helpful when they contain information on how to reproduce the bug",
+    "Should have only one bug per report",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 3,
+  "explanation": "Effective bug reports are documented, reproducible, and contain one issue per report."
+},
+{
+  "id": 85,
+  "text": "Among the legal reasons to reverse engineer someone else's software is:",
+  "type": "MCQ",
+  "options": [
+    "To achieve interoperability and develop competing software",
+    "To evaluate software quality and robustness",
+    "To learn the steps of an algorithm",
+    "All of the above",
+    "Only a and b"
+  ],
+  "answer": 4,
+  "explanation": "Interoperability and evaluation can be legal in some contexts; copying algorithm details directly may violate IP."
+},
+{
+  "id": 86,
+  "text": "The reverse engineering case that started the PC clone industry was IBM vs Phoenix.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Phoenix successfully reverse-engineered the BIOS; it was not IBM winning against Phoenix."
+},
+{
+  "id": 88,
+  "text": "The most important goal of an obfuscation technique is that it should be maximally stealthy (hidden from the reverse engineer’s knowledge).",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Effective obfuscation should make reverse engineering difficult and ideally not obvious."
+},
+{
+  "id": 89,
+  "text": "An anti-reverse engineering technique is removing symbolic information from compiled code.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Stripping symbols makes reverse engineering more difficult."
+},
+{
+  "id": 90,
+  "text": "Control transformation as an obfuscation technique should alter program semantics (behavior).",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Obfuscation must preserve semantics while altering structure."
+},
+{
+  "id": 91,
+  "text": "A watermark in a program or media file is a secret message that can be used to prove ownership.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Digital watermarking embeds ownership information."
+},
+{
+  "id": 92,
+  "text": "Static program comprehension is based on analyzing source code structure.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Static analysis examines code without executing it."
+},
+{
+  "id": 93,
+  "text": "Program comprehension is what maintenance programmers spend most of their time doing.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "A large portion of maintenance effort is spent understanding existing code."
+},
+{
+  "id": 94,
+  "text": "Which mental model relies on programmers grouping several statements to understand what the code is doing?",
+  "type": "MCQ",
+  "options": ["Text Structure", "Chunks", "Beacons"],
+  "answer": 1,
+  "explanation": "Chunks refer to grouping statements into meaningful units for understanding."
+},
+{
+  "id": 95,
+  "text": "One key factor in scaling up program comprehension is:",
+  "type": "MCQ",
+  "options": [
+    "The use of parsing technologies for automatic code analysis",
+    "Programmer practice at reading code",
+    "Application of Lehman’s second law"
+  ],
+  "answer": 0,
+  "explanation": "Automated parsing and analysis tools help scale comprehension for large systems."
+},
+{
+  "id": 96,
+  "text": "Lehman’s first law says that programs in a real-world environment must change or become less useful.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "This is the Law of Continuing Change."
+},
+{
+  "id": 97,
+  "text": "About 60% of faults are found by rigorous testing after implementation.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "Most defects are found earlier through inspections and reviews rather than only post-implementation testing."
+},
+{
+  "id": 98,
+  "text": "Grace Hopper invented the term “bug” to describe a program defect.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "The term existed earlier; she popularized it after documenting a moth in a relay."
+},
+{
+  "id": 99,
+  "text": "Which is not a recognized process model flow?",
+  "type": "MCQ",
+  "options": ["Linear", "Transformational", "Iterative", "Evolutionary"],
+  "answer": 1,
+  "explanation": "Common flows include linear, iterative, and evolutionary; transformational is not a standard flow category."
+},
+{
+  "id": 100,
+  "text": "Extreme Programming (XP) is a use-case driven, architecture-centric, iterative and incremental process closely aligned with UML.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "That description matches the Unified Process, not XP."
+}
 ]
