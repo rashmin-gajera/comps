@@ -2064,5 +2064,285 @@
   ],
   "answer": 2,
   "explanation": "XP is iterative/incremental and agile, not a linear process model."
+},
+{
+  "id": 221,
+  "text": "The probability of a failure-free system operation over a specified time in a given environment for a given purpose is called:",
+  "type": "MCQ",
+  "options": ["Availability", "Reliability", "Mean Time to Failure"],
+  "answer": 1,
+  "explanation": "Reliability is the probability of failure-free operation for a specified time under stated conditions."
+},
+{
+  "id": 222,
+  "text": "A characteristic of a software system that can lead to a system error is:",
+  "type": "MCQ",
+  "options": ["Human error or mistake", "System fault", "System failure"],
+  "answer": 1,
+  "explanation": "A system fault is a defect that can cause an erroneous system state (error)."
+},
+{
+  "id": 223,
+  "text": "Reliability specifications provide a basis for assessing when to stop testing a system.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Reliability specifications can define target reliability levels that guide stopping criteria."
+},
+{
+  "id": 224,
+  "text": "Verification and validation techniques are used to identify and remove faults in a system before deployment.",
+  "type": "MCQ",
+  "options": ["Fault avoidance", "Fault detection", "Fault tolerance"],
+  "answer": 1,
+  "explanation": "V&V primarily supports fault detection/removal before release."
+},
+{
+  "id": 225,
+  "text": "The following are true about availability: (a) measures fraction of time available, (b) takes repair/restart time into account, (c) relevant for non-stop running systems.",
+  "type": "MCQ",
+  "options": ["Only a and c", "Only b and c", "All the above"],
+  "answer": 2,
+  "explanation": "Availability concerns uptime fraction, includes repair/restart, and matters for continuously running systems."
+},
+{
+  "id": 226,
+  "text": "The following are true about reliability specification: (a) specs can be incomplete/incorrect so a conforming system may still 'fail' for users, (b) users often don't read specs, (c) perceived reliability matters in practice.",
+  "type": "MCQ",
+  "options": ["Only a and b", "Only a and c", "All the above"],
+  "answer": 2,
+  "explanation": "All three points are commonly cited issues with reliability specifications."
+},
+{
+  "id": 227,
+  "text": "_____ metric is relevant for systems where the system must process a large number of similar requests in a short time.",
+  "type": "MCQ",
+  "options": ["Probability of failure on demand", "Rate of occurrence of failures", "Availability", "Mean Time to Failure"],
+  "answer": 1,
+  "explanation": "ROCOF is useful for systems handling many requests/transactions over time."
+},
+{
+  "id": 228,
+  "text": "Which security design guideline advises that systems should continue protecting sensitive information even during failure?",
+  "type": "MCQ",
+  "options": ["Avoid a single point of failure", "Fail securely", "Design for recoverability", "Use redundancy and diversity"],
+  "answer": 1,
+  "explanation": "Fail securely means security properties are preserved even when failures occur."
+},
+{
+  "id": 229,
+  "text": "The most appropriate metric for measuring the reliability of an insulin pump is Rate of Occurrence of Failure (ROCOF).",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "For demand-based safety-critical devices, probability of failure on demand is typically more appropriate than ROCOF."
+},
+{
+  "id": 230,
+  "text": "92% of reported vulnerabilities are in applications, not in networks.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "The statement is marked as true in the provided exam image."
+},
+{
+  "id": 231,
+  "text": "In the preliminary risk assessment process, which step involves decomposing threats into specific ways in which an attack might occur?",
+  "type": "MCQ",
+  "options": ["Threat identification", "Attack assessment", "Exposure assessment", "Control feasibility analysis"],
+  "answer": 1,
+  "explanation": "Attack assessment breaks threats into concrete attack scenarios/paths."
+},
+{
+  "id": 232,
+  "text": "Which method in security validation involves simulating real attacks to try to breach the system?",
+  "type": "MCQ",
+  "options": ["Tool-based analysis", "Experience-based testing", "Penetration testing", "Formal verification"],
+  "answer": 2,
+  "explanation": "Penetration testing simulates realistic attacks to find exploitable weaknesses."
+},
+{
+  "id": 233,
+  "text": "Which of the following is a risk detection requirement?",
+  "type": "MCQ",
+  "options": ["Designing the system so that the risk cannot arise", "Ensuring the system can recover after an attack", "Identifying risks when they occur and neutralizing them", "Encrypting patient data on a client device"],
+  "answer": 2,
+  "explanation": "Risk detection focuses on detecting/recognizing risks/events and responding to neutralize them."
+},
+{
+  "id": 234,
+  "text": "According to the slides, which entity is responsible for reviewing and approving changes to baselines?",
+  "type": "MCQ",
+  "options": ["Development team", "QA team", "Configuration Control Board (CCB)", "Security operations group"],
+  "answer": 2,
+  "explanation": "The CCB is responsible for evaluating and approving baseline changes."
+},
+{
+  "id": 235,
+  "text": "Which of the following is not one of the four basic software configuration management (SCM) processes?",
+  "type": "MCQ",
+  "options": ["Identification", "Risk Assessment", "Status Accounting", "Auditing and Reviewing"],
+  "answer": 1,
+  "explanation": "Core SCM processes include identification, version control/change control, status accounting, and audits/reviews—not risk assessment."
+},
+{
+  "id": 236,
+  "text": "A software configuration item (SCI) is defined as:",
+  "type": "MCQ",
+  "options": ["Any hardware part of the system", "A collection of software elements treated as a unit", "Only source code files", "Only documentation artifacts"],
+  "answer": 1,
+  "explanation": "An SCI is any set of software elements managed as a single unit under configuration control."
+},
+{
+  "id": 237,
+  "text": "A company migrates from Windows Server 2012 to Windows Server 2022, requiring updates to database drivers and API calls. This is:",
+  "type": "MCQ",
+  "options": ["Perfective maintenance", "Preventive maintenance", "Adaptive maintenance", "Corrective maintenance"],
+  "answer": 2,
+  "explanation": "Adaptive maintenance adapts software to changes in its environment (OS/platform/APIs)."
+},
+{
+  "id": 238,
+  "text": "In distributed version control systems (DVCS), clients store only the latest snapshot of the repository.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 1,
+  "explanation": "DVCS clients typically have the full repository history, not just the latest snapshot."
+},
+{
+  "id": 239,
+  "text": "In Git, the term committed means:",
+  "type": "MCQ",
+  "options": ["The file is staged but not stored", "The data is safely stored in the local database", "The changes were pushed to a remote server", "The file was modified but not saved"],
+  "answer": 1,
+  "explanation": "A commit records changes in the local repository database/history."
+},
+{
+  "id": 240,
+  "text": "Y2K-like Date Issue: Engineers proactively update code months before a system-wide timestamp change. This is:",
+  "type": "MCQ",
+  "options": ["Perfective maintenance", "Preventive maintenance", "Adaptive maintenance", "Corrective maintenance"],
+  "answer": 1,
+  "explanation": "Preventive maintenance is done to prevent future failures before they occur."
+},
+{
+  "id": 241,
+  "text": "Developers refactor a large module to reduce complexity and improve readability before future enhancements. This is:",
+  "type": "MCQ",
+  "options": ["Perfective maintenance", "Preventive maintenance", "Adaptive maintenance", "Corrective maintenance"],
+  "answer": 0,
+  "explanation": "Refactoring to improve maintainability/quality (for future change) is often categorized as perfective maintenance in this exam context."
+},
+{
+  "id": 242,
+  "text": "Customers request a new feature that automatically emails monthly reports. Developers implement the feature and update documentation. This is:",
+  "type": "MCQ",
+  "options": ["Perfective maintenance", "Preventive maintenance", "Adaptive maintenance", "Corrective maintenance"],
+  "answer": 0,
+  "explanation": "Adding new user-requested functionality is perfective maintenance."
+},
+{
+  "id": 243,
+  "text": "Program slicing helps identify the parts of code that influence a specific variable or computation.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Program slicing isolates statements affecting a chosen variable/output."
+},
+{
+  "id": 244,
+  "text": "When to reengineer a system: (a) changes confined to part → reengineer that part, (b) hardware/software support becomes obsolete, (c) tools to support restructuring are available.",
+  "type": "MCQ",
+  "options": ["Only a and b", "Only b and c", "Only a and c", "All the above"],
+  "answer": 1,
+  "explanation": "Reengineering is often triggered by obsolescence and availability of restructuring support/tools (as marked)."
+},
+{
+  "id": 245,
+  "text": "An array of actions designed to both eliminate symbolic information and confuse program structure is called:",
+  "type": "MCQ",
+  "options": ["Obfuscation", "Watermarking", "Reengineering"],
+  "answer": 0,
+  "explanation": "Obfuscation intentionally makes code harder to understand and reverse engineer."
+},
+{
+  "id": 246,
+  "text": "IsDebuggerPresent API can detect user-mode debuggers.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "IsDebuggerPresent can indicate whether a debugger is attached to the current process."
+},
+{
+  "id": 247,
+  "text": "Some anti-debugger techniques intentionally execute operations that can disrupt or disable a debugger.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Anti-debugging can include tactics that interfere with debugging tools."
+},
+{
+  "id": 248,
+  "text": "The cost of developing new software is often significantly higher than the cost of reengineering software.",
+  "type": "TF",
+  "options": ["True", "False"],
+  "answer": 0,
+  "explanation": "Reengineering can be cheaper than greenfield redevelopment in many cases."
+},
+{
+  "id": 249,
+  "text": "Risk exposure is computed as:",
+  "type": "MCQ",
+  "options": ["The probability that a risk will occur", "The cost to the project if the risk should occur", "The product of a and b"],
+  "answer": 2,
+  "explanation": "Risk exposure = Probability × Impact (loss)."
+},
+{
+  "id": 250,
+  "text": "Project risk components are categorized by:",
+  "type": "MCQ",
+  "options": ["Performance, cost, support and schedule", "Mitigation, monitoring and management"],
+  "answer": 0,
+  "explanation": "Risk components are commonly grouped as performance, cost, support, and schedule."
+},
+{
+  "id": 251,
+  "text": "Risks may be categorized as: (a) Intolerable, (b) ALARP, (c) Acceptable.",
+  "type": "MCQ",
+  "options": ["Only a and b", "Only b and c", "All of the above"],
+  "answer": 2,
+  "explanation": "All three are common risk categories in risk assessment (intolerable/ALARP/acceptable)."
+},
+{
+  "id": 252,
+  "text": "The following are risks related to business impact, except:",
+  "type": "MCQ",
+  "options": ["The effect of this product on the company's revenue", "Visibility of this product by senior management", "Whether the customer has a solid idea of requirements", "Reasonableness of the delivery deadline", "Number of customers who will use this product"],
+  "answer": 2,
+  "explanation": "Customer clarity of requirements is typically a project/process risk rather than a direct business impact risk."
+},
+{
+  "id": 253,
+  "text": "The following are risks related to process maturity, except:",
+  "type": "MCQ",
+  "options": ["Whether a common process framework has been established", "Whether project teams consistently follow the defined process", "Whether management supports software engineering practices", "Whether formal technical reviews are conducted", "Whether the product has strong market demand"],
+  "answer": 4,
+  "explanation": "Market demand is a business/product risk, not a process maturity risk."
+},
+{
+  "id": 254,
+  "text": "Problems with re-structuring are:",
+  "type": "MCQ",
+  "options": ["Loss of comments", "Loss of documentation", "Heavy computational demands", "All of the above"],
+  "answer": 3,
+  "explanation": "Restructuring can lose comments/docs and may require significant computational effort."
+},
+{
+  "id": 255,
+  "text": "Reasons to reverse engineer include: (a) interoperability with proprietary software, (b) developing competing software, (c) evaluating software quality and robustness.",
+  "type": "MCQ",
+  "options": ["Only a and b", "Only a and c", "Only b and c", "All of the above"],
+  "answer": 3,
+  "explanation": "All listed items are presented as reasons to reverse engineer in the exam image."
 }
 ]
