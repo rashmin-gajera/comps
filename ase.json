@@ -1271,8 +1271,8 @@
     "Reusability management",
     "All of the above are umbrella activities"
   ],
-  "answer": 4,
-  "explanation": "All of the above are umbrella activities in process models."
+  "answer": 2,
+  "explanation": "Monitoring and control is a framework activity, not an umbrella activity."
 },
 {
   "id": 140,
@@ -1338,8 +1338,8 @@
     "Both a and b",
     "Both a and c"
   ],
-  "answer": 0,
-  "explanation": "EVA measures project progress using planned vs actual values."
+  "answer": 3,
+  "explanation": "Both a and b are correct; EVA computes progress and can use historical data for comparison."
 },
 {
   "id": 146,
