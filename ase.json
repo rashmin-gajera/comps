@@ -289,8 +289,8 @@
     "The best approach to use for projects with large development teams",
     "A risky model that rarely produces a meaningful product"
   ],
-  "answer": 2,
-  "explanation": "The best approach to use for projects with large development teams"
+  "answer": 1,
+  "explanation": "The unified process (UP) is an iterative and incremental software development process that is particularly useful when requirements are not well defined at the outset, allowing for flexibility and adaptation as the project progresses."
 },
 {
   "id": 32,
@@ -673,8 +673,8 @@
 "text": "A WBS is a hierarchical description of all the activities scheduled for a project.",
 "type": "TF",
 "options": ["True", "False"],
-"answer": 0,
-"explanation": "A Work Breakdown Structure decomposes the project work into a hierarchy of deliverables/tasks."
+"answer": 1,
+"explanation": "A WBS (Work Breakdown Structure) is a hierarchical description of all the deliverables/work products — not scheduled activities."
 },
 {
 "id": 75,
